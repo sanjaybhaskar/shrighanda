@@ -1,9 +1,9 @@
 .custom-footer {
-  background: url('/assets/bg-footer.png') no-repeat center center;
+  background: url('https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/bg-footer.png') no-repeat center center;
   background-size: cover;
   color: #fff;
-  padding: 50px;
   position: relative;
+  padding-top:  40px;
 
   .footer-row {
     display: flex;
@@ -14,7 +14,7 @@
     &.copyright {
       justify-content: center;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 50px;
+      padding-top: 80px;
     }
   }
 
@@ -31,6 +31,7 @@
       left: 50%; /* Start positioning at the center of the screen */
       transform: translateX(-50%); /* Shift it back by 50% of its width to perfectly center it */
       flex: 0; /* Prevent it from growing */
+      padding-top: 50px;
     }
   }
 
@@ -52,6 +53,7 @@
   .custom-footer .footer-row {
     flex-direction: column;
     text-align: center; /* Center text on smaller screens */
+    padding-top: 20px;
   }
 
   .custom-footer .footer-column.details {
@@ -63,11 +65,19 @@
   .custom-footer .footer-image {
     height: 80px;
   }
+
+  .copyright {
+    padding-top: 40 !important;
+  }
 }
 
 @media (max-width: 480px) {
   .custom-footer {
     padding: 10px;
+  }
+
+  .copyright {
+    padding-top: 40 !important;
   }
 
   .custom-footer .footer-image {

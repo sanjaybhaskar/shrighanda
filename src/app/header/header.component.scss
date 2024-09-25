@@ -133,7 +133,6 @@ label {
     cursor: pointer;
     transition: 0.3s;
     transition-property: color;
-    margin-left: auto;
   }
 
   label:hover {
@@ -199,6 +198,7 @@ label {
 
   header .logo {
     height: 50px; /* Even smaller logo for mobile */
+    padding-left: 20px;
   }
 
   header .title {
