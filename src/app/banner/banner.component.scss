@@ -1,0 +1,129 @@
+.banner-content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.overlay-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.right-image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.heading {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.book-now {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.white-color-text {
+  span, i {
+      color: whitesmoke;
+  }
+}
+
+/* RESPONSIVE STYLES */
+
+/* For devices smaller than 768px (Tablets and Phones) */
+@media (max-width: 768px) {
+  .full-width-image {
+      height: 300px; /* Smaller image height */
+  }
+  .overlay-image {
+      width: 100%; /* Overlay takes up full width */
+      height: auto;
+      top: auto;
+      bottom: 0;
+  }
+  .text-overlay {
+      transform: none; /* Remove transform for mobile */
+      top: auto;
+      left: auto;
+      padding: 15px; /* Adjust padding */
+      margin-top: -50px; /* Slightly overlap the image */
+  }
+  .heading {
+      font-size: 20px; /* Adjust heading size */
+  }
+  .date {
+      font-size: 16px; /* Adjust date size */
+  }
+  .book-now {
+      padding: 8px 16px; /* Adjust button size */
+  }
+}
+
+/* For devices smaller than 480px (Phones) */
+@media (max-width: 480px) {
+  .full-width-image {
+      height: 250px; /* Further reduce image height */
+  }
+  .text-overlay {
+      font-size: 14px; /* Reduce text size */
+      padding: 10px; /* Adjust padding */
+  }
+  .heading {
+      font-size: 18px; /* Adjust heading size */
+  }
+  .date {
+      font-size: 14px; /* Adjust date size */
+  }
+  .book-now {
+      padding: 6px 12px; /* Adjust button size */
+  }
+}

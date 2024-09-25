@@ -1,0 +1,213 @@
+/* Top section styles */
+.top-section {
+  background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.social-media {
+  flex: 1;
+  text-align: right;
+}
+
+.social-media span {
+  margin-right: 10px;
+}
+
+.social-media a {
+  margin-left: 5px;
+  color: white;
+}
+
+.social-media a:hover {
+  color: #f7420d;
+}
+
+span i {
+  margin-left: 10px; /* Space between icon and text */
+  color: white; /* Icon color */
+}
+
+/* Header styles */
+header {
+  position: relative;
+  width: 100%;
+  height: 80px; /* Height for the header */
+  padding: 0 20px; /* Horizontal padding */
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Center items vertically */
+}
+
+header .logo {
+  height: 80px; /* Logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+header .title {
+  font-size: 24px; /* Title font size */
+  color: #000; /* Title color */
+  margin-left: 0; /* No margin for closer alignment */
+  padding-left: 5px; /* Optional: Add a little padding for spacing */
+  font-weight: bold;
+}
+
+header .menu {
+  display: flex;
+  align-items: center; /* Align menu items vertically */
+  margin-left: auto; /* Push the menu to the right */
+}
+
+header .menu a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+header .menu a:not(:last-child) {
+  margin-right: 30px; /* Space between menu items */
+}
+
+header .menu a:hover {
+  padding: 10px;
+  background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);
+  color: white; /* Change text color for contrast */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive styles */
+label {
+  display: none;
+}
+
+#check {
+  z-index: 3;
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .top-section {
+    flex-direction: column;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .social-media {
+    margin-top: 10px;
+  }
+
+  header {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .logo {
+    height: 60px; /* Smaller logo size */
+  }
+
+  header .title {
+    font-size: 20px; /* Reduce title size on smaller screens */
+    text-align: center;
+    margin-left: 0;
+  }
+
+  header .menu {
+    display: none; /* Hide menu on smaller screens */
+  }
+
+  label {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: color;
+    margin-left: auto;
+  }
+
+  label:hover {
+    color: #fff;
+  }
+
+  label .close-btn {
+    display: none;
+  }
+
+  #check:checked ~ header .menu {
+    z-index: 2;
+    position: fixed;
+    background: rgba(229, 246, 223, 0.9);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 5px;
+  }
+
+  #check:checked ~ header .menu a {
+    font-weight: 700;
+    margin-right: 0;
+    margin-bottom: 50px;
+    letter-spacing: 10px;
+  }
+
+  #check:checked ~ header label .menu-btn {
+    display: none;
+  }
+
+  #check:checked ~ header label .close-btn {
+    z-index: 2;
+    display: block;
+    position: fixed;
+  }
+
+  label .menu-btn {
+    position: absolute;
+  }
+
+  header .logo {
+    position: absolute;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .top-section {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  header .logo {
+    height: 50px; /* Even smaller logo for mobile */
+  }
+
+  header .title {
+    font-size: 18px; /* Smaller title on mobile */
+    padding-left: 50px;
+  }
+
+  #check:checked ~ header .menu a {
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+}
