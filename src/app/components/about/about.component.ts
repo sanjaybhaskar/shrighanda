@@ -7,9 +7,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  constructor(private router: Router) {}
-
-  navigateToRegister() {
-    this.router.navigate(['/about']);
-  }
+  
 }

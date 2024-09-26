@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AboutusComponent } from './components/about/aboutus/aboutus.component';
+import { MissionComponent } from './components/about/mission/mission.component';
+import { EventsComponent } from './components/events/events.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { RegistrationComponent } from './components/registration/registration.co
     BannerComponent,
     HomeComponent,
     AboutComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AboutusComponent,
+    MissionComponent,
+    EventsComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

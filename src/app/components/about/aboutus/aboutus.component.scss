@@ -1,0 +1,33 @@
+.section-img {
+    background-image: url("https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/about_bg_1.png");
+}
+
+
+/* For devices smaller than 768px (Tablets and Phones) */
+@media (max-width: 768px) {
+    .about-img5 {
+        display: none;
+    }
+
+    .section-img {
+        background-image: none;
+    }
+
+    .background-image {
+        background-image: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-img5 {
+        display: none;
+    }
+
+    .section-img {
+        background-image: none;
+    }
+
+    .background-image {
+        background-image: none;
+    }
+}

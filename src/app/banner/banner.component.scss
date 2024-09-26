@@ -64,11 +64,12 @@
 }
 
 .book-now {
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
+    background-color: #f7420d; /* Background color for the button */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Transition for background */
 }
 
 .white-color-text {
@@ -118,7 +119,7 @@
   .banner-content {
     padding-top: 20px;
   }
-  
+
   .full-width-image {
       height: 250px; /* Further reduce image height */
   }

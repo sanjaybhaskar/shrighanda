@@ -1,0 +1,37 @@
+.background-image-div {
+    position: relative;
+    z-index: 1;
+    /* Add styles for content */
+}
+
+.background-image-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/nuddi.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Adjust this value for desired opacity */
+    z-index: -1;
+}
+
+.background-image-div1 {
+    position: relative;
+    z-index: 1;
+    /* Add styles for content */
+}
+
+.background-image-div1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/bendre_d.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5; /* Adjust this value for desired opacity */
+    z-index: -1;
+}

@@ -40,7 +40,7 @@ span i {
 header {
   position: relative;
   width: 100%;
-  height: 80px; /* Height for the header */
+  height: 100px; /* Height for the header */
   padding: 0 20px; /* Horizontal padding */
   display: flex;
   justify-content: flex-start; /* Align items to the left */
@@ -53,11 +53,12 @@ header .logo {
 }
 
 header .title {
-  font-size: 24px; /* Title font size */
+  font-size: 34px; /* Title font size */
   color: #000; /* Title color */
   margin-left: 0; /* No margin for closer alignment */
   padding-left: 5px; /* Optional: Add a little padding for spacing */
   font-weight: bold;
+  align-self: center;
 }
 
 header .menu {
@@ -118,7 +119,7 @@ label {
   }
 
   header .title {
-    font-size: 20px; /* Reduce title size on smaller screens */
+    font-size: 30px; /* Reduce title size on smaller screens */
     text-align: center;
     margin-left: 0;
   }
@@ -157,6 +158,7 @@ label {
     align-items: center;
     list-style: none;
     margin-bottom: 5px;
+    margin-top: -400px
   }
 
   #check:checked ~ header .menu a {
@@ -174,6 +176,7 @@ label {
     z-index: 2;
     display: block;
     position: fixed;
+    color: black;
   }
 
   label .menu-btn {
@@ -197,13 +200,20 @@ label {
   }
 
   header .logo {
-    height: 50px; /* Even smaller logo for mobile */
+    height: 30px; /* Even smaller logo for mobile */
     padding-left: 20px;
   }
 
   header .title {
-    font-size: 18px; /* Smaller title on mobile */
-    padding-left: 50px;
+    font-size: 20px; /* Smaller title on mobile */
+    padding-left: 60px;
+    padding-top: 5px;
+  }
+
+  .header .logo {
+    position: absolute;
+    height: 30px;
+    padding-left: 10px;
   }
 
   #check:checked ~ header .menu a {
