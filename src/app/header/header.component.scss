@@ -25,6 +25,7 @@
 .social-media a {
   margin-left: 5px;
   color: white;
+  font-size: 14px;
 }
 
 .social-media a:hover {
@@ -201,13 +202,12 @@ label {
 
   header .logo {
     height: 30px; /* Even smaller logo for mobile */
-    padding-left: 20px;
+    padding-left: 15px;
   }
 
   header .title {
-    font-size: 20px; /* Smaller title on mobile */
-    padding-left: 60px;
-    padding-top: 5px;
+    font-size: 18px; /* Smaller title on mobile */
+    padding-left: 50px;
   }
 
   .header .logo {
