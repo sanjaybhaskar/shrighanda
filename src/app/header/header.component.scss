@@ -23,7 +23,7 @@
 }
 
 .social-media a {
-  margin-left: 5px;
+  margin-left: 15px;
   color: white;
   font-size: 14px;
 }
@@ -33,39 +33,53 @@
 }
 
 span i {
-  margin-left: 10px; /* Space between icon and text */
-  color: white; /* Icon color */
+  margin-left: 10px;
+  /* Space between icon and text */
+  color: white;
+  /* Icon color */
 }
 
 /* Header styles */
 header {
   position: relative;
   width: 100%;
-  height: 100px; /* Height for the header */
-  padding: 0 20px; /* Horizontal padding */
+  height: 100px;
+  /* Height for the header */
+  padding: 0 20px;
+  /* Horizontal padding */
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center; /* Center items vertically */
+  justify-content: flex-start;
+  /* Align items to the left */
+  align-items: center;
+  /* Center items vertically */
 }
 
 header .logo {
-  height: 80px; /* Logo height */
-  width: auto; /* Maintain aspect ratio */
+  height: 80px;
+  /* Logo height */
+  width: auto;
+  /* Maintain aspect ratio */
 }
 
 header .title {
-  font-size: 34px; /* Title font size */
-  color: #000; /* Title color */
-  margin-left: 0; /* No margin for closer alignment */
-  padding-left: 5px; /* Optional: Add a little padding for spacing */
+  font-size: 34px;
+  /* Title font size */
+  color: #000;
+  /* Title color */
+  margin-left: 0;
+  /* No margin for closer alignment */
+  padding-left: 5px;
+  /* Optional: Add a little padding for spacing */
   font-weight: bold;
   align-self: center;
 }
 
 header .menu {
   display: flex;
-  align-items: center; /* Align menu items vertically */
-  margin-left: auto; /* Push the menu to the right */
+  align-items: center;
+  /* Align menu items vertically */
+  margin-left: auto;
+  /* Push the menu to the right */
 }
 
 header .menu a {
@@ -77,14 +91,17 @@ header .menu a {
 }
 
 header .menu a:not(:last-child) {
-  margin-right: 30px; /* Space between menu items */
+  margin-right: 30px;
+  /* Space between menu items */
 }
 
 header .menu a:hover {
   padding: 10px;
   background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);
-  color: white; /* Change text color for contrast */
-  transition: background 0.3s ease; /* Smooth transition */
+  color: white;
+  /* Change text color for contrast */
+  transition: background 0.3s ease;
+  /* Smooth transition */
 }
 
 /* Responsive styles */
@@ -116,17 +133,20 @@ label {
   }
 
   header .logo {
-    height: 60px; /* Smaller logo size */
+    height: 60px;
+    /* Smaller logo size */
   }
 
   header .title {
-    font-size: 30px; /* Reduce title size on smaller screens */
+    font-size: 30px;
+    /* Reduce title size on smaller screens */
     text-align: center;
     margin-left: 0;
   }
 
   header .menu {
-    display: none; /* Hide menu on smaller screens */
+    display: none;
+    /* Hide menu on smaller screens */
   }
 
   label {
@@ -145,7 +165,7 @@ label {
     display: none;
   }
 
-  #check:checked ~ header .menu {
+  #check:checked~header .menu {
     z-index: 2;
     position: fixed;
     background: rgba(229, 246, 223, 0.9);
@@ -162,18 +182,18 @@ label {
     margin-top: -400px
   }
 
-  #check:checked ~ header .menu a {
+  #check:checked~header .menu a {
     font-weight: 700;
     margin-right: 0;
     margin-bottom: 50px;
     letter-spacing: 10px;
   }
 
-  #check:checked ~ header label .menu-btn {
+  #check:checked~header label .menu-btn {
     display: none;
   }
 
-  #check:checked ~ header label .close-btn {
+  #check:checked~header label .close-btn {
     z-index: 2;
     display: block;
     position: fixed;
@@ -201,12 +221,14 @@ label {
   }
 
   header .logo {
-    height: 30px; /* Even smaller logo for mobile */
+    height: 30px;
+    /* Even smaller logo for mobile */
     padding-left: 15px;
   }
 
   header .title {
-    font-size: 18px; /* Smaller title on mobile */
+    font-size: 18px;
+    /* Smaller title on mobile */
     padding-left: 50px;
   }
 
@@ -216,8 +238,28 @@ label {
     padding-left: 10px;
   }
 
-  #check:checked ~ header .menu a {
+  #check:checked~header .menu a {
     font-size: 14px;
     letter-spacing: normal;
   }
+}
+
+.cart-icon {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.cart-icon a {
+  color: #fff; /* Icon color */
+  text-decoration: none; /* Remove underline */
+}
+.cart-icon .badge {
+  position: absolute;
+  top: -12px;
+  right: -20px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  background-color: #ffcc00; /* Adjust as needed */
+  color: #333; /* Text color */
 }

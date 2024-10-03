@@ -14,7 +14,7 @@ export class BannerComponent implements OnInit {
   }
 
   navigateToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/events']);
   }
 
 

@@ -1,0 +1,1044 @@
+[
+    {
+        "id": 2940,
+        "name": "HaHaHa Child",
+        "slug": "hahaha-child",
+        "permalink": "https://shrigandha.nl/product/hahaha-child/",
+        "date_created": "2024-04-13T15:29:39",
+        "date_created_gmt": "2024-04-13T13:29:39",
+        "date_modified": "2024-06-07T15:06:42",
+        "date_modified_gmt": "2024-06-07T13:06:42",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p><span style=\"font-family: UICTFontTextStyleBody;font-size: 17px;font-style: normal;font-weight: 400;letter-spacing: normal;text-align: start;text-indent: 0px;text-transform: none;text-decoration: none;float: none\"><a href=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144358.png\"><img class=\"alignnone size-full wp-image-3064\" src=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144358.png\" alt=\"\" width=\"405\" height=\"68\" /></a></span></p>\n",
+        "short_description": "",
+        "sku": "HaHaHa-child",
+        "price": "0",
+        "regular_price": "0",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": true,
+        "total_sales": 9,
+        "virtual": true,
+        "downloadable": true,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2941,
+                "date_created": "2024-04-13T17:33:44",
+                "date_created_gmt": "2024-04-13T13:33:44",
+                "date_modified": "2024-06-07T17:06:44",
+                "date_modified_gmt": "2024-06-07T13:06:44",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2024/04/img_3836.jpeg?fit=500%2C500&ssl=1",
+                "name": "2022- CC- Shrigandha- Logo &#8211; Ticket &#8211; Haa Ha Haa (0-8y)",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;0,00</bdi></span>",
+        "related_ids": [
+            2939
+        ],
+        "meta_data": [
+            {
+                "id": 41932,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 41933,
+                "key": "saso_eventtickets_list",
+                "value": "2"
+            },
+            {
+                "id": 41934,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 41935,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 41936,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"HHH\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 43275,
+                "key": "saso_eventtickets_is_ticket",
+                "value": "yes"
+            },
+            {
+                "id": 43276,
+                "key": "saso_eventtickets_event_location",
+                "value": "‘t Tejaterke – Social Cultural Centrum, Best"
+            },
+            {
+                "id": 43277,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43278,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "15:30"
+            },
+            {
+                "id": 43279,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43280,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "19:30"
+            },
+            {
+                "id": 43281,
+                "key": "saso_eventtickets_is_date_for_all_variants",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "outofstock",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/2940"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 2939,
+        "name": "HaHaHa Adults",
+        "slug": "hahaha-adults",
+        "permalink": "https://shrigandha.nl/product/hahaha-adults/",
+        "date_created": "2024-04-13T15:27:25",
+        "date_created_gmt": "2024-04-13T13:27:25",
+        "date_modified": "2024-07-08T14:46:03",
+        "date_modified_gmt": "2024-07-08T12:46:03",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144529.png\"><img class=\"alignnone size-full wp-image-3065\" src=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144529.png\" alt=\"\" width=\"378\" height=\"75\" /></a></p>\n",
+        "short_description": "",
+        "sku": "HaHaHa-adults",
+        "price": "15",
+        "regular_price": "15",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": true,
+        "total_sales": 105,
+        "virtual": true,
+        "downloadable": true,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": true,
+        "stock_quantity": -13,
+        "backorders": "yes",
+        "backorders_allowed": true,
+        "backordered": true,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2942,
+                "date_created": "2024-04-13T17:34:17",
+                "date_created_gmt": "2024-04-13T13:34:17",
+                "date_modified": "2024-06-07T17:06:20",
+                "date_modified_gmt": "2024-06-07T13:06:20",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2024/04/img_3837.jpeg?fit=500%2C500&ssl=1",
+                "name": "2022- CC- Shrigandha- Logo &#8211; Ticket &#8211; Standard (9+ years)",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;15,00</bdi></span>",
+        "related_ids": [
+            2940
+        ],
+        "meta_data": [
+            {
+                "id": 41902,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 41903,
+                "key": "saso_eventtickets_list",
+                "value": "2"
+            },
+            {
+                "id": 41904,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 41905,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 41906,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"HHH\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 43288,
+                "key": "saso_eventtickets_is_ticket",
+                "value": "yes"
+            },
+            {
+                "id": 43289,
+                "key": "saso_eventtickets_event_location",
+                "value": "‘t Tejaterke – Social Cultural Centrum, Best"
+            },
+            {
+                "id": 43290,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43291,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "15:30"
+            },
+            {
+                "id": 43292,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43293,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "19:30"
+            },
+            {
+                "id": 43294,
+                "key": "saso_eventtickets_is_date_for_all_variants",
+                "value": "yes"
+            },
+            {
+                "id": 43295,
+                "key": "saso_eventtickets_list_formatter",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "onbackorder",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/2939"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 2937,
+        "name": "HaHaHa-EarlyBird",
+        "slug": "hahaha-earlybird",
+        "permalink": "https://shrigandha.nl/product/hahaha-earlybird/",
+        "date_created": "2024-04-13T15:12:10",
+        "date_created_gmt": "2024-04-13T13:12:10",
+        "date_modified": "2024-04-25T21:24:34",
+        "date_modified_gmt": "2024-04-25T19:24:34",
+        "type": "simple",
+        "status": "private",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144748.png\"><img class=\"alignnone size-full wp-image-3066\" src=\"https://shrigandha.nl/wp-content/uploads/2024/04/Screenshot-2024-04-15-144748.png\" alt=\"\" width=\"453\" height=\"74\" /></a></p>\n",
+        "short_description": "",
+        "sku": "HaHaHa-adults-earlybird",
+        "price": "12.50",
+        "regular_price": "15",
+        "sale_price": "12.50",
+        "date_on_sale_from": "2024-04-14T00:00:00",
+        "date_on_sale_from_gmt": "2024-04-13T22:00:00",
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": true,
+        "purchasable": true,
+        "total_sales": 46,
+        "virtual": true,
+        "downloadable": true,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": true,
+        "stock_quantity": 10,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2936,
+                "date_created": "2024-04-13T17:12:04",
+                "date_created_gmt": "2024-04-13T13:12:04",
+                "date_modified": "2024-04-25T23:24:37",
+                "date_modified_gmt": "2024-04-25T19:24:37",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2024/04/img_3835.jpeg?fit=500%2C500&ssl=1",
+                "name": "2022- CC- Shrigandha- Logo &#8211; Ticket &#8211; Early Bird  (9+ years)",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;15,00</bdi></span></del> <span class=\"screen-reader-text\">Original price was: &euro;&nbsp;15,00.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;12,50</bdi></span></ins><span class=\"screen-reader-text\">Current price is: &euro;&nbsp;12,50.</span>",
+        "related_ids": [
+            2940,
+            2939
+        ],
+        "meta_data": [
+            {
+                "id": 41876,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 41878,
+                "key": "saso_eventtickets_list",
+                "value": "2"
+            },
+            {
+                "id": 41879,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 41880,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 41881,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"HHH\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 43298,
+                "key": "saso_eventtickets_event_location",
+                "value": "‘t Tejaterke – Social Cultural Centrum, Best"
+            },
+            {
+                "id": 43299,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43300,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "15:30"
+            },
+            {
+                "id": 43301,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-05-04"
+            },
+            {
+                "id": 43302,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "19:30"
+            },
+            {
+                "id": 43303,
+                "key": "saso_eventtickets_is_date_for_all_variants",
+                "value": "yes"
+            },
+            {
+                "id": 43304,
+                "key": "saso_eventtickets_list_formatter",
+                "value": "yes"
+            },
+            {
+                "id": 43305,
+                "key": "saso_eventtickets_is_ticket",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "outofstock",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/2937"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 2617,
+        "name": "Ugadi 2024 Entry (5y - 12y)",
+        "slug": "ugadi-entry-5y-12y",
+        "permalink": "https://shrigandha.nl/product/ugadi-entry-5y-12y/",
+        "date_created": "2024-02-20T01:40:29",
+        "date_created_gmt": "2024-02-19T23:40:29",
+        "date_modified": "2024-04-15T13:47:07",
+        "date_modified_gmt": "2024-04-15T11:47:07",
+        "type": "simple",
+        "status": "private",
+        "featured": true,
+        "catalog_visibility": "visible",
+        "description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/5-12-y.png\"><img class=\"alignnone wp-image-2664 \" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/5-12-y.png\" alt=\"\" width=\"416\" height=\"138\" /></a></p>\n",
+        "short_description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/5-12-y.png\"><img class=\"alignnone size-medium wp-image-2664\" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/5-12-y-300x100.png\" alt=\"\" width=\"300\" height=\"100\" /></a></p>\n",
+        "sku": "General Entry (5y-12y)",
+        "price": "15",
+        "regular_price": "15",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": true,
+        "total_sales": 83,
+        "virtual": true,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": true,
+        "stock_quantity": -1,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2618,
+                "date_created": "2024-02-20T03:42:44",
+                "date_created_gmt": "2024-02-19T23:42:44",
+                "date_modified": "2024-04-13T03:10:44",
+                "date_modified_gmt": "2024-04-12T23:10:44",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2024/02/Ticket-U5-12-Ugadi-2024.png?fit=500%2C500&ssl=1",
+                "name": "Ticket &#8211; U5- 12 Ugadi 2024",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 5,
+        "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;15,00</bdi></span>",
+        "related_ids": [
+            2940,
+            2939
+        ],
+        "meta_data": [
+            {
+                "id": 31695,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 31696,
+                "key": "_wp_desired_post_slug",
+                "value": "entry-adult"
+            },
+            {
+                "id": 31697,
+                "key": "saso_eventtickets_list",
+                "value": "1"
+            },
+            {
+                "id": 31698,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 31699,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 31700,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"SUS-\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 31702,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 31703,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "10:30"
+            },
+            {
+                "id": 31704,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 31705,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "18:00"
+            },
+            {
+                "id": 31706,
+                "key": "saso_eventtickets_event_location",
+                "value": "Theater de Schalm, Meiveld 3, 5501 KA Veldhoven"
+            },
+            {
+                "id": 32082,
+                "key": "saso_eventtickets_list_formatter",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "outofstock",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/2617"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 1935,
+        "name": "Ugadi 2024 Entry (13+ years)",
+        "slug": "ugadi-2024-13-adults",
+        "permalink": "https://shrigandha.nl/product/ugadi-2024-13-adults/",
+        "date_created": "2023-02-18T09:46:40",
+        "date_created_gmt": "2023-02-18T07:46:40",
+        "date_modified": "2024-04-15T13:47:30",
+        "date_modified_gmt": "2024-04-15T11:47:30",
+        "type": "simple",
+        "status": "private",
+        "featured": true,
+        "catalog_visibility": "visible",
+        "description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/13-plus-years.png\"><img class=\"alignnone size-medium wp-image-2663\" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/13-plus-years-300x104.png\" alt=\"\" width=\"300\" height=\"104\" /></a></p>\n",
+        "short_description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/13-plus-years.png\"><img class=\"alignnone size-medium wp-image-2663\" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/13-plus-years-300x104.png\" alt=\"\" width=\"300\" height=\"104\" /></a></p>\n",
+        "sku": "General Entry (13+years)",
+        "price": "25",
+        "regular_price": "25",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": true,
+        "total_sales": 1132,
+        "virtual": true,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": true,
+        "stock_quantity": -2,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2619,
+                "date_created": "2024-02-20T03:45:09",
+                "date_created_gmt": "2024-02-19T23:45:09",
+                "date_modified": "2024-04-13T03:10:29",
+                "date_modified_gmt": "2024-04-12T23:10:29",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2023/02/Ticket-General-Ugadi-2024.png?fit=500%2C500&ssl=1",
+                "name": "Ticket &#8211; General Ugadi 2024",
+                "alt": ""
+            },
+            {
+                "id": 2619,
+                "date_created": "2024-02-20T03:45:09",
+                "date_created_gmt": "2024-02-19T23:45:09",
+                "date_modified": "2024-04-13T03:10:29",
+                "date_modified_gmt": "2024-04-12T23:10:29",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2023/02/Ticket-General-Ugadi-2024.png?fit=500%2C500&ssl=1",
+                "name": "Ticket &#8211; General Ugadi 2024",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 4,
+        "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;25,00</bdi></span>",
+        "related_ids": [
+            2940,
+            2939
+        ],
+        "meta_data": [
+            {
+                "id": 12526,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 12529,
+                "key": "_wp_desired_post_slug",
+                "value": "entry-adult"
+            },
+            {
+                "id": 20845,
+                "key": "saso_eventtickets_list",
+                "value": "1"
+            },
+            {
+                "id": 20846,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 20847,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 20848,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"SUS-\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 20854,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 20855,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "10:30"
+            },
+            {
+                "id": 20856,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 20857,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "18:00"
+            },
+            {
+                "id": 21550,
+                "key": "saso_eventtickets_event_location",
+                "value": "Theater de Schalm, Meiveld 3, 5501 KA Veldhoven"
+            },
+            {
+                "id": 32083,
+                "key": "saso_eventtickets_list_formatter",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "outofstock",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/1935"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    },
+    {
+        "id": 1791,
+        "name": "Ugadi 2024 Entry (0-4 y)",
+        "slug": "ugadi-2024-0-4y",
+        "permalink": "https://shrigandha.nl/product/ugadi-2024-0-4y/",
+        "date_created": "2023-01-26T09:01:22",
+        "date_created_gmt": "2023-01-26T07:01:22",
+        "date_modified": "2024-04-15T13:47:48",
+        "date_modified_gmt": "2024-04-15T11:47:48",
+        "type": "simple",
+        "status": "private",
+        "featured": true,
+        "catalog_visibility": "visible",
+        "description": "<h1><strong><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/0-4-y.png\"><img class=\"alignnone size-medium wp-image-2662\" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/0-4-y-300x96.png\" alt=\"\" width=\"300\" height=\"96\" /></a> </strong></h1>\n",
+        "short_description": "<p><a href=\"https://shrigandha.nl/wp-content/uploads/2023/01/0-4-y.png\"><img class=\"alignnone size-medium wp-image-2662\" src=\"https://shrigandha.nl/wp-content/uploads/2023/01/0-4-y-300x96.png\" alt=\"\" width=\"300\" height=\"96\" /></a></p>\n",
+        "sku": "Kids Entry (0-4y)",
+        "price": "0",
+        "regular_price": "0",
+        "sale_price": "",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": false,
+        "purchasable": true,
+        "total_sales": 154,
+        "virtual": true,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": true,
+        "stock_quantity": 0,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": false,
+        "shipping_taxable": false,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": false,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 94,
+                "name": "Access",
+                "slug": "access"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 2620,
+                "date_created": "2024-02-20T03:46:52",
+                "date_created_gmt": "2024-02-19T23:46:52",
+                "date_modified": "2024-04-13T03:09:33",
+                "date_modified_gmt": "2024-04-12T23:09:33",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2023/01/Ticket-Infants-Ugadi-2024.png?fit=500%2C500&ssl=1",
+                "name": "Ticket &#8211; Infants Ugadi 2024",
+                "alt": ""
+            },
+            {
+                "id": 2620,
+                "date_created": "2024-02-20T03:46:52",
+                "date_created_gmt": "2024-02-19T23:46:52",
+                "date_modified": "2024-04-13T03:09:33",
+                "date_modified_gmt": "2024-04-12T23:09:33",
+                "src": "https://i0.wp.com/shrigandha.nl/wp-content/uploads/2023/01/Ticket-Infants-Ugadi-2024.png?fit=500%2C500&ssl=1",
+                "name": "Ticket &#8211; Infants Ugadi 2024",
+                "alt": ""
+            }
+        ],
+        "attributes": [],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 6,
+        "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&euro;</span>&nbsp;0,00</bdi></span>",
+        "related_ids": [
+            2939,
+            2940
+        ],
+        "meta_data": [
+            {
+                "id": 9594,
+                "key": "_last_editor_used_jetpack",
+                "value": "classic-editor"
+            },
+            {
+                "id": 9597,
+                "key": "_wp_desired_post_slug",
+                "value": "entry-kid"
+            },
+            {
+                "id": 20849,
+                "key": "saso_eventtickets_list",
+                "value": "1"
+            },
+            {
+                "id": 20850,
+                "key": "saso_eventtickets_ticket_max_redeem_amount",
+                "value": "1"
+            },
+            {
+                "id": 20851,
+                "key": "saso_eventtickets_ticket_amount_per_item",
+                "value": "1"
+            },
+            {
+                "id": 20852,
+                "key": "saso_eventtickets_list_formatter_values",
+                "value": "{\"input_prefix_codes\":\"SUS-\",\"input_type_codes\":\"1\",\"input_amount_letters\":5,\"input_letter_excl\":\"1\",\"input_letter_style\":1,\"input_include_numbers\":\"3\",\"input_serial_delimiter\":\"2\",\"input_serial_delimiter_space\":\"3\",\"input_number_start\":10000,\"input_number_offset\":1}"
+            },
+            {
+                "id": 21238,
+                "key": "saso_eventtickets_ticket_start_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 21239,
+                "key": "saso_eventtickets_ticket_start_time",
+                "value": "10:30"
+            },
+            {
+                "id": 21240,
+                "key": "saso_eventtickets_ticket_end_date",
+                "value": "2024-04-14"
+            },
+            {
+                "id": 21241,
+                "key": "saso_eventtickets_ticket_end_time",
+                "value": "18:00"
+            },
+            {
+                "id": 21551,
+                "key": "saso_eventtickets_event_location",
+                "value": "Theater de Schalm, Meiveld 3, 5501 KA Veldhoven"
+            },
+            {
+                "id": 32084,
+                "key": "saso_eventtickets_list_formatter",
+                "value": "yes"
+            }
+        ],
+        "stock_status": "outofstock",
+        "has_options": false,
+        "post_password": "",
+        "global_unique_id": "",
+        "jetpack_sharing_enabled": true,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products/1791"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://shrigandha.nl/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    }
+]

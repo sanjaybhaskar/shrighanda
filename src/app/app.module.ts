@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { AboutusComponent } from './components/about/aboutus/aboutus.component';
 import { MissionComponent } from './components/about/mission/mission.component';
 import { EventsComponent } from './components/events/events.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { CartComponent } from './components/registration/cart/cart.component';
+import { CheckoutComponent } from './components/registration/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,16 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     AboutusComponent,
     MissionComponent,
     EventsComponent,
-    GalleryComponent
+    GalleryComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    Wpng2RoutingModule
+    Wpng2RoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

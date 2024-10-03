@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row mt-4 mb-4 cart-header">
+        <div class="col-12 text-center">
+          <h1 class="cart-header-title">Your Shopping Cart</h1>
+          <p class="cart-summary">You have selected the following items. Review your choices before proceeding to checkout.</p>
+        </div>
+      </div>
+      
+    <div class="row">
+      <!-- Check if cart is empty -->
+      <div *ngIf="getGroupedCartItems().length === 0" class="col-12">
+        <p class="text-center">Your cart is empty.</p>
+      </div>
+  
+      <!-- Loop through grouped cart items -->
+      <div class="col-md-4 col-sm-6 mb-4" *ngFor="let item of getGroupedCartItems()">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top img-fluid" [src]="item.product.images[0]?.src" alt="{{ item.product.name }}" />
+          <div class="card-body">
+            <h5 class="card-title text-primary font-weight-bold">{{ item.product.name }}</h5>
+            <p><strong>Price:</strong> <span [innerHTML]="item.product.price_html"></span></p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+            <p><strong>Total:</strong> &euro;{{ calculateItemTotal(item) }}</p>
+            <button class="btn btn-danger btn-block" (click)="removeFromCart(item.product.id)">
+              <i class="fas fa-trash-alt"></i> Remove from Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+    <!-- Total Cart Summary -->
+    <div class="row mt-4 mb-4">
+        <div class="col-12 text-right">
+          <div class="cart-total-background p-4 rounded shadow-lg">
+            <h4 class="text-primary font-weight-bold mb-3">Total: &euro;{{ calculateCartTotal() }}</h4>
+            <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()">
+              <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      
+  </div>
+  

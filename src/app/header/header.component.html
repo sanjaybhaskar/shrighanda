@@ -3,8 +3,8 @@
   <div class="top-section">
     <div class="contact-info">
       <span>
-        <i class="fas fa-phone-alt"></i>+31 (0) 685806806 | 644649874
-        <i class="fas fa-envelope"></i>info&#64;shrigandha.nl
+        <i class="fas fa-phone-alt"></i><a href="tel:+31685806806"> +31 68580 6806</a>
+        <i class="fas fa-envelope"></i> info&#64;shrigandha.nl
       </span>
     </div>
     <div class="social-media">
@@ -12,14 +12,19 @@
       <a href="https://www.facebook.com/ShrigandhaKannadaBaLaga/" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/shrigandha_holland_kanbalaga/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://chat.whatsapp.com/L9OiMbxdhMD9QcuFopPzOC"><i class="fab fa-whatsapp"></i></a>
+        <a routerLink="cart" title="Cart" class="cart-icon position-relative">
+          <i class="fas fa-shopping-cart" style="font-size: 14px; color: #fff;"></i>
+          <span class="badge badge-light" *ngIf="cartService.getCartItemCount() > 0">{{ cartService.getCartItemCount() }}</span>
+        </a>
     </div>
+    
   </div>
 
   <section>
     <input type="checkbox" id="check">
     <header>
       <a href="#" class="logo"  style="display: flex;">
-        <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/Shrigandha-logo.jpg" class="logo">
+        <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/Shrigandha-logo.png" class="logo">
         <!-- <a><img src="assets/site_logo.jpg" class="logo"></a> -->
         <!-- <a><img src="assets/logo.jpg" class="logo"></a> -->
         <div class="title">ಶ್ರೀಗಂಧ ಹಾಲೆಂಡ್ ಕನ್ನಡ ಬಳಗ</div>

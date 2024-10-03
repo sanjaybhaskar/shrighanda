@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './header.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CartService } from '../components/registration/service/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -31,7 +32,7 @@ export class HeaderComponent implements OnInit {
     title: 'Contact', url: 'contact'
   }];
 
-  constructor(private headerService: HeaderService, private router: Router) { }
+  constructor(private headerService: HeaderService, private router: Router, public cartService: CartService) { }
 
   ngOnInit() {
     /**
