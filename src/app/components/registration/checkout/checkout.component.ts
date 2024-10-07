@@ -47,19 +47,9 @@ export class CheckoutComponent {
 
   private async initializeStripe() {
     this.stripe = await loadStripe(environment.stripePublisherKey); // Replace with your Stripe publishable key
-    this.setupCardElement();
+    this.setupIdealElement();
   }
 
-  private setupCardElement() {
-    const elements = this.stripe.elements();
-    if (this.card) this.card.destroy(); // Clean up the previous element
-    this.card = elements.create('card', { style }); // Create a Card Element
-    this.card.mount('#card-element'); // Mount the Card Element to the DOM
-    this.card.on('change', (event: any) => {
-      if (event.complete)
-        this.paymentModeValid = !this.paymentModeValid;
-    });
-  }
 
   private setupIdealElement() {
     const elements = this.stripe.elements();
@@ -74,14 +64,6 @@ export class CheckoutComponent {
         this.paymentModeValid = !this.paymentModeValid;
       }
     });
-  }
-
-  onPaymentMethodChange() {
-    if (this.selectedPaymentMethod === 'ideal') {
-      this.setupIdealElement();
-    } else {
-      this.setupCardElement();
-    }
   }
 
   // Calculate the total price of the cart
@@ -126,15 +108,22 @@ export class CheckoutComponent {
       total: totalAmount
     };
 
-    this.wcService.createOrder(this.orderData).subscribe(
-      async (order: any) => {
-        this.orderId = order.id;
-        this.handleStripePayment(order)
-      },
-      (error) => {
-        console.error('Order creation error:', error);
-      }
-    );
+    return new Promise((resolve, reject) => {
+      this.wcService.createOrder(this.orderData).subscribe(
+        async (order: any) => {
+          this.orderId = order.id;
+          if (totalAmount === 0) {
+           window.location.href = `https://shrigandha.nl/order-confirmation?orderId=${order.id}&redirect_status='succeeded'`;
+          }
+          else {
+            this.handleStripePayment(order);
+          }
+        },
+        (error) => {
+          console.error('Order creation error:', error);
+        }
+      );
+    });
   }
 
 
@@ -162,7 +151,7 @@ export class CheckoutComponent {
           email: this.email,
         },
       },
-      return_url: `http://localhost:4200/order-confirmation?orderId=${order.id}` // Handle redirect after payment
+      return_url: `https://shrigandha.nl/order-confirmation?orderId=${order.id}` // Handle redirect after payment
     });
 
   }

@@ -23,15 +23,13 @@ export class OrderConfirmationComponent implements OnInit {
     // Extract query parameters from the URL
     this.route.queryParams.subscribe(params => {
       this.orderId = params['orderId'];
-      const paymentIntent = params['payment_intent'];
-
       const redirectStatus = params['redirect_status'];
       // Check if the payment status indicates a failure
       if (redirectStatus === 'failed') {
         this.errorMessage = 'Your payment was unsuccessful. Please try again or contact support.';
       } else if (this.orderId) {
         this.getOrderDetails(this.orderId);
-        this.confirmPayment(this.orderId, paymentIntent);
+        this.confirmPayment(this.orderId);
         this.cartService.clearCart();
       }
     });
@@ -48,7 +46,7 @@ export class OrderConfirmationComponent implements OnInit {
     );
   }
 
-  confirmPayment(orderId: string | null, paymentIntent: string) {
+  confirmPayment(orderId: string | null) {
     this.wcService.confirmPayment(orderId)
       .subscribe(
         response => {

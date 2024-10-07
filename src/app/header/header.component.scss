@@ -263,3 +263,12 @@ label {
   background-color: #ffcc00; /* Adjust as needed */
   color: #333; /* Text color */
 }
+
+header {
+  background-color: #fff; /* Change to your desired background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust values for shadow effect */
+  padding: 10px 20px; /* Optional padding for better spacing */
+  position: relative; /* Optional: helps in positioning if needed */
+  z-index: 10; /* Optional: makes sure header stays above other elements */
+}
+

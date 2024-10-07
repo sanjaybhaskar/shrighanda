@@ -1,0 +1,61 @@
+.feedback-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input,
+textarea,
+button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.feedback-form-container {
+    max-width: 600px;
+    /* Adjust as needed */
+    margin: auto;
+    /* Center align */
+}
+
+@media (max-width: 576px) {
+    .feedback-form-container {
+        padding: 20px;
+        /* Less padding on smaller screens */
+    }
+}

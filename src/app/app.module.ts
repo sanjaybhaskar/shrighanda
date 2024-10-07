@@ -18,6 +18,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { OrderConfirmationComponent } from './components/registration/order-conf
     GalleryComponent,
     CartComponent,
     CheckoutComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,

@@ -61,7 +61,7 @@ export class RegistrationComponent {
     return product.price * product.quantity; // Calculate total cost based on price and quantity
   }
 
-  checkout() {
-    this.router.navigate(['/checkout']);
+  viewCart() {
+    this.router.navigate(['/cart']);
   }
 }

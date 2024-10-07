@@ -1,0 +1,64 @@
+
+
+<div class="container feedback-form-container mb-4 mt-4">
+    <div style="text-align: center mb-4">
+        <h3>Submit Your Feedback / Query / Complaint</h3>
+    </div>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+
+        <!-- Radio buttons for Feedback Type -->
+        <div class="mb-3 mt-4">
+            <div class="d-flex flex-wrap">
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" id="feedback" formControlName="type" value="feedback">
+                    <label class="form-check-label" for="feedback">Feedback</label>
+                </div>
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" id="query" formControlName="type" value="query">
+                    <label class="form-check-label" for="query">Query</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="complaint" formControlName="type" value="complaint">
+                    <label class="form-check-label" for="complaint">Complaint</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Name Field -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+            <div *ngIf="feedbackForm.controls.name.invalid && feedbackForm.controls.name.touched" class="text-danger">
+                Name is required.
+            </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email">
+            <div *ngIf="feedbackForm.controls.email.invalid && feedbackForm.controls.email.touched" class="text-danger">
+                <div *ngIf="feedbackForm.controls.email.errors?.required">Email is required.</div>
+                <div *ngIf="feedbackForm.controls.email.errors?.email">Invalid email format.</div>
+            </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-control" formControlName="message"></textarea>
+            <div *ngIf="feedbackForm.controls.message.invalid && feedbackForm.controls.message.touched"
+                class="text-danger">
+                Message is required.
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+            <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit</button>
+        </div>
+    </form>
+    <div *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+    </div>
+</div>
