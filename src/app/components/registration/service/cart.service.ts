@@ -23,8 +23,7 @@ export class CartService {
     }
 
     addToCart(product: any) {
-        console.log(product.quantity);
-        
+        this.loadCart();
         // Check if the product already exists in the cart
         const existingProduct = this.cart.find((item: any) => item.product.id === product.id);
         console.log('existingProduct', existingProduct);
@@ -41,6 +40,7 @@ export class CartService {
     }
 
     removeFromCart(productId: number) {
+        this.loadCart();
         this.cart = this.cart.filter(item => item.id !== productId);
         this.saveCart();
     }
@@ -59,6 +59,7 @@ export class CartService {
     }
 
     getCartItemCount(): number {
+        this.loadCart();
         return this.cart.reduce((total, item) => total + item.quantity, 0);
     }
 }

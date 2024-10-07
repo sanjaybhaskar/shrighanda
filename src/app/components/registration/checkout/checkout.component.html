@@ -90,15 +90,21 @@
 
                     <!-- Commute Field (Select) -->
                     <div class="form-group col-md-6">
-                        <label for="commute">Commute</label>
-                        <select class="form-control form-control-sm" id="commute" [(ngModel)]="commute" name="commute"
-                            required #commuteField="ngModel">
-                            <option value="" disabled>Select Commute Method</option>
-                            <option value="bus">Bus</option>
-                            <option value="own">By Own</option>
-                        </select>
-                        <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
-                            Commute method is required.
+                        <label>Commute</label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="commuteBus" value="bus" 
+                                       [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
+                                <label class="form-check-label" for="commuteBus">Bus</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="commuteOwn" value="own" 
+                                       [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
+                                <label class="form-check-label" for="commuteOwn">By Own</label>
+                            </div>
+                            <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
+                                Commute method is required.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +122,7 @@
                     <div id="card-element"></div>
                     <div id="ideal-bank-element"></div>
                 </div>
-                <button type="button" class="btn btn-primary btn-block mt-4 mb-4" [disabled]="checkoutForm.invalid || isLoading"
+                <button type="button" class="btn btn-primary btn-block mt-4 mb-4" [disabled]="checkoutForm.invalid || !paymentModeValid"
                     (click)="handleSubmit($event)">
                     <span *ngIf="isLoading">Processing...</span>
                     <span *ngIf="!isLoading">Pay Now</span>

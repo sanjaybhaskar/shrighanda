@@ -18,7 +18,7 @@ export class CheckoutComponent {
   lastName: string = '';
   email: string = '';
   city: string = '';    // Added City
-  commute: string = '';  // Added Commute
+  commute: string = 'own';  // Added Commute
   phoneNumber: string = '';
   cartItems: any[] = []; // You can get the cart items from localStorage or a cart service
   dutchPhonePattern: string = '^(\\+31|0)[1-9][0-9]{8}$';
@@ -30,8 +30,9 @@ export class CheckoutComponent {
   selectedPaymentMethod: string = 'card'; // Default selected payment method
   isLoading: boolean = false;
   selectedBank: any;
+  paymentModeValid: boolean = false;
 
-  constructor(private wcService: WooCommerceService, private router: Router,
+  constructor(private wcService: WooCommerceService,
     private paymentService: PaymentService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
@@ -54,6 +55,10 @@ export class CheckoutComponent {
     if (this.card) this.card.destroy(); // Clean up the previous element
     this.card = elements.create('card', { style }); // Create a Card Element
     this.card.mount('#card-element'); // Mount the Card Element to the DOM
+    this.card.on('change', (event: any) => {
+      if (event.complete)
+        this.paymentModeValid = !this.paymentModeValid;
+    });
   }
 
   private setupIdealElement() {
@@ -66,6 +71,7 @@ export class CheckoutComponent {
       if (event.value) {
         // Store the selected bank in the component state
         this.selectedBank = event.value; // e.g., 'abn_amro'
+        this.paymentModeValid = !this.paymentModeValid;
       }
     });
   }

@@ -52,6 +52,11 @@
                         [disabled]="product.quantity <= 0">
                         Add to Cart
                     </button>
+
+                    <button class="btn btn-primary btn-block" (click)="checkout()"
+                        [disabled]="getCartCount() === 0">
+                        Checkout
+                    </button>
                 </div>
             </div>
         </div>

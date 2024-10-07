@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class WooCommerceService {
     private getProductsApiUrl = 'https://shrigandha.nl/wp-json/wc/v3/products';
-    private wcApiUrl = 'https://shrigandha.nl/wp-json/wc/v3/orders';
+    private ordersApiUrl = 'https://shrigandha.nl/wp-json/wc/v3/orders';
 
     constructor(private http: HttpClient) { }
 
@@ -31,17 +31,29 @@ export class WooCommerceService {
                 'Basic ' + btoa(environment.consumerKey + ':' + environment.consumerSecret),
         });
 
-        return this.http.post(this.wcApiUrl, orderData, { headers });
+        return this.http.post(this.ordersApiUrl, orderData, { headers });
     }
 
     getOrder(orderId: string) {
-        const url = `${this.wcApiUrl}/${orderId}`;
+        const url = `${this.ordersApiUrl}/${orderId}`;
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
             Authorization:
                 'Basic ' + btoa(environment.consumerKey + ':' + environment.consumerSecret),
         });
         return this.http.get(url, { headers });
-      }
-      
+    }
+
+    confirmPayment(orderId: string | null): Observable<any> {
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            Authorization:
+                'Basic ' + btoa(environment.consumerKey + ':' + environment.consumerSecret),
+        });
+
+        const body = {
+            status: 'completed',
+        };
+        return this.http.post<any>(`${this.ordersApiUrl}/${orderId}`, body, { headers });
+    }
 }
