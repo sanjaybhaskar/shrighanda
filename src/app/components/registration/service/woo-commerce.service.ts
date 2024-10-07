@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root',
 })
 export class WooCommerceService {
-    private apiUrl = 'https://shrigandha.nl/wp-json/wc/v3/products';
+    private getProductsApiUrl = 'https://shrigandha.nl/wp-json/wc/v3/products';
     private wcApiUrl = 'https://shrigandha.nl/wp-json/wc/v3/orders';
 
     constructor(private http: HttpClient) { }
@@ -18,7 +18,7 @@ export class WooCommerceService {
             'Authorization': 'Basic ' + btoa(`${environment.consumerKey}:${environment.consumerSecret}`),
         });
 
-        return this.http.get(this.apiUrl, { headers }).pipe(
+        return this.http.get(this.getProductsApiUrl, { headers }).pipe(
             map((products: any) => products)
         );
     }
@@ -34,4 +34,14 @@ export class WooCommerceService {
         return this.http.post(this.wcApiUrl, orderData, { headers });
     }
 
+    getOrder(orderId: string) {
+        const url = `${this.wcApiUrl}/${orderId}`;
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            Authorization:
+                'Basic ' + btoa(environment.consumerKey + ':' + environment.consumerSecret),
+        });
+        return this.http.get(url, { headers });
+      }
+      
 }

@@ -1,0 +1,50 @@
+<div class="order-confirmation">
+
+    <div *ngIf="errorMessage" class="error-message">
+        <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/error_payment.jpg" alt="Payment Failure" class="failure-image" />
+        <p>{{ errorMessage }}</p>
+
+        <button class="btn-primary" (click)="goToCart()">Continue Payment</button>
+
+    </div>
+    <div class="order-summary" *ngIf="!errorMessage">
+
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed. Here is a summary of your order:</p>
+
+        <div class="order-summary">
+            <h2>Order #{{ orderId }}</h2>
+            <p><strong>Date:</strong> {{ orderDetails?.date_created | date:'medium' }}</p>
+
+            <h3>Billing Details</h3>
+            <p>
+                {{ orderDetails.billing.first_name }} {{ orderDetails.billing.last_name }}<br>
+                {{ orderDetails.billing.city }}<br>
+                {{ orderDetails.billing.phone }}<br>
+                {{ orderDetails.billing.email }}
+            </p>
+
+            <h3>Order Items</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of orderDetails.line_items">
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>€{{ item.price | number: '1.2-2' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Total: €{{ calculateOrderTotal() | number: '1.2-2' }}</h3>
+        </div>
+
+        <button class="btn-primary" (click)="goToShop()">Continue Shopping</button>
+    </div>
+</div>

@@ -35,7 +35,7 @@
         <div class="col-12 text-right">
           <div class="cart-total-background p-4 rounded shadow-lg">
             <h4 class="text-primary font-weight-bold mb-3">Total: &euro;{{ calculateCartTotal() }}</h4>
-            <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()">
+            <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()" [disabled]="cartItems.length == 0">
               <i class="fas fa-shopping-cart"></i> Proceed to Checkout
             </button>
           </div>

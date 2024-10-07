@@ -29,55 +29,103 @@
             <h2 class="mb-4">Checkout</h2>
 
             <!-- Form tag with ngModelGroup to track validation state -->
-            <form (submit)="handleSubmit($event)">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name"
-                        [(ngModel)]="firstName" name="firstName" required #firstNameField="ngModel" />
-                    <div *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger">
-                        First Name is required.
+            <form #checkoutForm="ngForm">
+                <div class="row">
+                    <!-- First Name Field -->
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control form-control-sm" id="firstName"
+                            placeholder="Enter First Name" [(ngModel)]="firstName" name="firstName" required
+                            #firstNameField="ngModel" />
+                        <div *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger">
+                            First Name is required.
+                        </div>
+                    </div>
+
+                    <!-- Last Name Field -->
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control form-control-sm" id="lastName"
+                            placeholder="Enter Last Name" [(ngModel)]="lastName" name="lastName" required
+                            #lastNameField="ngModel" />
+                        <div *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger">
+                            Last Name is required.
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"
-                        [(ngModel)]="lastName" name="lastName" required #lastNameField="ngModel" />
-                    <div *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger">
-                        Last Name is required.
+                <div class="row">
+                    <!-- Email Field -->
+                    <div class="form-group col-md-6">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Enter Email"
+                            [(ngModel)]="email" name="email" required email #emailField="ngModel" />
+                        <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
+                            Valid Email is required.
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Field -->
+                    <div class="form-group col-md-6">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" class="form-control form-control-sm" id="phoneNumber"
+                            placeholder="Enter Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required
+                            #phoneField="ngModel" />
+                        <div *ngIf="phoneField.invalid && phoneField.touched" class="text-danger">
+                            Phone Number is required.
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="email"
-                        name="email" required email #emailField="ngModel" />
-                    <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
-                        Valid Email is required.
+                <div class="row">
+                    <!-- City Field -->
+                    <div class="form-group col-md-6">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control form-control-sm" id="city" placeholder="Enter City"
+                            [(ngModel)]="city" name="city" required #cityField="ngModel" />
+                        <div *ngIf="cityField.invalid && cityField.touched" class="text-danger">
+                            City is required.
+                        </div>
+                    </div>
+
+                    <!-- Commute Field (Select) -->
+                    <div class="form-group col-md-6">
+                        <label for="commute">Commute</label>
+                        <select class="form-control form-control-sm" id="commute" [(ngModel)]="commute" name="commute"
+                            required #commuteField="ngModel">
+                            <option value="" disabled>Select Commute Method</option>
+                            <option value="bus">Bus</option>
+                            <option value="own">By Own</option>
+                        </select>
+                        <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
+                            Commute method is required.
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="email"
-                        name="email" required email #emailField="ngModel" />
-                    <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
-                        Valid Email is required.
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="tel" class="form-control" id="city" placeholder="Enter City"
-                        [(ngModel)]="city" name="city" required #cityField="ngModel" />
-                    <div *ngIf="cityField.invalid && cityField.touched" class="text-danger">
-                        Please enter city
-                    </div>
-                </div>
 
                 <!-- Disable button if form is invalid -->
-                <div id="card-element"></div> <!-- Placeholder for Stripe Card Element -->
-                <button type="submit">Pay</button>
+
+
+                <label for="payment-method">Payment Method:</label>
+                <select [(ngModel)]="selectedPaymentMethod" (change)="onPaymentMethodChange()">
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="ideal">iDEAL</option>
+                </select>
+                <div class="col-md-6 mt-4">
+                    <div id="card-element"></div>
+                    <div id="ideal-bank-element"></div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block mt-4 mb-4" [disabled]="checkoutForm.invalid || isLoading"
+                    (click)="handleSubmit($event)">
+                    <span *ngIf="isLoading">Processing...</span>
+                    <span *ngIf="!isLoading">Pay Now</span>
+                </button>
+                
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                </div>
+
             </form>
         </div>
     </div>

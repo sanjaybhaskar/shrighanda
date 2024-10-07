@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { WooCommerceService } from '../service/woo-commerce.service';
 import { loadStripe } from '@stripe/stripe-js';
+import { PaymentService } from '../service/payment.service';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { style } from './checkout.constant';
 
 @Component({
   selector: 'app-checkout',
@@ -9,20 +12,27 @@ import { loadStripe } from '@stripe/stripe-js';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent {
+  errorMessage: string | null = null;  // Add this to hold the error message
 
   firstName: string = '';
   lastName: string = '';
   email: string = '';
-  city: string = '';
+  city: string = '';    // Added City
+  commute: string = '';  // Added Commute
   phoneNumber: string = '';
   cartItems: any[] = []; // You can get the cart items from localStorage or a cart service
   dutchPhonePattern: string = '^(\\+31|0)[1-9][0-9]{8}$';
   stripe: any;
   elements: any;
   card: any;
+  orderData: any;
+  orderId: any;
+  selectedPaymentMethod: string = 'card'; // Default selected payment method
+  isLoading: boolean = false;
+  selectedBank: any;
 
-
-  constructor(private wcService: WooCommerceService) { }
+  constructor(private wcService: WooCommerceService, private router: Router,
+    private paymentService: PaymentService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     // Retrieve cart items from localStorage
@@ -34,73 +44,122 @@ export class CheckoutComponent {
 
   }
 
+  private async initializeStripe() {
+    this.stripe = await loadStripe(environment.stripePublisherKey); // Replace with your Stripe publishable key
+    this.setupCardElement();
+  }
+
+  private setupCardElement() {
+    const elements = this.stripe.elements();
+    if (this.card) this.card.destroy(); // Clean up the previous element
+    this.card = elements.create('card', { style }); // Create a Card Element
+    this.card.mount('#card-element'); // Mount the Card Element to the DOM
+  }
+
+  private setupIdealElement() {
+    const elements = this.stripe.elements();
+    if (this.card) this.card.destroy(); // Clean up the previous element
+    this.card = elements.create('idealBank', { style }); // Create an iDEAL Element
+    this.card.mount('#ideal-bank-element'); // Mount the iDEAL Element to the DOM
+    // Event listener for the idealBank Element
+    this.card.on('change', (event: any) => {
+      if (event.value) {
+        // Store the selected bank in the component state
+        this.selectedBank = event.value; // e.g., 'abn_amro'
+      }
+    });
+  }
+
+  onPaymentMethodChange() {
+    if (this.selectedPaymentMethod === 'ideal') {
+      this.setupIdealElement();
+    } else {
+      this.setupCardElement();
+    }
+  }
+
   // Calculate the total price of the cart
   calculateCartTotal() {
     return this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
   }
 
+  async handleSubmit(event: Event) {
+    event.preventDefault(); // Prevent default form submission
+    this.isLoading = true; // Set loading state to true
+    this.cdr.detectChanges(); // Manually trigger change detection
 
-  handleSubmit(event: Event) {
-    event.preventDefault(); // Prevent the default form submission
-  
-    this.stripe
-      .createPaymentMethod({
-        type: 'card',
-        card: this.card,
-      })
-      .then((result: any) => {
-        if (result.error) {
-          // Show error to your customer (e.g., insufficient funds)
-          console.error(result.error.message);
-        } else {
-          // Handle the successful payment here
-          console.log('Payment Method:', result.paymentMethod);
-          // You can now use the payment method to create a payment intent or complete the payment
-          this.SuccessCheckout();
-        }
-      });
+    try {
+      await this.createOrder();
+      // Optionally redirect or display success message
+    } catch (error: any) {
+      console.error('Payment error:', error.message);
+    } finally {
+      this.isLoading = false; // Reset loading state after payment process
+      this.cdr.detectChanges(); // Manually trigger change detection
+    }
+
   }
 
-  
-  // Handle Checkout
-  private SuccessCheckout() {
-    // Prepare order data
-    const orderData = {
-      payment_method: 'stripe', // or 'cod', 'paypal', etc.
-      payment_method_title: 'Stripe',
-      set_paid: false, // Payment will be handled by Stripe later
+  private async createOrder() {
+    const totalAmount = this.calculateCartTotal();
+    this.orderData = {
       billing: {
         first_name: this.firstName,
         last_name: this.lastName,
         email: this.email,
         phone: this.phoneNumber,
+        city: this.city,
+        commute: this.commute
       },
-      line_items: this.cartItems.map((item) => ({
+      line_items: this.cartItems.map(item => ({
         product_id: item.product.id,
         quantity: item.quantity,
       })),
-    }
+      payment_method: this.selectedBank, // Use the selected bank here
+      payment_method_title: 'iDEAL',
+      total: totalAmount
+    };
 
-    // Create WooCommerce order
-    this.wcService.createOrder(orderData).subscribe(
-      (response: any) => {
-        // Redirect to WooCommerce checkout URL
-        const checkoutUrl = response._links.self.href + '?key=' + response.order_key;
-        window.location.href = checkoutUrl;
+    this.wcService.createOrder(this.orderData).subscribe(
+      async (order: any) => {
+        this.orderId = order.id;
+        this.handleStripePayment(order)
       },
       (error) => {
-        console.error('Error creating order:', error);
+        console.error('Order creation error:', error);
       }
     );
   }
 
-  async initializeStripe() {
-    this.stripe = await loadStripe('your-publishable-key-from-stripe');
-    this.elements = this.stripe.elements();
 
-    // Create an instance of the card element
-    this.card = this.elements.create('card');
-    this.card.mount('#card-element'); // Mount the card element to a div with this id
+  private async handleStripePayment(order: any) {
+    const totalAmount = this.calculateCartTotal();
+
+    // Create a PaymentIntent on your backend (you can use WooCommerce for this or create it directly)
+    const paymentIntentData = await this.paymentService.createPaymentIntent({
+      amount: Math.round(totalAmount * 100), // Convert to cents
+      currency: 'eur',
+      payment_method_types: ['ideal'], // Specify iDEAL payment method
+      metadata: { order_id: order.id }  // Pass WooCommerce order ID as metadata
+    }).toPromise();
+
+    const clientSecret = paymentIntentData.client_secret;
+
+    // Confirm the payment using Stripe.js and iDEAL
+    await this.stripe.confirmIdealPayment(clientSecret, {
+      payment_method: {
+        ideal: {
+          bank: this.selectedBank,
+        },
+        billing_details: {
+          name: `${this.firstName} ${this.lastName}`,
+          email: this.email,
+        },
+      },
+      return_url: `http://localhost:4200/order-confirmation?orderId=${order.id}` // Handle redirect after payment
+    });
+
   }
-
 }
+
+

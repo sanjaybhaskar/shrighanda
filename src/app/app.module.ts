@@ -17,6 +17,7 @@ import { EventsComponent } from './components/events/events.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
+import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CheckoutComponent } from './components/registration/checkout/checkout.c
     EventsComponent,
     GalleryComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderConfirmationComponent
   ],
   imports: [
     BrowserModule,

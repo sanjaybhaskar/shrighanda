@@ -5,6 +5,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AboutComponent } from './components/about/about.component';
 import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
+import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'order-confirmation', component: OrderConfirmationComponent },
 
 ];
 
