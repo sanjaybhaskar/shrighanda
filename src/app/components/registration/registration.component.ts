@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WooCommerceService } from './service/woo-commerce.service';
 import { CartService } from './service/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,11 +13,11 @@ export class RegistrationComponent {
   adultQuantity: number = 1;
   childQuantity: number = 1;
 
-  constructor(private wooCommerceService: WooCommerceService, private cartService: CartService) {}
+  constructor(private wooCommerceService: WooCommerceService, private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
     this.wooCommerceService.getProducts().subscribe((data) => {
-      this.products = data;
+      this.products = data.filter((p: any) => p.stock_status === 'instock');
       this.products.forEach(product => {
         product.quantity = 0; // Default quantity is 0
       });
@@ -34,6 +35,10 @@ export class RegistrationComponent {
     }
   }
 
+  getCartCount(): number {
+    return this.cartService.getCartItemCount();
+  }
+
   // Add product to cart
   addToCart(product: any) {
     this.cartService.addToCart(Object.assign({}, product));
@@ -41,7 +46,9 @@ export class RegistrationComponent {
   }
 
   increaseQuantity(product: any) {
-    product.quantity += 1; // Increment quantity
+    if (product.quantity < 10) {
+      product.quantity += 1; // Increment quantity
+    }
   }
 
   decreaseQuantity(product: any) {
@@ -52,5 +59,9 @@ export class RegistrationComponent {
 
   calculateTotalCost(product: any): number {
     return product.price * product.quantity; // Calculate total cost based on price and quantity
+  }
+
+  checkout() {
+    this.router.navigate(['/checkout']);
   }
 }
