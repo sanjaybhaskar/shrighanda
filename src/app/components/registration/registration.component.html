@@ -10,53 +10,64 @@
         </div>
     </div>
 
-    <div class="row">
-        <!-- Loop through the products -->
-        <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
-            <div class="card h-100">
-                <!-- Product Image -->
-                <img class="card-img-top img-fluid" [src]="product.images[0]?.src" alt="{{ product.name }}">
+    <div class="container my-4">
+        <!-- Title Card -->
+        <div class="card mb-4">
+            <div class="card-header text-center">
+                <h2 class="mb-0">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2024</h2>
+            </div>
+        </div>
 
-                <!-- Card Body with Product Details -->
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
 
-                    <!-- Product Description -->
-                    <p class="card-text" [innerHTML]="product.description"></p>
+        <div class="row">
 
-                    <!-- Product Price -->
-                    <p><strong>Price:</strong> <span [innerHTML]="product.price_html"></span></p>
+            <!-- Loop through the products -->
+            <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+                <div class="card h-100">
+                    <!-- Product Image -->
+                    <img class="card-img-top img-fluid" [src]="product.images[0]?.src" alt="{{ product.name }}">
 
-                    <!-- Quantity Selector -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-btn">
-                            <button class="btn btn-outline-secondary" (click)="decreaseQuantity(product)">-</button>
-                        </span>
+                    <!-- Card Body with Product Details -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
 
-                        <!-- Adjust the width of the input to make it smaller -->
-                        <input type="number" class="form-control text-center" [(ngModel)]="product.quantity" [min]="0"
-                            [max]="10" style="width: 60px; height: 38px;" />
+                        <!-- Product Description -->
+                        <p class="card-text" [innerHTML]="product.description"></p>
 
-                        <span class="input-group-btn">
-                            <button class="btn btn-outline-secondary" (click)="increaseQuantity(product)">+</button>
-                        </span>
+                        <!-- Product Price -->
+                        <p><strong>Price:</strong> <span [innerHTML]="product.price_html"></span></p>
+
+                        <!-- Quantity Selector -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-btn">
+                                <button class="btn btn-outline-secondary" (click)="decreaseQuantity(product)">-</button>
+                            </span>
+
+                            <!-- Adjust the width of the input to make it smaller -->
+                            <input type="number" class="form-control text-center" [(ngModel)]="product.quantity"
+                                [min]="0" [max]="10" style="width: 60px; height: 38px;" />
+
+                            <span class="input-group-btn">
+                                <button class="btn btn-outline-secondary" (click)="increaseQuantity(product)">+</button>
+                            </span>
+                        </div>
+
+
+                        <!-- Total Cost -->
+                        <p><strong>Total Cost: </strong><span style="color: green; font-weight: bold;"> &euro;{{
+                                calculateTotalCost(product) | number: '1.2-2' }}</span></p>
+
+                        <!-- Add to Cart Button -->
+                        <button class="btn btn-primary btn-block" (click)="addToCart(product)"
+                            [disabled]="product.quantity <= 0">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-primary btn-block" (click)="viewCart()"
+                            [disabled]="getCartCount() === 0">
+                            View Cart
+                        </button>
                     </div>
-
-
-                    <!-- Total Cost -->
-                    <p><strong>Total Cost: </strong><span style="color: green; font-weight: bold;"> &euro;{{
-                            calculateTotalCost(product) | number: '1.2-2' }}</span></p>
-
-                    <!-- Add to Cart Button -->
-                    <button class="btn btn-primary btn-block" (click)="addToCart(product)"
-                        [disabled]="product.quantity <= 0">
-                        Add to Cart
-                    </button>
-
-                    <button class="btn btn-primary btn-block" (click)="viewCart()"
-                        [disabled]="getCartCount() === 0">
-                        View Cart
-                    </button>
                 </div>
             </div>
         </div>

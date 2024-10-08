@@ -1,1 +1,42 @@
-<p>gallery works!</p>
+<div class="media-gallery">
+    <div *ngFor="let item of mediaItems" class="media-item">
+        <ng-container *ngIf="item.media_type === 'IMAGE'; else videoTemplate">
+            <img [src]="item.media_url" [alt]="item.caption" />
+        </ng-container>
+        <ng-template #videoTemplate>
+            <video controls>
+                <source [src]="item.media_url" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </ng-template>
+        <p>{{ item.caption }}</p>
+    </div>
+
+    <div class="video-gallery">
+        <h2>Video Gallery</h2>
+      
+        <div class="year-toggle">
+          <span>Select Year:</span>
+          <div class="toggle-buttons">
+            <button *ngFor="let year of years" 
+                    [class.selected]="year === selectedYear" 
+                    (click)="onYearToggle(year)">
+              {{ year }}
+            </button>
+          </div>
+        </div>
+      
+        <div class="video-list">
+          <div *ngFor="let video of videos" class="video-item">
+            <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+              <img [src]="video.snippet.thumbnails.high.url" [alt]="video.snippet.title" />
+              <h3>{{ video.snippet.title }}</h3>
+            </a>
+          </div>
+        </div>
+      
+        <button (click)="loadMore()" *ngIf="pageToken">Load More</button>
+        <div *ngIf="!currentYearVideos && selectedYear">No videos found for {{ selectedYear }}</div>
+      </div>
+      
+</div>

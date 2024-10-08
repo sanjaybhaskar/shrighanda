@@ -7,6 +7,7 @@ import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'order-confirmation', component: OrderConfirmationComponent },
   { path: 'contact-us', component: FeedbackFormComponent },
+  { path: 'gallery', component: GalleryComponent },
 
 ];
 

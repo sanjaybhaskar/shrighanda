@@ -95,14 +95,14 @@
                         <label>Commute</label>
                         <div class="d-flex">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" id="commutePubilc" value="pubilc"
+                                <input class="form-check-input" type="radio" id="commutePublic" value="pubilc"
                                     [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
-                                <label class="form-check-label" for="commutePubilc">Pubilc transport</label>
+                                <label class="form-check-label" for="commutePublic">By Public Transport</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" id="commuteOwn" value="own"
                                     [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
-                                <label class="form-check-label" for="commuteOwn">By Own</label>
+                                <label class="form-check-label" for="commuteOwn">By Car</label>
                             </div>
                             <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
                                 Commute method is required.
@@ -111,17 +111,26 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" *ngIf="calculateCartTotal() > 0">
                     <!-- Disable button if form is invalid -->
                     <div class="form-group col-md-6 mb-4">
-                        <label>Select Bank</label>
+                        <label>iDEAL Payment</label>
                         <div id="ideal-bank-element"></div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-block mt-4 mb-4"
-                    [disabled]="checkoutForm.invalid || !paymentModeValid || isLoading" (click)="handleSubmit($event)">
+                <button type="button" class="btn btn-primary btn-block mt-4 mb-4" 
+                    *ngIf="calculateCartTotal() !== 0"
+                    [disabled]="checkoutForm.invalid || !paymentModeValid || isLoading || calculateCartTotal() === 0" (click)="handleSubmit($event)">
                     <span *ngIf="isLoading">Processing...</span>
-                    <span *ngIf="!isLoading">Pay Now</span>
+                    <span *ngIf="!isLoading && calculateCartTotal() !== 0">Pay Now</span>
+                    <span *ngIf="!isLoading && calculateCartTotal() == 0">Register</span>
+                </button>
+
+                <button type="button" class="btn btn-primary btn-block mt-4 mb-4"
+                    *ngIf="calculateCartTotal() === 0"
+                    [disabled]="checkoutForm.invalid || isLoading" (click)="handleSubmit($event)">
+                    <span *ngIf="isLoading">Processing...</span>
+                    <span *ngIf="!isLoading">Register</span>
                 </button>
 
                 <div *ngIf="errorMessage" class="error-message">

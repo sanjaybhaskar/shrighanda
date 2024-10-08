@@ -36,11 +36,14 @@ export class CheckoutComponent {
     private paymentService: PaymentService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     // Retrieve cart items from localStorage
     const storedCart = localStorage.getItem('cartItems');
     if (storedCart) {
       this.cartItems = JSON.parse(storedCart);
-      this.initializeStripe();
+      if (this.calculateCartTotal() > 0) {
+        this.initializeStripe();
+      }
     }
 
   }
@@ -113,7 +116,7 @@ export class CheckoutComponent {
         async (order: any) => {
           this.orderId = order.id;
           if (totalAmount === 0) {
-           window.location.href = `https://shrigandha.nl/order-confirmation?orderId=${order.id}&redirect_status='succeeded'`;
+            window.location.href = `https://shrigandha.nl/order-confirmation?orderId=${order.id}&redirect_status='succeeded'`;
           }
           else {
             this.handleStripePayment(order);

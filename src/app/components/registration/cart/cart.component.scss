@@ -1,72 +1,126 @@
 .card-img-top {
-    border: 5px solid gray(0, 123, 255, 0.5); /* Semi-transparent blue border */
-    padding: 5px; /* Space between the image and the border */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow around the image */
-  }
-  
-  .card-img-top:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
-  }
-  
-  .card {
-    transition: box-shadow 0.3s ease; /* Smooth transition for card shadow */
-  }
-  
-  .card-body {
-    background: linear-gradient(to bottom right, #ffe7e3, #f7f9fc); /* Soft gradient background */
-    padding: 1.5rem; /* More padding for better spacing */
-    transition: background 0.5s ease; /* Smooth transition for background */
-  }
-  
-  .card-body:hover {
-    background: linear-gradient(to bottom right, #ffcccc, #e7f7fc); /* Change gradient on hover */
-  }
-  
-  .card-title {
-    color: #007bff; /* Bootstrap primary color */
-    margin-bottom: 0.5rem; /* Spacing below title */
-  }
-  
-  .btn-danger {
-    background-color: #dc3545; /* Bootstrap danger color */
-    border-color: #dc3545; /* Match border color with button */
-    transition: background 0.3s ease; /* Smooth transition for button background */
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333; /* Darker red on hover */
-    border-color: #bd2130; /* Match border color on hover */
-    transform: scale(1.05); /* Slightly grow on hover */
-  }
-  
-  .card h5 {
-    font-size: 1.2rem; /* Increase font size for title */
-    font-weight: bold; /* Bold font for better readability */
-  }
-  
+  border: 5px solid gray(0, 123, 255, 0.5);
+  /* Semi-transparent blue border */
+  padding: 5px;
+  /* Space between the image and the border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow around the image */
+}
+
+.card-img-top:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  /* Enhance shadow on hover */
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition for card shadow */
+}
+
+.card-body {
+  background: linear-gradient(to bottom right, #ffe7e3, #f7f9fc);
+  /* Soft gradient background */
+  padding: 1.5rem;
+  /* More padding for better spacing */
+  transition: background 0.5s ease;
+  /* Smooth transition for background */
+}
+
+.card-body:hover {
+  background: linear-gradient(to bottom right, #ffcccc, #e7f7fc);
+  /* Change gradient on hover */
+}
+
+.card-title {
+  color: #007bff;
+  /* Bootstrap primary color */
+  margin-bottom: 0.5rem;
+  /* Spacing below title */
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  /* Bootstrap danger color */
+  border-color: #dc3545;
+  /* Match border color with button */
+  transition: background 0.3s ease;
+  /* Smooth transition for button background */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  /* Darker red on hover */
+  border-color: #bd2130;
+  /* Match border color on hover */
+  transform: scale(1.05);
+  /* Slightly grow on hover */
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  /* Increase font size for title */
+  font-weight: bold;
+  /* Bold font for better readability */
+}
+
 
 .cart-total-background {
-    background: linear-gradient(to right, #A8D8EA, #FFFFFF); /* Example gradient */
-    border: 1px solid #dee2e6;
-    transition: transform 0.2s ease;
+  background: linear-gradient(to right, #A8D8EA, #FFFFFF);
+  /* Example gradient */
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s ease;
+}
+
+.cart-total-background:hover {
+  transform: scale(1.02);
+}
+
+.cart-total-button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px 20px;
+}
+
+.cart-total-button:hover {
+  background-color: #218838;
+  /* Darker green on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+.cart-total-background h4 {
+  font-size: 1.5rem;
+  /* Increase font size for total */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background-color: #007bff;
+  /* Change to your preferred color */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  /* Optional rounded corners */
+  cursor: pointer;
+  margin-top: 10px;
+  /* Space from breadcrumb */
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .back-button {
+    display: none;
   }
-  
-  .cart-total-background:hover {
-    transform: scale(1.02);
+}
+
+
+@media (max-width: 480px) {
+  .back-button {
+    display: none;
   }
-  
-  .cart-total-button {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    padding: 10px 20px;
-  }
-  
-  .cart-total-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-  }
-  
-  .cart-total-background h4 {
-    font-size: 1.5rem; /* Increase font size for total */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
+}

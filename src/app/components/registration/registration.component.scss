@@ -1,35 +1,45 @@
 .product-card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin-bottom: 16px;
-    max-width: 300px;
-  }
-  
-  .product-card img {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .product-card h2 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
-  }
-  
-  .product-card p {
-    margin: 0;
-  }
-  
-  .product-card a {
-    text-decoration: none;
-    color: blue;
-  }
-  
-  .quantity-input {
-    width: 60px; /* Set the desired width for the number input */
-    text-align: center; /* Center the text inside the input */
-  }
-  
-  .input-group-btn {
-    display: flex;
-    align-items: center; /* Center the buttons vertically */
-  }
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+  max-width: 300px;
+}
+
+.product-card img {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.product-card p {
+  margin: 0;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: blue;
+}
+
+.quantity-input {
+  width: 60px;
+  /* Set the desired width for the number input */
+  text-align: center;
+  /* Center the text inside the input */
+}
+
+.input-group-btn {
+  display: flex;
+  align-items: center;
+  /* Center the buttons vertically */
+}
+
+.logo {
+  height: 80px;
+  /* Logo height */
+  width: auto;
+  /* Maintain aspect ratio */
+}

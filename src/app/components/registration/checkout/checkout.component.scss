@@ -1,14 +1,33 @@
 .back-button {
-    background-color: #007bff; /* Change to your preferred color */
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px; /* Optional rounded corners */
-    cursor: pointer;
-    margin-top: 10px; /* Space from breadcrumb */
+  background-color: #007bff;
+  /* Change to your preferred color */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  /* Optional rounded corners */
+  cursor: pointer;
+  margin-top: 10px;
+  /* Space from breadcrumb */
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .back-button {
+    display: none;
   }
-  
-  .back-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+@media (max-width: 480px) {
+  .back-button {
+    display: none;
   }
-  
+}
