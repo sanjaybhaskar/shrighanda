@@ -13,30 +13,29 @@
     </div>
 
     <div class="video-gallery">
-        <h2>Video Gallery</h2>
-      
+        <h2 class="ml-3">Video Gallery</h2>
+
         <div class="year-toggle">
-          <span>Select Year:</span>
-          <div class="toggle-buttons">
-            <button *ngFor="let year of years" 
-                    [class.selected]="year === selectedYear" 
+            <div class="toggle-buttons">
+                <button *ngFor="let year of years" [class.selected]="year === selectedYear"
                     (click)="onYearToggle(year)">
-              {{ year }}
-            </button>
-          </div>
+                    {{ year }}
+                </button>
+            </div>
         </div>
-      
+
         <div class="video-list">
-          <div *ngFor="let video of videos" class="video-item">
-            <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
-              <img [src]="video.snippet.thumbnails.high.url" [alt]="video.snippet.title" />
-              <h3>{{ video.snippet.title }}</h3>
-            </a>
-          </div>
+            <div *ngFor="let video of videos" class="video-item">
+                <a [href]="'https://www.youtube.com/watch?v=' + video.id.videoId" target="_blank">
+                    <img [src]="video.snippet.thumbnails.high.url" [alt]="video.snippet.title" />
+                    <h3 [innerHTML]="video.snippet.title"></h3>
+                </a>
+            </div>
         </div>
-      
-        <button (click)="loadMore()" *ngIf="pageToken">Load More</button>
-        <div *ngIf="!currentYearVideos && selectedYear">No videos found for {{ selectedYear }}</div>
-      </div>
-      
+        <div class="d-flex mt-2">
+            <button (click)="loadMore()" *ngIf="pageToken" id="load-more">Load More</button>
+            <div *ngIf="!currentYearVideos && selectedYear">No videos found for {{ selectedYear }}</div>
+        </div>
+    </div>
+
 </div>

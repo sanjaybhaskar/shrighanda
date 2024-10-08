@@ -10,7 +10,7 @@ export class GalleryComponent implements OnInit {
   mediaItems: any[] = [];
   videos: any = [];
   pageToken: string = '';
-  selectedYear: any = '';
+  selectedYear: any = 2024;
   years: number[] = [];
   currentYearVideos: number = 0;
 
