@@ -18,7 +18,7 @@ export class FeedbackFormComponent {
 
   ngOnInit() {
     this.feedbackForm = new FormGroup({
-      type: new FormControl('feedback', Validators.required),
+      type: new FormControl('Feedback', Validators.required),
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', Validators.required)
@@ -38,7 +38,7 @@ export class FeedbackFormComponent {
           console.log('Email sent successfully:', response);
           // Optionally reset the form
           this.feedbackForm.reset();
-          this.successMessage = 'Email sent successfully!';
+          this.successMessage = response;
         },
         (error) => {
           this.successMessage = 'Email could not be sent.';

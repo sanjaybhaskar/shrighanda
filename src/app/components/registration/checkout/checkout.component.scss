@@ -16,6 +16,31 @@
   /* Darker shade on hover */
 }
 
+body {
+  text-align: center;
+  
+}
+
+.card {
+  margin: 0 auto;
+  text-align: center;
+	display: -webkit-flex;
+	display: flex;
+  border-radius: 10px;
+	-webkit-justify-content: center; 
+  justify-content: center;
+  -webkit-flex-wrap: wrap; 
+	flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+}
+
+
 
 
 /* Media Queries for Responsiveness */

@@ -1,9 +1,9 @@
 <div class="container mt-2">
     <button class="back-button" onclick="window.history.back();">Go Back</button>
 
-    <div class="row mt-3">
+    <div class="row mt-2">
         <!-- Right Column: Cart Summary -->
-        <div class="col-md-5 order-1 order-md-2 mb-4 p-4">
+        <div class="col-md-5 order-1 order-md-2 mb-4">
             <h2 class="mb-4">Order Summary</h2>
             <div class="card">
                 <div class="card-body">
@@ -27,117 +27,121 @@
         </div>
 
         <!-- Left Column: Checkout Form -->
-        <div class="col-md-7 order-2 order-md-1 p-4">
+        <div class="col-md-7 order-2 order-md-1 pb-4">
             <h2 class="mb-4">Checkout</h2>
+            <div class="card" style="text-align: left;">
+                <div class="card-body">
 
-            <!-- Form tag with ngModelGroup to track validation state -->
-            <form #checkoutForm="ngForm">
-                <div class="row">
-                    <!-- First Name Field -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control form-control-sm" id="firstName"
-                            placeholder="Enter First Name" [(ngModel)]="firstName" name="firstName" required
-                            #firstNameField="ngModel" />
-                        <div *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger">
-                            First Name is required.
-                        </div>
-                    </div>
-
-                    <!-- Last Name Field -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control form-control-sm" id="lastName"
-                            placeholder="Enter Last Name" [(ngModel)]="lastName" name="lastName" required
-                            #lastNameField="ngModel" />
-                        <div *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger">
-                            Last Name is required.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <!-- Email Field -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control form-control-sm" id="email" placeholder="Enter Email"
-                            [(ngModel)]="email" name="email" required email #emailField="ngModel" />
-                        <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
-                            Valid Email is required.
-                        </div>
-                    </div>
-
-                    <!-- Phone Number Field -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" class="form-control form-control-sm" id="phoneNumber"
-                            placeholder="Enter Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required
-                            #phoneField="ngModel" [pattern]="dutchPhonePattern" />
-                        <div *ngIf="phoneField.invalid && phoneField.touched" class="text-danger">
-                            Please enter a valid Dutch phone number (e.g., 06 12345678 or +31 6 12345678).
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <!-- City Field -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control form-control-sm" id="city" placeholder="Enter City"
-                            [(ngModel)]="city" name="city" required #cityField="ngModel" />
-                        <div *ngIf="cityField.invalid && cityField.touched" class="text-danger">
-                            City is required.
-                        </div>
-                    </div>
-
-                    <!-- Commute Field (Select) -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label>Commute</label>
-                        <div class="d-flex">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="commutePublic" value="pubilc"
-                                    [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
-                                <label class="form-check-label" for="commutePublic">By Public Transport</label>
+                <!-- Form tag with ngModelGroup to track validation state -->
+                <form #checkoutForm="ngForm">
+                    <div class="row">
+                        <!-- First Name Field -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control form-control-sm" id="firstName"
+                                placeholder="Enter First Name" [(ngModel)]="firstName" name="firstName" required
+                                #firstNameField="ngModel" />
+                            <div *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger">
+                                First Name is required.
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="commuteOwn" value="own"
-                                    [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
-                                <label class="form-check-label" for="commuteOwn">By Car</label>
-                            </div>
-                            <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
-                                Commute method is required.
+                        </div>
+
+                        <!-- Last Name Field -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control form-control-sm" id="lastName"
+                                placeholder="Enter Last Name" [(ngModel)]="lastName" name="lastName" required
+                                #lastNameField="ngModel" />
+                            <div *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger">
+                                Last Name is required.
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row" *ngIf="calculateCartTotal() > 0">
-                    <!-- Disable button if form is invalid -->
-                    <div class="form-group col-md-6 mb-4">
-                        <label>iDEAL Payment</label>
-                        <div id="ideal-bank-element"></div>
+                    <div class="row">
+                        <!-- Email Field -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control form-control-sm" id="email"
+                                placeholder="Enter Email" [(ngModel)]="email" name="email" required email
+                                #emailField="ngModel" />
+                            <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
+                                Valid Email is required.
+                            </div>
+                        </div>
+
+                        <!-- Phone Number Field -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control form-control-sm" id="phoneNumber"
+                                placeholder="Enter Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required
+                                #phoneField="ngModel" [pattern]="dutchPhonePattern" />
+                            <div *ngIf="phoneField.invalid && phoneField.touched" class="text-danger">
+                                Please enter a valid Dutch phone number (e.g., 06 12345678 or +31 6 12345678).
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary btn-block mt-4 mb-4" 
-                    *ngIf="calculateCartTotal() !== 0"
-                    [disabled]="checkoutForm.invalid || !paymentModeValid || isLoading || calculateCartTotal() === 0" (click)="handleSubmit($event)">
-                    <span *ngIf="isLoading">Processing...</span>
-                    <span *ngIf="!isLoading && calculateCartTotal() !== 0">Pay Now</span>
-                    <span *ngIf="!isLoading && calculateCartTotal() == 0">Register</span>
-                </button>
 
-                <button type="button" class="btn btn-primary btn-block mt-4 mb-4"
-                    *ngIf="calculateCartTotal() === 0"
-                    [disabled]="checkoutForm.invalid || isLoading" (click)="handleSubmit($event)">
-                    <span *ngIf="isLoading">Processing...</span>
-                    <span *ngIf="!isLoading">Register</span>
-                </button>
+                    <div class="row">
+                        <!-- City Field -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control form-control-sm" id="city" placeholder="Enter City"
+                                [(ngModel)]="city" name="city" required #cityField="ngModel" />
+                            <div *ngIf="cityField.invalid && cityField.touched" class="text-danger">
+                                City is required.
+                            </div>
+                        </div>
 
-                <div *ngIf="errorMessage" class="error-message">
-                    {{ errorMessage }}
-                </div>
+                        <!-- Commute Field (Select) -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label>Commute</label>
+                            <div class="d-flex">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="commutePublic" value="pubilc"
+                                        [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
+                                    <label class="form-check-label" for="commutePublic">By Public Transport</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="commuteOwn" value="own"
+                                        [(ngModel)]="commute" name="commute" required #commuteField="ngModel">
+                                    <label class="form-check-label" for="commuteOwn">By Car</label>
+                                </div>
+                                <div *ngIf="commuteField.invalid && commuteField.touched" class="text-danger">
+                                    Commute method is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            </form>
+                    <div class="row" *ngIf="calculateCartTotal() > 0">
+                        <!-- Disable button if form is invalid -->
+                        <div class="form-group col-md-6 mb-4">
+                            <label>iDEAL Payment</label>
+                            <div id="ideal-bank-element"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block mt-4 mb-4" *ngIf="calculateCartTotal() !== 0"
+                        [disabled]="checkoutForm.invalid || !paymentModeValid || isLoading || calculateCartTotal() === 0"
+                        (click)="handleSubmit($event)">
+                        <span *ngIf="isLoading">Processing...</span>
+                        <span *ngIf="!isLoading && calculateCartTotal() !== 0">Pay Now</span>
+                        <span *ngIf="!isLoading && calculateCartTotal() == 0">Register</span>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-block mt-4 mb-4" *ngIf="calculateCartTotal() === 0"
+                        [disabled]="checkoutForm.invalid || isLoading" (click)="handleSubmit($event)">
+                        <span *ngIf="isLoading">Processing...</span>
+                        <span *ngIf="!isLoading">Register</span>
+                    </button>
+
+                    <div *ngIf="errorMessage" class="error-message">
+                        {{ errorMessage }}
+                    </div>
+                </form>
+                </div>  
+            </div>
+
         </div>
     </div>
 </div>

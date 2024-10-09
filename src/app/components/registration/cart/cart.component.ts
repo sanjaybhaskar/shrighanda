@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../service/cart.service';
+import { Component } from '@angular/core';
 import { Product } from '../product/model/product.model';
 import { Router } from '@angular/router';
 
@@ -11,6 +10,10 @@ import { Router } from '@angular/router';
 export class CartComponent {
 
   cartItems: any = [];
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
 
   constructor(private router: Router) {
     // Retrieve cart items from localStorage

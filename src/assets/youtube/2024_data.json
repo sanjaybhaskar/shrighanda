@@ -1,0 +1,1066 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "DZ-qtT3R2pzMzTimeOZ5MflGrTg",
+    "regionCode": "US",
+    "pageInfo": {
+      "totalResults": 31,
+      "resultsPerPage": 31
+    },
+    "items": [
+      {
+        "kind": "youtube#searchResult",
+        "etag": "99mFDirYkzqpNZetBdGd468oy6U",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "8UzQJ8P8ys4"
+        },
+        "snippet": {
+          "publishedAt": "2024-09-30T03:21:25Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "ಶ್ರೀಗಂಧ - &quot;ಫಟ್! ಅಂತ ಹೇಳಿ&quot; |  ಕನ್ನಡ Online Quiz (Edition 2) || ಭಾನುವಾರ, 29 ಸೆಪ್ಟೆಂಬರ್ 2024",
+          "description": "ಶ್ರೀಗಂಧ ಫಟ್! ಅಂತ ಹೇಳಿ - ಕನ್ನಡ Online Quiz edition 2 ನಮ್ಮೊಂದಿಗೆ ಆನ್ಲೈನ್ ಬಂದು ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/8UzQJ8P8ys4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/8UzQJ8P8ys4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/8UzQJ8P8ys4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-09-30T03:21:25Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "aaMwu2rJecdf5k2s2vO2ovkbIw0",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "6sw5CLDk3PE"
+        },
+        "snippet": {
+          "publishedAt": "2024-09-01T03:38:03Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "ಶ್ರೀಗಂಧ - &quot;ಫಟ್! ಅಂತ ಹೇಳಿ&quot; |  ಕನ್ನಡ Online Quiz (Edition 1) || ಶನಿವಾರ, 31 ಆಗಸ್ಟ್ 2024",
+          "description": "ಶ್ರೀಗಂಧ ಫಟ್! ಅಂತ ಹೇಳಿ - ಕನ್ನಡ Online Quiz edition 1 ನಾಳೆ ನಮ್ಮೊಂದಿಗೆ ಆನ್ಲೈನ್ ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/6sw5CLDk3PE/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/6sw5CLDk3PE/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/6sw5CLDk3PE/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-09-01T03:38:03Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "KqANzZy5yctxtWhYUUdHblJ94xQ",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "LqUUVoChnf0"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-28T18:56:58Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Haa - Ha - Haa event announcement by Venkatesh| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/LqUUVoChnf0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/LqUUVoChnf0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/LqUUVoChnf0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-28T18:56:58Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "DjDXhjO_MVm4sWb7Jmeuc85zlq0",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "1FagmQStCE8"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-25T19:57:47Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Tribute to Kanasugaara Dr V. Ravichandran ❤️ - Shrigandha Culture Club | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/1FagmQStCE8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/1FagmQStCE8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/1FagmQStCE8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-25T19:57:47Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "FJKtEiIB_LZHeBC8lszDYLHPvr0",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "AbKu5_uPGA8"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-25T19:22:50Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Haa - Ha - Haa event Promo| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/AbKu5_uPGA8/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/AbKu5_uPGA8/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/AbKu5_uPGA8/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-25T19:22:50Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "hZewmrdkbNY82wZMtLzH4Mz6BIw",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "F-vulTz9VqQ"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:18:55Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Semi - Classical Group Dance by Shiva Shakthi | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/F-vulTz9VqQ/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/F-vulTz9VqQ/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/F-vulTz9VqQ/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:18:55Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "mzuOXdUhyKjwZH6iLQ1VX7SXsxA",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "s5BckeX-WR0"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:17:12Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Anchors in Hubli-Dharwad style | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/s5BckeX-WR0/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/s5BckeX-WR0/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/s5BckeX-WR0/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:17:12Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "geecXcFveo1pReFDGyd6jW-j9hw",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "_9ugouOMcVE"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:18:19Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "80s Soirée/ Medley Group song by Nandan, Vaishnavi and Shreyas | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/_9ugouOMcVE/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/_9ugouOMcVE/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/_9ugouOMcVE/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:18:19Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "Cjx67WUtDVHGn7-f1NqqYgXjulc",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "opCFFC7BIxg"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:18:07Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Shrigandha Ugadi 2024 -  Sponsors and Volunteers Introduction | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/opCFFC7BIxg/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/opCFFC7BIxg/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/opCFFC7BIxg/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:18:07Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "BSwWzwVDAtgAAICvEAvvuWK1JW8",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "B3vNvb0mFPA"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:17:36Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Quiz on Ramayana and Mahabharatha by Chandramouli | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/B3vNvb0mFPA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/B3vNvb0mFPA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/B3vNvb0mFPA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:17:36Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "i5GDTgewxKMVfTUeguxP19mtZeQ",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "j1UXzPEHQFM"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:17:49Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Dance by Othla Jodigalu 🥳 | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/j1UXzPEHQFM/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/j1UXzPEHQFM/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/j1UXzPEHQFM/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:17:49Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "y0MU-4biM7mhcjgX0cjfnTBb3OA",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "MnXfpVMoppk"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:17:24Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "North Karnataka Theme Folk-Fusion Group Dance by Eindhoven Kannadatiyaru | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/MnXfpVMoppk/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/MnXfpVMoppk/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/MnXfpVMoppk/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:17:24Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "Zll0J3ofjuu3cZ81ZVINMCIxFVE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "ax823NEr7gc"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:15:13Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Folk Song Performance by Shruthi, Sudhir and Seetha | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/ax823NEr7gc/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/ax823NEr7gc/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/ax823NEr7gc/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:15:13Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "nHH6MGQW_OvEbAE3RFUmkafEMlw",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "YQfRFVwoCXM"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:15:35Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Kishkindha Kaanda Pouranika Nataka🎭 by Putta Taaregalu (Nritya Roopaka) | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/YQfRFVwoCXM/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/YQfRFVwoCXM/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/YQfRFVwoCXM/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:15:35Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "Pp5r-eRx5OTCeccFOP2CZyKIdhg",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "yLA_kpuGFQc"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:15:48Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Filmi Songs by Guru Batni and team - Tribute to Dr. Puneeth Rajkumar ⭐| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/yLA_kpuGFQc/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/yLA_kpuGFQc/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/yLA_kpuGFQc/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:15:48Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "ulRE84EfXB9vNF3imaDI48BG5r0",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "4FfAad8vW6I"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:16:44Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Dance by Asmaakam Shiva Parvati (Tribute to Lord Shiva) | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/4FfAad8vW6I/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/4FfAad8vW6I/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/4FfAad8vW6I/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:16:44Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "O9HI4PoNyeWGAmRo_P2yJjcG9cY",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "uc1dLaPxYwo"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:14:55Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Dance by Kirik Party 🕺💃| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/uc1dLaPxYwo/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/uc1dLaPxYwo/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/uc1dLaPxYwo/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:14:55Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "KScWpEEErV3cpogtytkzXUuEOsM",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "mCt6KVukIzg"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:13:50Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Filmi Dance by Dazzler Boys | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/mCt6KVukIzg/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/mCt6KVukIzg/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/mCt6KVukIzg/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:13:50Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "5AGswQgAHPG0LZzo1w-eFMnBkAw",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "zqh7S-D1cKI"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:14:37Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Dance by Fly Girls 👯\u200d♀️| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/zqh7S-D1cKI/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/zqh7S-D1cKI/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/zqh7S-D1cKI/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:14:37Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "iD_xV-5Dfk3WK3EjZBvW5YeAPbE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "tqcHMxGq5-Y"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:12:46Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Song by the Students of Srividya School of Music | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/tqcHMxGq5-Y/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/tqcHMxGq5-Y/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/tqcHMxGq5-Y/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:12:46Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "1hWWQJsnrcCka2m5EaisJHrwzjE",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "k8-YpY76V9M"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:13:00Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Dance by Eindhoven Puttanigalu  👧🧑| Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/k8-YpY76V9M/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/k8-YpY76V9M/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/k8-YpY76V9M/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:13:00Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "81cOCAViAavPWEs15EcINGchD2A",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "wr9vK6T4TI4"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:13:15Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Folk Dance by Eindhoven Nakshatragalu | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/wr9vK6T4TI4/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/wr9vK6T4TI4/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/wr9vK6T4TI4/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:13:15Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "VmBD1rZUeYYB-vWz7AWXXEudUG8",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "aCKNjPbIvpg"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:14:23Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Kids Fancy Dress |  Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/aCKNjPbIvpg/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/aCKNjPbIvpg/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/aCKNjPbIvpg/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:14:23Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "eTXAx1NaLUM2hSQIGcyF5MLAVag",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "fugFUT0IODA"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:14:09Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Musical Quiz by Sundresh | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/fugFUT0IODA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/fugFUT0IODA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/fugFUT0IODA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:14:09Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "AenCwT8nuHLayDLHDSh6SxFkwKs",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "2DKh8cXS9Hs"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:11:12Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Shrigandha Holland Kannada Balaga - Welcome and History by Srivatsa | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/2DKh8cXS9Hs/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/2DKh8cXS9Hs/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/2DKh8cXS9Hs/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:11:12Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "jrQpWFWai2PtKVPQ97D_W8nagvw",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "Jn50I922hgU"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:12:24Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Bharatanatyam Group Dance by KalaBhavan School Students | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/Jn50I922hgU/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/Jn50I922hgU/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/Jn50I922hgU/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:12:24Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "OVghWSwuEJzDjVa1UAYLPzvf7DA",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "i2-yHd3qdVc"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:12:12Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Group Devotional Song by Eindhoven Kogilegalu | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/i2-yHd3qdVc/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/i2-yHd3qdVc/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/i2-yHd3qdVc/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:12:12Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "Z8AMNFh5h_j839Egb6OTW8dfGRI",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "upc9gl2Pq2g"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:10:02Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Invocation Song by Smt. Vaishnavi, Srividya School of Music | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/upc9gl2Pq2g/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/upc9gl2Pq2g/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/upc9gl2Pq2g/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:10:02Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "VbxhjjWDHAIflw4DtSmdnlwFBD0",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "2j93TnqZ83Y"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:09:41Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Event opening and Lighting up the Lamp by Seniors | Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:09:41Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "DKRSaZ8I37t1KNy4PET7FiZZCDA",
+        "id": {
+          "kind": "youtube#video",
+          "videoId": "0f4yg4lKftA"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-24T21:10:12Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Opening Slokas by Kids - Shrigandha Ugadi 2024",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/0f4yg4lKftA/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/0f4yg4lKftA/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/0f4yg4lKftA/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-24T21:10:12Z"
+        }
+      },
+      {
+        "kind": "youtube#searchResult",
+        "etag": "00qTVySZZpvzFgAqih0NueDiU1A",
+        "id": {
+          "kind": "youtube#playlist",
+          "playlistId": "PLKXjFRtBkvNVLe7FIIIQZqEL99pssiECY"
+        },
+        "snippet": {
+          "publishedAt": "2024-04-16T09:27:23Z",
+          "channelId": "UCtikVLN76VEPLvAj-vrlL7A",
+          "title": "Shrigandha Ugadi 2024 - Eindhoven",
+          "description": "Shrigandha Ugadi 2024 Date: Sunday, 14th April 2024 || 11.00 hours - 18.30 hours Place: Theater De Schalm, City Center ...",
+          "thumbnails": {
+            "default": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/default.jpg",
+              "width": 120,
+              "height": 90
+            },
+            "medium": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/mqdefault.jpg",
+              "width": 320,
+              "height": 180
+            },
+            "high": {
+              "url": "https://i.ytimg.com/vi/2j93TnqZ83Y/hqdefault.jpg",
+              "width": 480,
+              "height": 360
+            }
+          },
+          "channelTitle": "Shrigandha",
+          "liveBroadcastContent": "none",
+          "publishTime": "2024-04-16T09:27:23Z"
+        }
+      }
+    ]
+  }
+  
