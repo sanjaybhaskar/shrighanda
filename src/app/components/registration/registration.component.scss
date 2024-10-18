@@ -43,3 +43,94 @@
   width: auto;
   /* Maintain aspect ratio */
 }
+
+.event-container {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Add space below the event container */
+}
+
+/* Styling for the event image */
+.event-image {
+  flex: 1;
+  overflow: hidden;
+  min-width: 200px; /* Ensures the image section doesn't shrink too much */
+}
+
+.event-image img {
+  width: 100%;
+  height: auto; /* Ensure the height adjusts based on the width */
+  object-fit: cover; /* Keep aspect ratio while covering */
+}
+
+/* Styling for the Google Maps iframe */
+.event-location {
+  flex: 1;
+  padding: 0; /* Remove padding to ensure full height */
+  min-width: 300px; /* Ensures the map section doesn't shrink too much */
+  display: flex; /* Allows the iframe to fill the height */
+}
+
+.event-location iframe {
+  width: 100%;
+  height: 100%; /* Set iframe height to 100% of its parent */
+  border: 0;
+}
+
+/* Register Now Button Styles */
+.register-button-container {
+  text-align: center; /* Center the button */
+  margin-top: 15px; /* Space above the button */
+}
+
+.register-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF; /* Button color */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.register-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Media query for tablets and small screens */
+@media (max-width: 768px) {
+  .event-container {
+      flex-direction: column;
+  }
+
+  .event-location {
+      padding: 10px;
+      height: 200px; /* Set a specific height for smaller screens */
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+  .event-image img {
+      height: 400px; /* Adjust image height for small screens */
+  }
+
+  .event-location {
+      height: 200px; /* Adjust height for map on small screens */
+  }
+
+  .event-location iframe {
+      height: 100%; /* Full height of the parent */
+  }
+}
+
+/* Global styles to reduce section height */
+section {
+  padding: 20px 0; /* Adjust top and bottom padding as needed */
+}

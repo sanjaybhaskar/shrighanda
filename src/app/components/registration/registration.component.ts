@@ -12,6 +12,7 @@ export class RegistrationComponent {
   products: any[] = [];
   adultQuantity: number = 1;
   childQuantity: number = 1;
+  loading = true;  // Track loading state
 
   constructor(private wooCommerceService: WooCommerceService, private cartService: CartService, private router: Router) { }
 
@@ -21,6 +22,7 @@ export class RegistrationComponent {
       this.products.forEach(product => {
         product.quantity = 0; // Default quantity is 0
       });
+      this.loading = false;  // Stop loading once products are fetched
     });
   }
 

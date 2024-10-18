@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="display-4 text-success mb-3">Kannada Events</h1>
+            <h1 class="display-4 mb-3" style="color:chocolate;">Kannada Events</h1>
             <p class="lead text-muted mb-5">
                 Join us for a series of exciting Kannada events that celebrate our rich culture and heritage. From
                 cultural programs to festivals, immerse yourself in the vibrancy of Karnataka and connect with our
@@ -14,15 +14,43 @@
         <!-- Title Card -->
         <div class="card mb-4">
             <div class="card-header text-center">
-                <h2 class="mb-0">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2024</h2>
+                <h2 class="mb-0" style="color:chocolate;">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2024</h2>
+                <div class="card-title" style="color:chocolate; font-size: large;">Book your tickets below</div>
             </div>
         </div>
 
+        <div class="event-container">
+            <!-- Left column for the image -->
+            <div class="event-image">
+                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2024/kannada_raj_2024_mobile.png"
+                    alt="Event Image">
+            </div>
 
-        <div class="row">
+            <!-- Right column for the Google Maps iframe -->
+            <div class="event-location">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.016238427446!2d5.6150443!3d51.6572333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c71db84a6bec2f%3A0x4aba5274958d57c!2sMarkant%20Theater%20Maashorst!5e0!3m2!1sen!2snl!4v1696682458123!5m2!1sen!2snl"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header text-center">
+                <h2 class="mb-0" style="color:chocolate;">Tickets</h2>
+            </div>
+        </div>
+
+        <div *ngIf="loading" class="text-center my-5">
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading event tickets...</p>
+        </div>
+        <div class="row justify-content-center">
 
             <!-- Loop through the products -->
-            <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+            <div class="col-md-4 col-sm-2 mb-4" *ngFor="let product of products">
                 <div class="card h-100">
                     <!-- Product Image -->
                     <img class="card-img-top img-fluid" [src]="product.images[0]?.src" alt="{{ product.name }}">
@@ -52,7 +80,6 @@
                             </span>
                         </div>
 
-
                         <!-- Total Cost -->
                         <p><strong>Total Cost: </strong><span style="color: green; font-weight: bold;"> &euro;{{
                                 calculateTotalCost(product) | number: '1.2-2' }}</span></p>
@@ -62,14 +89,16 @@
                             [disabled]="product.quantity <= 0">
                             Add to Cart
                         </button>
-
-                        <button class="btn btn-primary btn-block" (click)="viewCart()"
-                            [disabled]="getCartCount() === 0">
-                            View Cart
-                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="row justify-content-around">
+            <button class="btn btn-primary btn-block" style="width: 120px" (click)="viewCart()"
+                [disabled]="getCartCount() === 0">
+                View Cart
+            </button>
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@
     .event-image img {
         width: 100%;
         height: auto; /* Ensure the height adjusts based on the width */
-        object-fit: cover; /* Keep aspect ratio while covering */
+        object-fit: contain; /* Keep aspect ratio while covering */
     }
 
     /* Styling for the Google Maps iframe */
@@ -105,7 +105,8 @@
     /* Media query for mobile phones */
     @media (max-width: 480px) {
         .event-image img {
-            height: 400px; /* Adjust image height for small screens */
+            height: auto; /* Ensure the height adjusts based on the width */
+            object-fit: contain; /* Keep aspect ratio while covering */
         }
 
         .event-location {
