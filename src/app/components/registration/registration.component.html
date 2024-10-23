@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 text-center">
             <h1 class="display-4 mb-3" style="color:chocolate;">Kannada Events</h1>
-            <p class="lead text-muted mb-5">
+            <p class="lead text-muted mb-2">
                 Join us for a series of exciting Kannada events that celebrate our rich culture and heritage. From
                 cultural programs to festivals, immerse yourself in the vibrancy of Karnataka and connect with our
                 community!
@@ -12,12 +12,14 @@
 
     <div class="container my-4">
         <!-- Title Card -->
-        <div class="card mb-4">
+        <div class="card mb-4" style="background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);">
             <div class="card-header text-center">
-                <h2 class="mb-0" style="color:chocolate;">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2024</h2>
-                <div class="card-title" style="color:chocolate; font-size: large;">Book your tickets below</div>
+                <h2 class="mb-0" style="color: white;">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2024</h2>
+                <div class="card-title" style="color: white; font-size: medium; padding-top: 5px;">Book your tickets
+                    below</div>
             </div>
         </div>
+
 
         <div class="event-container">
             <!-- Left column for the image -->
@@ -35,23 +37,19 @@
             </div>
         </div>
 
-        <div class="card mb-4">
+        <div class="card mb-4" style="background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);">
             <div class="card-header text-center">
-                <h2 class="mb-0" style="color:chocolate;">Tickets</h2>
+                <h2 class="mb-0" style="color:white;">Tickets</h2>
             </div>
         </div>
 
-        <div *ngIf="loading" class="text-center my-5">
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p>Loading event tickets...</p>
-        </div>
+        <app-loading-modal [isLoading]="loading"></app-loading-modal>
+
         <div class="row justify-content-center">
 
             <!-- Loop through the products -->
-            <div class="col-md-4 col-sm-2 mb-4" *ngFor="let product of products">
-                <div class="card h-100">
+            <div class="col-md-5 col-sm-2 mb-4" *ngFor="let product of products">
+                <div class="card h-100 text-center">
                     <!-- Product Image -->
                     <img class="card-img-top img-fluid" [src]="product.images[0]?.src" alt="{{ product.name }}">
 
@@ -83,20 +81,20 @@
                         <!-- Total Cost -->
                         <p><strong>Total Cost: </strong><span style="color: green; font-weight: bold;"> &euro;{{
                                 calculateTotalCost(product) | number: '1.2-2' }}</span></p>
-
-                        <!-- Add to Cart Button -->
-                        <button class="btn btn-primary btn-block" (click)="addToCart(product)"
-                            [disabled]="product.quantity <= 0">
-                            Add to Cart
-                        </button>
+                        <div class="d-flex justify-content-center">
+                            <!-- Add to Cart Button -->
+                            <button class="btn btn-primary btn-block" (click)="addToCart(product)"
+                                [disabled]="product.quantity <= 0">
+                                Add to Cart
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row justify-content-around">
-            <button class="btn btn-primary btn-block" style="width: 120px" (click)="viewCart()"
-                [disabled]="getCartCount() === 0">
+            <button class="btn btn-primary btn-block" (click)="viewCart()" [disabled]="getCartCount() === 0">
                 View Cart
             </button>
         </div>

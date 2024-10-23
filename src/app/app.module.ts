@@ -19,6 +19,7 @@ import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { LoadingModalComponent } from './shared/loading-modal/loading-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FeedbackFormComponent } from './components/feedback-form/feedback-form.
     CartComponent,
     CheckoutComponent,
     OrderConfirmationComponent,
-    FeedbackFormComponent
+    FeedbackFormComponent,
+    LoadingModalComponent
   ],
   imports: [
     BrowserModule,

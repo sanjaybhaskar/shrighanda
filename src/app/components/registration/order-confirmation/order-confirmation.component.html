@@ -8,7 +8,10 @@
         <button class="btn-primary" (click)="goToCart()">Continue Payment</button>
 
     </div>
-    <div class="order-summary" *ngIf="!errorMessage">
+
+    <app-loading-modal [isLoading]="loading"></app-loading-modal>
+
+    <div class="order-summary" *ngIf="!errorMessage && !loading">
 
         <h1>Thank You for Your Order!</h1>
         <h2 style="color: green;">{{confirmationMessage}}</h2>

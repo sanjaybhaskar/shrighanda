@@ -81,26 +81,8 @@
   border: 0;
 }
 
-/* Register Now Button Styles */
-.register-button-container {
-  text-align: center; /* Center the button */
-  margin-top: 15px; /* Space above the button */
-}
-
-.register-button {
-  display: inline-block;
-  padding: 12px 25px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007BFF; /* Button color */
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.register-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+button {
+  width: 160px;
 }
 
 /* Media query for tablets and small screens */
@@ -118,19 +100,33 @@
 /* Media query for mobile phones */
 @media (max-width: 480px) {
   .event-image img {
-      height: 400px; /* Adjust image height for small screens */
+      // height: 400px; /* Adjust image height for small screens */
+      // object-fit: contain; /* Keep aspect ratio while covering */
+  }
+  
+  h1 {
+    font-size: 32px;
   }
 
-  .event-location {
-      height: 200px; /* Adjust height for map on small screens */
+  h2 {
+    font-size: 22px;
   }
 
   .event-location iframe {
       height: 100%; /* Full height of the parent */
+      width: fit-content;
+  }
+
+  button {
+    width: 100%;
   }
 }
 
 /* Global styles to reduce section height */
 section {
   padding: 20px 0; /* Adjust top and bottom padding as needed */
+}
+
+img {
+  max-width: 100%;
 }

@@ -14,6 +14,7 @@ export class OrderConfirmationComponent implements OnInit {
   errorMessage: string | null = null;
   orderDetails: any;
   confirmationMessage: string | null = null;
+  loading = true;  // Track loading state
 
   constructor(private router: Router, private route: ActivatedRoute, private wcService: WooCommerceService,
     private cartService: CartService) { }
@@ -39,6 +40,7 @@ export class OrderConfirmationComponent implements OnInit {
     this.wcService.getOrder(orderId).subscribe(
       (order: any) => {
         this.orderDetails = order;
+        this.loading = !this.loading;
       },
       (error) => {
         console.error('Failed to fetch order details:', error);
