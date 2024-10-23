@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../product/model/product.model';
 import { Router } from '@angular/router';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,27 +16,12 @@ export class CartComponent {
     window.scrollTo(0, 0);
   }
 
-  constructor(private router: Router) {
-    // Retrieve cart items from localStorage
-    const storedCartItems = localStorage.getItem('cartItems');
-    this.cartItems = storedCartItems ? JSON.parse(storedCartItems) : [];
+  constructor(private router: Router, private cartService: CartService) {
+    this.cartItems = this.cartService.getCart();
   }
 
   getGroupedCartItems() {
-    const groupedItems: { [key: number]: { product: Product; quantity: number } } = {};
-
-    this.cartItems.forEach((item: any) => {
-      const productId = item.product.id;
-      if (!groupedItems[productId]) {
-        groupedItems[productId] = {
-          product: item.product,
-          quantity: 0
-        };
-      }
-      groupedItems[productId].quantity += item.quantity;
-    });
-
-    return Object.values(groupedItems);
+    return this.cartService.getGroupedCartItems();
   }
 
   calculateItemTotal(item: any) {
@@ -44,18 +30,18 @@ export class CartComponent {
   }
 
   calculateCartTotal() {
-    return this.getGroupedCartItems().reduce((total, item) => {
-      const price = parseFloat(item.product.price); // Use the price property directly
-      return total + (price * item.quantity);
-    }, 0).toFixed(2);
+    return this.cartService.calculateCartTotal();
   }
 
   removeFromCart(productId: number) {
-    this.cartItems = this.cartItems.filter((item: any) => item.product.id !== productId);
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+    this.cartService.removeFromCart(productId);
   }
 
   proceedToCheckout() {
     this.router.navigate(['/checkout']);
+  }
+
+  proceedToEvents() {
+    this.router.navigate(['/events']);
   }
 }

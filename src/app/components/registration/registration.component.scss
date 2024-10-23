@@ -81,9 +81,6 @@
   border: 0;
 }
 
-button {
-  width: 160px;
-}
 
 /* Media query for tablets and small screens */
 @media (max-width: 768px) {
@@ -120,6 +117,10 @@ button {
   button {
     width: 100%;
   }
+
+  .btn-trash {
+    width: 30px;
+  }
 }
 
 /* Global styles to reduce section height */
@@ -129,4 +130,40 @@ section {
 
 img {
   max-width: 100%;
+}
+
+
+.table {
+  th, td {
+    padding: 5px;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+
+  th {
+    font-weight: bold;
+    color: white;
+  }
+
+  .thead-dark {
+    background-color: #343a40; // Dark background for header
+  }
+
+  .hover-row {
+    background-color: #ffffff; // White background for rows
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f8f9fa; // Light gray on hover
+    }
+  }
+
+  .btn-danger {
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: #dc3545; // Darker red on hover
+    }
+  }
 }

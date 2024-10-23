@@ -36,11 +36,12 @@
   <!-- Total Cart Summary -->
   <div class="row mt-4 mb-4">
     <div class="col-12 text-right">
-      <div class="d-flex justify-content-between cart-total-background p-4 rounded shadow-lg">
+      <div class="d-flex justify-content-between cart-total-background p-4 rounded shadow-lg align-items-end">
         <div>
-          <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()"
+          <h4 class="text-primary font-weight-bold mb-3"></h4>
+          <button class="btn btn-success" (click)="proceedToEvents()"
             [disabled]="cartItems.length == 0">
-            <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+            <i class="fa fa-arrow-left"></i> Events
           </button>
         </div>
         <div>

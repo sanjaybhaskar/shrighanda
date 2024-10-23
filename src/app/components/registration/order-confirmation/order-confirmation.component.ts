@@ -27,6 +27,7 @@ export class OrderConfirmationComponent implements OnInit {
       const redirectStatus = params['redirect_status'];
       // Check if the payment status indicates a failure
       if (redirectStatus === 'failed') {
+        this.loading = false; // Stop loading if there was a failure
         this.errorMessage = 'Your payment was unsuccessful. Please try again or contact support.';
       } else if (this.orderId) {
         this.getOrderDetails(this.orderId);
@@ -40,10 +41,12 @@ export class OrderConfirmationComponent implements OnInit {
     this.wcService.getOrder(orderId).subscribe(
       (order: any) => {
         this.orderDetails = order;
-        this.loading = !this.loading;
+        this.loading = false; // Stop loading when order details are fetched
       },
       (error) => {
         console.error('Failed to fetch order details:', error);
+        this.errorMessage = 'Failed to retrieve order details. Please try again later.';
+        this.loading = false; // Stop loading on error
       }
     );
   }

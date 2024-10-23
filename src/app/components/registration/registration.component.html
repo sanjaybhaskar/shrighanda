@@ -46,7 +46,6 @@
         <app-loading-modal [isLoading]="loading"></app-loading-modal>
 
         <div class="row justify-content-center">
-
             <!-- Loop through the products -->
             <div class="col-md-5 col-sm-2 mb-4" *ngFor="let product of products">
                 <div class="card h-100 text-center">
@@ -68,35 +67,78 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-outline-secondary" (click)="decreaseQuantity(product)">-</button>
                             </span>
-
-                            <!-- Adjust the width of the input to make it smaller -->
                             <input type="number" class="form-control text-center" [(ngModel)]="product.quantity"
                                 [min]="0" [max]="10" style="width: 60px; height: 38px;" />
-
                             <span class="input-group-btn">
                                 <button class="btn btn-outline-secondary" (click)="increaseQuantity(product)">+</button>
                             </span>
                         </div>
 
-                        <!-- Total Cost -->
-                        <p><strong>Total Cost: </strong><span style="color: green; font-weight: bold;"> &euro;{{
-                                calculateTotalCost(product) | number: '1.2-2' }}</span></p>
-                        <div class="d-flex justify-content-center">
-                            <!-- Add to Cart Button -->
+                        <!-- Add to Cart Button -->
+                        <div class="d-flex justify-content-center mb-3">
                             <button class="btn btn-primary btn-block" (click)="addToCart(product)"
-                                [disabled]="product.quantity <= 0">
-                                Add to Cart
+                                [disabled]="product.quantity <= 0">Add to Cart
                             </button>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-around">
-            <button class="btn btn-primary btn-block" (click)="viewCart()" [disabled]="getCartCount() === 0">
-                View Cart
-            </button>
+        <div class="row mt-2" *ngIf="cart?.length">
+            <div class="col">
+
+                <!-- Card container -->
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h4 class="mb-1" style="color: #333;">Cart Summary</h4>
+
+                        <!-- Table to display cart items -->
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th scope="col" class="text-center">Qty</th>
+                                    <th scope="col" class="text-center">Price</th>
+                                    <th scope="col" class="text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop through the cart items -->
+                                <tr *ngFor="let cartItem of cart" class="hover-row">
+                                    <td>
+                                        <strong>{{ cartItem.product.name }}</strong>
+                                    </td>
+                                    <td class="text-center">
+                                        {{ cartItem.quantity }}
+                                    </td>
+                                    <td class="text-center">
+                                        &euro;{{ calculateTotalCost(cartItem) | number: '1.2-2' }}
+                                    </td>
+                                    <td class="text-center">
+                                        <!-- Font Awesome Trash Icon for remove -->
+                                        <button class="btn btn-danger btn-sm btn-trash"
+                                            (click)="removeFromCart(cartItem.product.id)" title="Remove Item">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div>
+                <h4 class="text-primary font-weight-bold mb-3 text-center">Total: &euro;{{ calculateCartTotal() }}</h4>
+                <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()"
+                    [disabled]="cart.length == 0">
+                    <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+                </button>
+            </div>
+
         </div>
     </div>
 </div>
