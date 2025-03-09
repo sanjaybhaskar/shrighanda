@@ -40,6 +40,14 @@ export class CheckoutStallsComponent {
     const storedCart = localStorage.getItem('cartItems');
     if (storedCart) {
       this.cartItems = JSON.parse(storedCart);
+      this.cartItems = this.cartItems.filter((item) => {
+        const hasMatchingType = item.product.attributes?.some(
+          (attr: any) =>
+            attr.name.toLowerCase() === "product_type" &&
+            attr.options.some((option: string) => option.toLowerCase() === 'business')
+        );
+        return hasMatchingType;
+      });
       if (this.calculateCartTotal() > 0) {
         this.initializeStripe();
       }

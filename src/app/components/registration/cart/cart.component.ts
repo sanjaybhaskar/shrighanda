@@ -61,10 +61,20 @@ export class CartComponent {
   }
 
   proceedToCheckout() {
-    this.router.navigate(['/checkout']);
+    if(this.filterValue === 'business') {
+      this.router.navigate(['/checkout-stalls']);
+    }
+    else if(this.filterValue === 'nonbusiness') {
+      this.router.navigate(['/checkout']);
+    }
   }
 
   proceedToEvents() {
-    this.router.navigate(['/events']);
+    if(this.filterValue === 'business') {
+      this.router.navigate(['/events'], { queryParams : { type: 'business' }});
+    }
+    else if(this.filterValue === 'nonbusiness') {
+      this.router.navigate(['/events'], { queryParams : { type: 'nonbusiness' }});
+    }
   }
 }

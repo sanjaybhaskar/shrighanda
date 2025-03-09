@@ -86,7 +86,7 @@ export class RegistrationComponent {
   }
 
   getCartCount(): number {
-    return this.cartService.getCartItemCount();
+      return this.cartService.getCartItemCountByType(this.filterValue);
   }
 
   // Add product to cart
