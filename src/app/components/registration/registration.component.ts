@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { WooCommerceService } from './service/woo-commerce.service';
 import { CartService } from './service/cart.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCacheService } from './service/product-cache.service';
 
 @Component({
@@ -16,27 +16,48 @@ export class RegistrationComponent {
   loading = true;  // Track loading state
   cart: any;
   private productsCache: any[] = []; // Cache for products
+  filterValue: string = 'nonbusiness'; // Default filter value
 
   constructor(private wooCommerceService: WooCommerceService, private cartService: CartService, private router: Router,
-    private productCacheService: ProductCacheService) { }
+    private productCacheService: ProductCacheService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Check if products are already cached
+    this.cart = this.cartService.getCart();
+
+    // Read the 'type' query parameter from the URL (e.g., ?type=business or ?type=nonbusiness)
+    this.route.queryParams.subscribe(params => {
+      if (params['type']) {
+        this.filterValue = params['type'].toLowerCase(); // Ensure lowercase comparison
+      }
+      this.loadProducts();
+    });
+
+  }
+
+  loadProducts() {
+    // Check if products are cached
     if (this.productCacheService.hasProducts()) {
-      this.products = this.productCacheService.getProducts();
-      this.loading = false;  // Stop loading as we have cached products
+      this.products = this.filterProducts(this.productCacheService.getProducts());
+      this.loading = false;
     } else {
-      // Fetch products from the service
       this.wooCommerceService.getProducts().subscribe((data) => {
-        this.products = data.filter((p: any) => p.stock_status === 'instock');
-        this.products.forEach(product => {
-          product.quantity = 0; // Default quantity is 0
-        });
-        this.productCacheService.setProducts(this.products); // Cache the fetched products
-        this.loading = false;  // Stop loading once products are fetched
+        const filteredProducts = this.filterProducts(data);
+        this.products = filteredProducts;
+        this.productCacheService.setProducts(data); // Cache all products (unfiltered)
+        this.loading = false;
       });
     }
-    this.cart = this.cartService.getCart();
+  }
+
+  filterProducts(products: any[]): any[] {
+    return products.filter((p: any) => {
+      const hasMatchingType = p.attributes?.some(
+        (attr: any) =>
+          attr.name.toLowerCase() === "product_type" &&
+          attr.options.some((option: string) => option.toLowerCase() === this.filterValue)
+      );
+      return p.stock_status === 'instock' && hasMatchingType;
+    }).map(product => ({ ...product, quantity: 0 })); // Ensure quantity is initialized to 0
   }
 
   isQuantityValid(product: any): boolean {
