@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { WooCommerceService } from '../service/woo-commerce.service';
 import { loadStripe } from '@stripe/stripe-js';
 import { PaymentService } from '../service/payment.service';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { style } from './checkout.constant';
 
