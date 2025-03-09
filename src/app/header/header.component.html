@@ -21,9 +21,15 @@
       <a href="https://www.youtube.com/@ShrigandhaNL" target="_blank"><i class="fab fa-youtube"
           style="color: black;"></i></a>
 
-      <a routerLink="cart" title="Cart" class="cart-icon position-relative">
+      <a [routerLink]="['/cart']" [queryParams]="{ type : 'business' }" title="Cart Business" class="cart-icon position-relative">
+        <i class="fas fa-store" style="font-size: 14px; color: black"></i>
+        <span class="badge badge-light" *ngIf="cartService.getCartItemCountByType('business') > 0">{{ cartService.getCartItemCountByType('business')
+          }}</span>
+      </a>
+
+      <a [routerLink]="['/cart']" [queryParams]="{ type : 'nonbusiness' }" title="Cart" class="cart-icon position-relative">
         <i class="fas fa-shopping-cart" style="font-size: 14px; color: black"></i>
-        <span class="badge badge-light" *ngIf="cartService.getCartItemCount() > 0">{{ cartService.getCartItemCount()
+        <span class="badge badge-light" *ngIf="cartService.getCartItemCountByType('nonbusiness') > 0">{{ cartService.getCartItemCountByType('nonbusiness')
           }}</span>
       </a>
     </div>
