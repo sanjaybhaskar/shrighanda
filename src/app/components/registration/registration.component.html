@@ -68,7 +68,7 @@
                                 <button class="btn btn-outline-secondary" (click)="decreaseQuantity(product)">-</button>
                             </span>
                             <input type="number" class="form-control text-center" [(ngModel)]="product.quantity"
-                                [min]="0" [max]="10" style="width: 60px; height: 38px;" />
+                                [min]="0" [max]="product.sold_individually ? 1 : 10" style="width: 60px; height: 38px;" />
                             <span class="input-group-btn">
                                 <button class="btn btn-outline-secondary" (click)="increaseQuantity(product)">+</button>
                             </span>
@@ -76,16 +76,21 @@
 
                         <!-- Add to Cart Button -->
                         <div class="d-flex justify-content-center mb-3">
-                            <button class="btn btn-primary btn-block" (click)="addToCart(product)"
-                                [disabled]="product.quantity <= 0">Add to Cart
+                            <button class="btn btn-primary btn-block" 
+                                    (click)="addToCart(product)"
+                                    [disabled]="product.quantity <= 0 || (product.sold_individually && getCartCount() === 1)">
+                                    Add to Cart
                             </button>
-                        </div>
 
+                        </div>
+                        <p class="text-danger mt-1" *ngIf="(product.sold_individually && product.quantity > 1)">
+                            Only one stall can be purchased at one time.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
+       
         <div class="row mt-2" *ngIf="cart?.length">
             <div class="col">
 
@@ -126,6 +131,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <p class="text-danger mt-1" *ngIf="filterValue === 'business' && getCartCount() > 0">
+                            Cart full - only one stall is allowed to add to the cart at one time
+                        </p>
                     </div>
                 </div>
             </div>
