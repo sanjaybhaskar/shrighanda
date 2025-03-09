@@ -103,12 +103,6 @@ export class RegistrationComponent {
     this.router.navigate(['/cart']);
   }
 
-  // Get the quantity of the product in the cart
-  getCartProductQuantity(product: any): number {
-    const cartItem = this.cart.find((cartItem: any) => cartItem.product.id === product.id);
-    return cartItem ? cartItem.quantity : 0;
-  }
-
   removeFromCart(productId: number) {
     this.cartService.removeFromCart(productId);
     this.cart = this.cartService.getCart();  // Update cart after adding product
