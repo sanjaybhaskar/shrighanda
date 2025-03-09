@@ -111,7 +111,7 @@
                             </thead>
                             <tbody>
                                 <!-- Loop through the cart items -->
-                                <tr *ngFor="let cartItem of cart" class="hover-row">
+                                <tr *ngFor="let cartItem of getFilteredCartItems()" class="hover-row">
                                     <td>
                                         <strong>{{ cartItem.product.name }}</strong>
                                     </td>
