@@ -10,29 +10,64 @@ import { style } from './checkout-stalls.constant';
   templateUrl: './checkout-stalls.component.html',
   styleUrls: ['./checkout-stalls.component.scss']
 })
-export class CheckoutStallsComponent {
-  errorMessage: string | null = null;  // Add this to hold the error message
 
+export class CheckoutStallsComponent {
+  // Existing properties
+  errorMessage: string | null = null;
   firstName: string = '';
   lastName: string = '';
   email: string = '';
-  city: string = '';    // Added City
-  commute: string = 'own';  // Added Commute
   phoneNumber: string = '';
-  cartItems: any[] = []; // You can get the cart items from localStorage or a cart service
+  city: string = '';
+  commute: string = 'own';
+  cartItems: any[] = [];
   dutchPhonePattern: string = '^(\\+31|0)[1-9][0-9]{8}$';
   stripe: any;
   elements: any;
   card: any;
   orderData: any;
   orderId: any;
-  selectedPaymentMethod: string = 'card'; // Default selected payment method
+  selectedPaymentMethod: string = 'card';
   isLoading: boolean = false;
   selectedBank: any;
   paymentModeValid: boolean = false;
 
-  constructor(private wcService: WooCommerceService,
-    private paymentService: PaymentService, private cdr: ChangeDetectorRef) { }
+  // New properties for Business Information
+  businessName: string = '';
+  businessAddress: string = '';
+  businessContactNumber: string = '';
+  businessType: string = ''; // Options: Food Vendor, Home decor & handicrafts, etc.
+  businessTypes: string[] = [
+    'Food Vendor',
+    'Home decor & handicrafts',
+    'Clothing & clothing accessories',
+    'Face painting and mehendi',
+    'Other'
+  ];
+
+  // New properties for Menu Details
+  menuType: string = ''; // Options: South Indian, North Indian, etc.
+  menuTypes: string[] = [
+    'South Indian',
+    'North Indian',
+    'Chinese',
+    'Snacks',
+    'Desserts',
+    'NA'
+  ];
+  menuItems: string[] = ['', '', '', '', '']; // Array to store up to 5 menu items
+
+  requiresElectricity: boolean = false;
+  electricityPoints: number = 1; // Default to 1 point
+  kvkRegistrationNumber: string = '';
+  agreeToWasteManagement: boolean = false; // Agreement checkbox
+  remarks: string = ''; // Optional remarks
+
+  constructor(
+    private wcService: WooCommerceService,
+    private paymentService: PaymentService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
