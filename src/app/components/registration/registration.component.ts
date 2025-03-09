@@ -43,6 +43,12 @@ export class RegistrationComponent {
       this.wooCommerceService.getProducts().subscribe((data) => {
         const filteredProducts = this.filterProducts(data);
         this.products = filteredProducts;
+        // Extract custom_sort value and sort products
+        this.products.sort((a: any, b: any) => {
+          const sortA = this.getCustomSortValue(a);
+          const sortB = this.getCustomSortValue(b);
+          return sortA - sortB;
+        });
         this.productCacheService.setProducts(data); // Cache all products (unfiltered)
         this.loading = false;
       });
@@ -58,6 +64,11 @@ export class RegistrationComponent {
       );
       return p.stock_status === 'instock' && hasMatchingType;
     }).map(product => ({ ...product, quantity: 0 })); // Ensure quantity is initialized to 0
+  }
+
+  getCustomSortValue(product: any): number {
+    const attr = product.attributes?.find((attr: any) => attr.name.toLowerCase() === "custom_sort");
+    return attr && attr.options.length ? parseInt(attr.options[0], 10) : 9999; // Default to 9999 if missing
   }
 
   isQuantityValid(product: any): boolean {
