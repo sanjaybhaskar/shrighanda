@@ -17,6 +17,7 @@ import { EventsComponent } from './components/events/events.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CartComponent } from './components/registration/cart/cart.component';
 import { CheckoutComponent } from './components/registration/checkout/checkout.component';
+import { CheckoutStallsComponent } from './components/registration/checkout-stalls/checkout-stalls.component';
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { LoadingModalComponent } from './shared/loading-modal/loading-modal.component';
@@ -36,6 +37,7 @@ import { LoadingModalComponent } from './shared/loading-modal/loading-modal.comp
     GalleryComponent,
     CartComponent,
     CheckoutComponent,
+    CheckoutStallsComponent,
     OrderConfirmationComponent,
     FeedbackFormComponent,
     LoadingModalComponent

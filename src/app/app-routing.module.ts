@@ -8,6 +8,7 @@ import { CheckoutComponent } from './components/registration/checkout/checkout.c
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { CheckoutStallsComponent } from './components/registration/checkout-stalls/checkout-stalls.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'events', component: RegistrationComponent },
   { path: 'about', component: AboutComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout-stalls', component: CheckoutStallsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'order-confirmation', component: OrderConfirmationComponent },
   { path: 'contact-us', component: FeedbackFormComponent },

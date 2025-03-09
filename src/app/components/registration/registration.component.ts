@@ -128,7 +128,12 @@ export class RegistrationComponent {
 
   proceedToCheckout() {
     const filteredCartItems = this.getFilteredCartItems();
-    this.router.navigate(['/checkout'], { state: { cart: filteredCartItems } });
+    if(this.filterValue === 'business') {
+      this.router.navigate(['/checkout-stalls'], { state: { cart: filteredCartItems } });
+    }
+    else if(this.filterValue === 'nonbusiness') {
+      this.router.navigate(['/checkout'], { state: { cart: filteredCartItems } });
+    }
   }
 
   calculateCartTotal(): number {
