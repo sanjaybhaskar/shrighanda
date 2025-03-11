@@ -61,6 +61,7 @@ export class CheckoutStallsComponent {
   electricityPoints: number = 1; // Default to 1 point
   kvkRegistrationNumber: string = '';
   agreeToWasteManagement: boolean = false; // Agreement checkbox
+  numberOfPersons: number | null = null; // Number of persons in the stall (1 or 2)
   remarks: string = ''; // Optional remarks
 
   constructor(
@@ -111,9 +112,15 @@ export class CheckoutStallsComponent {
     });
   }
 
-  // Calculate the total price of the cart
-  calculateCartTotal() {
-    return this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  calculateCartTotal(): number {
+    let total = this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  
+    // Add food price for non-food vendors
+    if (this.businessType && this.businessType !== 'Food Vendor' && this.numberOfPersons) {
+      total += 15 * this.numberOfPersons;
+    }
+  
+    return total;
   }
 
   async handleSubmit(event: Event) {
