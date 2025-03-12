@@ -84,18 +84,38 @@ export class CheckoutStallsComponent {
         );
         return hasMatchingType;
       });
-      if (this.calculateCartTotal() > 0) {
-        this.initializeStripe();
+      this.checkAndInitializeStripe()
+    }
+  }
+
+  private checkAndInitializeStripe() {
+    const total = this.calculateCartTotal();
+    if (total > 0) {
+      this.initializeStripe();
+    } else {
+      // Destroy the existing iDEAL element if the total is 0
+      if (this.card) {
+        this.card.destroy();
+        this.card = null;
       }
     }
+  }
 
+  public calculateCartTotal(): number {
+    let total = this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  
+    // Add food price for non-food vendors
+    if (this.businessType && this.businessType !== 'Food Vendor' && this.numberOfPersons) {
+      total += 15 * this.numberOfPersons;
+    }
+  
+    return total;
   }
 
   private async initializeStripe() {
     this.stripe = await loadStripe(environment.stripePublisherKey); // Replace with your Stripe publishable key
     this.setupIdealElement();
   }
-
 
   private setupIdealElement() {
     const elements = this.stripe.elements();
@@ -112,17 +132,6 @@ export class CheckoutStallsComponent {
     });
   }
 
-  calculateCartTotal(): number {
-    let total = this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
-  
-    // Add food price for non-food vendors
-    if (this.businessType && this.businessType !== 'Food Vendor' && this.numberOfPersons) {
-      total += 15 * this.numberOfPersons;
-    }
-  
-    return total;
-  }
-
   async handleSubmit(event: Event) {
     event.preventDefault(); // Prevent default form submission
     this.isLoading = true; // Set loading state to true
@@ -137,7 +146,11 @@ export class CheckoutStallsComponent {
       this.isLoading = false; // Reset loading state after payment process
       this.cdr.detectChanges(); // Manually trigger change detection
     }
+  }
 
+  // Example: Call this method when numberOfPersons changes
+  onNumberOfPersonsChange() {
+    this.checkAndInitializeStripe();
   }
 
   private async createOrder() {
