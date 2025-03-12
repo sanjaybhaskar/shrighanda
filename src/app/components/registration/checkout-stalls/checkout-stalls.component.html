@@ -1,0 +1,263 @@
+<app-loading-modal [isLoading]="isLoading"></app-loading-modal>
+
+<div class="container mt-2">
+    <button class="back-button" onclick="window.history.back();">Go Back</button>
+
+    <div class="row mt-2">
+        <!-- Right Column: Cart Summary -->
+        <div class="col-md-5 order-1 order-md-2 mb-4">
+            <h2 class="mb-4">Order Summary</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div *ngFor="let item of cartItems">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div style="text-align: start;">
+                                <h4 class="mb-0">{{ item.product.name }}</h4>
+                                <small>Quantity: {{ item.quantity }}</small>
+                            </div>
+                            <span class="text-muted">&euro;{{ item.product.price * item.quantity }}</span>
+                        </div>
+                        <hr />
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Total</h5>
+                        <h5>&euro;{{ calculateCartTotal() }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Column: Checkout Form -->
+        <div class="col-md-7 order-2 order-md-1 pb-4">
+            <h2 class="mb-4">Checkout</h2>
+            <div class="card" style="text-align: left;">
+                <div class="card-body">
+                    <!-- Introductory Text -->
+                    <div class="mb-4">
+                        <p>
+                            <strong>Expected Audience size is ~500 people,</strong> catered overall by around 6 varied food stalls*.
+                            Two tables and one chair will be provided per stall. Final menu and stall placement in the hall are finalized by the organization.
+                            Stalls can be set up from 12.00hr onwards and must wrap up by 20.00hr. <em>*to be confirmed</em>
+                        </p>
+                    </div>
+
+                    <!-- Form tag with ngModelGroup to track validation state -->
+                    <form #checkoutForm="ngForm">
+                        <!-- Personal Information -->
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control form-control-sm" id="firstName"
+                                    placeholder="Enter First Name" [(ngModel)]="firstName" name="firstName" required
+                                    #firstNameField="ngModel" />
+                                <div *ngIf="firstNameField.invalid && firstNameField.touched" class="text-danger">
+                                    First Name is required.
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control form-control-sm" id="lastName"
+                                    placeholder="Enter Last Name" [(ngModel)]="lastName" name="lastName" required
+                                    #lastNameField="ngModel" />
+                                <div *ngIf="lastNameField.invalid && lastNameField.touched" class="text-danger">
+                                    Last Name is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control form-control-sm" id="email"
+                                    placeholder="Enter Email" [(ngModel)]="email" name="email" required email
+                                    #emailField="ngModel" />
+                                <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
+                                    Valid Email is required.
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control form-control-sm" id="phoneNumber"
+                                    placeholder="Enter Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required
+                                    #phoneField="ngModel" [pattern]="dutchPhonePattern" />
+                                <div *ngIf="phoneField.invalid && phoneField.touched" class="text-danger">
+                                    Please enter a valid Dutch phone number (e.g., 06 12345678 or +31 6 12345678).
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Information -->
+                        <h3 class="mt-4 mb-3">Business Information</h3>
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="businessName">Business Name</label>
+                                <input type="text" class="form-control form-control-sm" id="businessName"
+                                    placeholder="Enter Business Name" [(ngModel)]="businessName" name="businessName" required
+                                    #businessNameField="ngModel" />
+                                <div *ngIf="businessNameField.invalid && businessNameField.touched" class="text-danger">
+                                    Business Name is required.
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="businessAddress">Business Address</label>
+                                <input type="text" class="form-control form-control-sm" id="businessAddress"
+                                    placeholder="Enter Business Address" [(ngModel)]="businessAddress" name="businessAddress" required
+                                    #businessAddressField="ngModel" />
+                                <div *ngIf="businessAddressField.invalid && businessAddressField.touched" class="text-danger">
+                                    Business Address is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="businessContactNumber">Business Contact Number</label>
+                                <input type="tel" class="form-control form-control-sm" id="businessContactNumber"
+                                    placeholder="Enter Business Contact Number" [(ngModel)]="businessContactNumber" name="businessContactNumber" required
+                                    #businessContactNumberField="ngModel" [pattern]="dutchPhonePattern" />
+                                <div *ngIf="businessContactNumberField.invalid && businessContactNumberField.touched" class="text-danger">
+                                    Please enter a valid Dutch phone number.
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="businessType">Business Type</label>
+                                <select class="form-control form-control-sm" id="businessType"
+                                    [(ngModel)]="businessType" name="businessType" required #businessTypeField="ngModel">
+                                    <option value="" disabled>Select Business Type</option>
+                                    <option *ngFor="let type of businessTypes" [value]="type">{{ type }}</option>
+                                </select>
+                                <div *ngIf="businessTypeField.invalid && businessTypeField.touched" class="text-danger">
+                                    Business Type is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Details -->
+                        <h3 class="mt-4 mb-3">Menu Details</h3>
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="menuType">Menu Type</label>
+                                <select class="form-control form-control-sm" id="menuType"
+                                    [(ngModel)]="menuType" name="menuType" required #menuTypeField="ngModel">
+                                    <option value="" disabled>Select Menu Type</option>
+                                    <option *ngFor="let type of menuTypes" [value]="type">{{ type }}</option>
+                                </select>
+                                <div *ngIf="menuTypeField.invalid && menuTypeField.touched" class="text-danger">
+                                    Menu Type is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="menuItems">Mention your items on your Menu List (Max 5 items)</label>
+                                <small class="form-text text-muted">[Non Food stalls, please mention NA]</small>
+                                <div *ngFor="let item of menuItems; let i = index">
+                                    <input type="text" class="form-control form-control-sm mt-2"
+                                        placeholder="Menu Item {{ i + 1 }}" [(ngModel)]="menuItems[i]" name="menuItem{{ i }}" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Electricity Requirements -->
+                        <h3 class="mt-4 mb-3">Electricity Requirements</h3>
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <label>Will you require electricity?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" [(ngModel)]="requiresElectricity" name="requiresElectricity" [value]="true" id="electricityYes" required />
+                                    <label class="form-check-label" for="electricityYes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" [(ngModel)]="requiresElectricity" name="requiresElectricity" [value]="false" id="electricityNo" required />
+                                    <label class="form-check-label" for="electricityNo">No</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4" *ngIf="requiresElectricity">
+                                <label for="electricityPoints">How many points required? (1-4)</label>
+                                <input type="number" class="form-control form-control-sm" id="electricityPoints"
+                                    [(ngModel)]="electricityPoints" name="electricityPoints" min="1" max="4" required
+                                    #electricityPointsField="ngModel" />
+                                <div *ngIf="electricityPointsField.invalid && electricityPointsField.touched" class="text-danger">
+                                    Please enter a number between 1 and 4.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KVK Registration Number -->
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="kvkRegistrationNumber">KVK Registration Number</label>
+                                <input type="text" class="form-control form-control-sm" id="kvkRegistrationNumber"
+                                    placeholder="Enter KVK Registration Number" [(ngModel)]="kvkRegistrationNumber" name="kvkRegistrationNumber" required
+                                    #kvkRegistrationNumberField="ngModel" />
+                                <small class="form-text text-muted">If you do not have a KVK registration number, mention "Not Available".</small>
+                                <div *ngIf="kvkRegistrationNumberField.invalid && kvkRegistrationNumberField.touched" class="text-danger">
+                                    KVK Registration Number is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Waste Management Agreement -->
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" [(ngModel)]="agreeToWasteManagement" name="agreeToWasteManagement" required
+                                        id="agreeToWasteManagement" #agreeToWasteManagementField="ngModel" />
+                                    <label class="form-check-label" for="agreeToWasteManagement">
+                                        I commit to managing and disposing of all garbage and waste generated by my food stall in accordance with local regulations. This includes providing your own waste bin and recycling containers.
+                                    </label>
+                                </div>
+                                <div *ngIf="agreeToWasteManagementField.invalid && agreeToWasteManagementField.touched" class="text-danger">
+                                    You must agree to the waste management statement.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Remarks -->
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="remarks">Any other remarks or comments to be considered for your registration? (optional)</label>
+                                <textarea class="form-control form-control-sm" id="remarks"
+                                    placeholder="Enter remarks or comments" [(ngModel)]="remarks" name="remarks"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Payment Section -->
+                        <div class="row" *ngIf="calculateCartTotal() > 0">
+                            <div class="form-group col-md-6 mb-4">
+                                <label>iDEAL Payment</label>
+                                <div id="ideal-bank-element"></div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Buttons -->
+                        <button type="button" class="btn btn-primary btn-block mt-4 mb-4" *ngIf="calculateCartTotal() !== 0"
+                            [disabled]="checkoutForm.invalid || !paymentModeValid || isLoading || calculateCartTotal() === 0"
+                            (click)="handleSubmit($event)">
+                            <span *ngIf="isLoading">Processing...</span>
+                            <span *ngIf="!isLoading && calculateCartTotal() !== 0">Pay Now</span>
+                            <span *ngIf="!isLoading && calculateCartTotal() == 0">Register</span>
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-block mt-4 mb-4" *ngIf="calculateCartTotal() === 0"
+                            [disabled]="checkoutForm.invalid || isLoading" (click)="handleSubmit($event)">
+                            <span *ngIf="isLoading">Processing...</span>
+                            <span *ngIf="!isLoading">Register</span>
+                        </button>
+
+                        <div *ngIf="errorMessage" class="error-message">
+                            {{ errorMessage }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

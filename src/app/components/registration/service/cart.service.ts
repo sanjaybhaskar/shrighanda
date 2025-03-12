@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CartItem, Product } from '../product/model/product.model';
+import { Product, ProductType } from '../product/model/product.model';
 
 @Injectable({
     providedIn: 'root',
@@ -65,7 +65,6 @@ export class CartService {
         return this.cart.reduce((total, item) => total + item.quantity, 0);
     }
 
-
     getGroupedCartItems() {
         this.loadCart();
         const groupedItems: { [key: number]: { product: Product; quantity: number } } = {};
@@ -92,4 +91,30 @@ export class CartService {
         }, 0).toFixed(2);
     }
 
+    // Get cart items by product type
+    getCartItemsByType(productType: ProductType): any[] {
+        this.loadCart();
+        return this.cart.filter((item: any) => {
+            const hasMatchingType = item.product.attributes?.some(
+                (attr: any) =>
+                    attr.name.toLowerCase() === "product_type" &&
+                    attr.options.some((option: string) => option.toLowerCase() === productType)
+            );
+            return hasMatchingType;
+        });
+    }
+
+    // Get the total cost of cart items by product type
+    getCartTotalByType(productType: ProductType): number {
+        const filteredItems = this.getCartItemsByType(productType);
+        return filteredItems.reduce((total, item) => {
+            return total + (item.product.price * item.quantity);
+        }, 0);
+    }
+
+    // Get the total quantity of cart items by product type
+    getCartItemCountByType(productType: ProductType): number {
+        const filteredItems = this.getCartItemsByType(productType);
+        return filteredItems.reduce((total, item) => total + item.quantity, 0);
+    }
 }

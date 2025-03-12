@@ -2,7 +2,6 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { WooCommerceService } from '../service/woo-commerce.service';
 import { loadStripe } from '@stripe/stripe-js';
 import { PaymentService } from '../service/payment.service';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { style } from './checkout.constant';
 
@@ -41,6 +40,14 @@ export class CheckoutComponent {
     const storedCart = localStorage.getItem('cartItems');
     if (storedCart) {
       this.cartItems = JSON.parse(storedCart);
+      this.cartItems = this.cartItems.filter((item) => {
+        const hasMatchingType = item.product.attributes?.some(
+          (attr: any) =>
+            attr.name.toLowerCase() === "product_type" &&
+            attr.options.some((option: string) => option.toLowerCase() === 'nonbusiness')
+        );
+        return hasMatchingType;
+      });
       if (this.calculateCartTotal() > 0) {
         this.initializeStripe();
       }

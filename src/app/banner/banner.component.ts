@@ -14,8 +14,10 @@ export class BannerComponent implements OnInit {
   }
 
   navigateToRegister() {
-    this.router.navigate(['/events']);
+    this.router.navigate(['/events'], { queryParams: { type: 'nonbusiness' }});
   }
 
-
+  navigateToRegisterStalls() {
+    this.router.navigate(['/events'], { queryParams: { type: 'business' }});
+  }
 }

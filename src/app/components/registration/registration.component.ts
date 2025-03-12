@@ -3,6 +3,7 @@ import { WooCommerceService } from './service/woo-commerce.service';
 import { CartService } from './service/cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCacheService } from './service/product-cache.service';
+import { ProductType } from './product/model/product.model';
 
 @Component({
   selector: 'app-registration',
@@ -16,7 +17,7 @@ export class RegistrationComponent {
   loading = true;  // Track loading state
   cart: any;
   private productsCache: any[] = []; // Cache for products
-  filterValue: string = 'nonbusiness'; // Default filter value
+  filterValue: ProductType = 'nonbusiness'; // Default filter value, using ProductType
 
   constructor(private wooCommerceService: WooCommerceService, private cartService: CartService, private router: Router,
     private productCacheService: ProductCacheService, private route: ActivatedRoute) { }
@@ -27,11 +28,13 @@ export class RegistrationComponent {
     // Read the 'type' query parameter from the URL (e.g., ?type=business or ?type=nonbusiness)
     this.route.queryParams.subscribe(params => {
       if (params['type']) {
-        this.filterValue = params['type'].toLowerCase(); // Ensure lowercase comparison
+        const type = params['type'].toLowerCase();
+        if (type === 'business' || type === 'nonbusiness') {
+          this.filterValue = type as ProductType; // Ensure the value is of type ProductType
+        }
       }
       this.loadProducts();
     });
-
   }
 
   loadProducts() {
@@ -83,11 +86,14 @@ export class RegistrationComponent {
   }
 
   getCartCount(): number {
-    return this.cartService.getCartItemCount();
+      return this.cartService.getCartItemCountByType(this.filterValue);
   }
 
   // Add product to cart
   addToCart(product: any) {
+    if(product.quantity > 1) {
+      product.quantity = 1; // Limit to one product
+    }
     this.cartService.addToCart(Object.assign({}, product));
     this.cart = this.cartService.getCart();  // Update cart after adding product
     product.quantity = 0;
@@ -106,7 +112,8 @@ export class RegistrationComponent {
   }
 
   calculateTotalCost(item: any): number {
-    const cartItem = this.cart.find((cartItem: any) => cartItem.product.id === item.product.id);
+    const filteredCartItems = this.getFilteredCartItems(); // Get filtered cart items
+    const cartItem = filteredCartItems.find((cartItem: any) => cartItem.product.id === item.product.id);
     return cartItem ? cartItem.product.price * cartItem.quantity : 0;
   }
 
@@ -120,11 +127,30 @@ export class RegistrationComponent {
   }
 
   proceedToCheckout() {
-    this.router.navigate(['/checkout']);
+    const filteredCartItems = this.getFilteredCartItems();
+    if(this.filterValue === 'business') {
+      this.router.navigate(['/checkout-stalls'], { state: { cart: filteredCartItems } });
+    }
+    else if(this.filterValue === 'nonbusiness') {
+      this.router.navigate(['/checkout'], { state: { cart: filteredCartItems } });
+    }
   }
 
-  calculateCartTotal() {
-    return this.cartService.calculateCartTotal();
+  calculateCartTotal(): number {
+    const filteredCartItems = this.getFilteredCartItems();
+    return filteredCartItems.reduce((total, cartItem) => {
+      return total + (cartItem.product.price * cartItem.quantity);
+    }, 0);
   }
 
+  getFilteredCartItems(): any[] {
+    return this.cart.filter((cartItem: any) => {
+      const hasMatchingType = cartItem.product.attributes?.some(
+        (attr: any) =>
+          attr.name.toLowerCase() === "product_type" &&
+          attr.options.some((option: string) => option.toLowerCase() === this.filterValue)
+      );
+      return hasMatchingType;
+    });
+  }
 }
