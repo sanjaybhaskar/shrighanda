@@ -5,6 +5,20 @@
 
     <div class="row mt-2">
         <!-- Right Column: Cart Summary -->
+        <div class="col-md-7 order-2 order-md-1 pb-4">
+            <h2 class="mb-4">Stall Information</h2>
+            <div class="card" style="text-align: left;">
+                <div class="card-body">
+                        <h5>Expected Audience size is ~500 people, catered overall by around 6 varied food stalls* </h5>
+                        <ul>
+                            <li><h6>Two tables and one chair will be provided per stall.</h6></li>
+                            <li><h6>Final Menu and stall placement in the hall is finalized by the organization.</h6></li>
+                            <li><h6>Stalls can be set up from 12.00hr onwards and must wrap up by 20.00hr. <em>*to be confirmed</em></h6>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
         <div class="col-md-5 order-1 order-md-2 mb-4">
             <h2 class="mb-4">Order Summary</h2>
             <div class="card">
@@ -40,20 +54,14 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Left Column: Checkout Form -->
-        <div class="col-md-7 order-2 order-md-1 pb-4">
+        <div class="col-md-7 order-2 order-md-3 pb-4">
             <h2 class="mb-4">Checkout</h2>
             <div class="card" style="text-align: left;">
                 <div class="card-body">
                     <!-- Introductory Text -->
-                    <div class="mb-4">
-                        <p>
-                            <strong>Expected Audience size is ~500 people,</strong> catered overall by around 6 varied food stalls*.
-                            Two tables and one chair will be provided per stall. Final menu and stall placement in the hall are finalized by the organization.
-                            Stalls can be set up from 12.00hr onwards and must wrap up by 20.00hr. <em>*to be confirmed</em>
-                        </p>
-                    </div>
+                    
 
                     <!-- Form tag with ngModelGroup to track validation state -->
                     <form #checkoutForm="ngForm">
@@ -176,7 +184,7 @@
                                             placeholder="Menu Item {{ i + 1 }}" [(ngModel)]="menuItems[i]" name="menuItem{{ i }}" />
                                     </div>
                                 </div>
-                            </div>
+                            </div>                     
                         </div>
 
                         <!-- Non-Food Vendor Details -->
