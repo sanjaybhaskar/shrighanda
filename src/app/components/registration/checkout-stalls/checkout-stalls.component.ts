@@ -61,6 +61,7 @@ export class CheckoutStallsComponent {
   electricityPoints: number = 1; // Default to 1 point
   kvkRegistrationNumber: string = '';
   agreeToWasteManagement: boolean = false; // Agreement checkbox
+  numberOfPersons: number | null = null; // Number of persons in the stall (1 or 2)
   remarks: string = ''; // Optional remarks
 
   constructor(
@@ -83,18 +84,38 @@ export class CheckoutStallsComponent {
         );
         return hasMatchingType;
       });
-      if (this.calculateCartTotal() > 0) {
-        this.initializeStripe();
+      this.checkAndInitializeStripe()
+    }
+  }
+
+  private checkAndInitializeStripe() {
+    const total = this.calculateCartTotal();
+    if (total > 0) {
+      this.initializeStripe();
+    } else {
+      // Destroy the existing iDEAL element if the total is 0
+      if (this.card) {
+        this.card.destroy();
+        this.card = null;
       }
     }
+  }
 
+  public calculateCartTotal(): number {
+    let total = this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
+  
+    // Add food price for non-food vendors
+    if (this.businessType && this.businessType !== 'Food Vendor' && this.numberOfPersons) {
+      total += 15 * this.numberOfPersons;
+    }
+  
+    return total;
   }
 
   private async initializeStripe() {
     this.stripe = await loadStripe(environment.stripePublisherKey); // Replace with your Stripe publishable key
     this.setupIdealElement();
   }
-
 
   private setupIdealElement() {
     const elements = this.stripe.elements();
@@ -111,11 +132,6 @@ export class CheckoutStallsComponent {
     });
   }
 
-  // Calculate the total price of the cart
-  calculateCartTotal() {
-    return this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
-  }
-
   async handleSubmit(event: Event) {
     event.preventDefault(); // Prevent default form submission
     this.isLoading = true; // Set loading state to true
@@ -130,7 +146,11 @@ export class CheckoutStallsComponent {
       this.isLoading = false; // Reset loading state after payment process
       this.cdr.detectChanges(); // Manually trigger change detection
     }
+  }
 
+  // Example: Call this method when numberOfPersons changes
+  onNumberOfPersonsChange() {
+    this.checkAndInitializeStripe();
   }
 
   private async createOrder() {
