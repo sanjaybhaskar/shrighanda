@@ -156,6 +156,18 @@
                                     Business Type is required.
                                 </div>
                             </div>
+
+                            <!-- KVK Registration Number -->
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="kvkRegistrationNumber">KVK Registration Number</label>
+                                <input type="text" class="form-control form-control-sm" id="kvkRegistrationNumber"
+                                    placeholder="Enter KVK Registration Number" [(ngModel)]="kvkRegistrationNumber" name="kvkRegistrationNumber" required
+                                    #kvkRegistrationNumberField="ngModel" />
+                                <small class="form-text text-muted">If you do not have a KVK registration number, mention "Not Available".</small>
+                                <div *ngIf="kvkRegistrationNumberField.invalid && kvkRegistrationNumberField.touched" class="text-danger">
+                                    KVK Registration Number is required.
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Menu Details (Conditional) -->
