@@ -55,7 +55,7 @@ export class CheckoutStallsComponent {
     'Desserts',
     'NA'
   ];
-  menuItems: string[] = ['', '', '', '', '']; // Array to store up to 5 menu items
+  menuItems: string = '';
 
   requiresElectricity: boolean = false;
   electricityPoints: number = 1; // Default to 1 point
