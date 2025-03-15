@@ -18,8 +18,6 @@ export class CheckoutStallsComponent {
   lastName: string = '';
   email: string = '';
   phoneNumber: string = '';
-  city: string = '';
-  commute: string = 'own';
   cartItems: any[] = [];
   dutchPhonePattern: string = '^(\\+31|0)[1-9][0-9]{8}$';
   stripe: any;
@@ -161,8 +159,15 @@ export class CheckoutStallsComponent {
         last_name: this.lastName,
         email: this.email,
         phone: this.phoneNumber,
-        city: this.city,
-        commute: this.commute
+        business_address: this.businessAddress,
+        business_contact_name: this.businessName,
+        business_contact: this.businessContactNumber,
+        business_type: this.businessType,
+        business_electricity_requirement: this.requiresElectricity,
+        business_waste_management_agree: this.agreeToWasteManagement,
+        business_remarks: this.remarks ?? '',
+        business_type_cusine: this.menuType
+        // Add fields for KVK number, number of electricity points and number of persons in stall (optional, if business type is non food)
       },
       line_items: this.cartItems.map(item => ({
         product_id: item.product.id,
