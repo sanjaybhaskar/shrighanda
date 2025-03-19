@@ -14,7 +14,8 @@ export class OrderConfirmationComponent implements OnInit {
   errorMessage: string | null = null;
   orderDetails: any;
   confirmationMessage: string | null = null;
-  loading = true;  // Track loading state
+  isLoading:boolean = true;  // Track loading state
+  redirectStatus: any;
 
   constructor(private router: Router, private route: ActivatedRoute, private wcService: WooCommerceService,
     private cartService: CartService) { }
@@ -24,16 +25,15 @@ export class OrderConfirmationComponent implements OnInit {
     // Extract query parameters from the URL
     this.route.queryParams.subscribe(params => {
       this.orderId = params['orderId'];
-      const redirectStatus = params['redirect_status'];
+      this.redirectStatus = params['redirect_status'];
       // Check if the payment status indicates a failure
-      if (redirectStatus === 'failed') {
-        this.loading = false; // Stop loading if there was a failure
+      if (this.redirectStatus === 'failed') {
         this.errorMessage = 'Your payment was unsuccessful. Please try again or contact support.';
+        this.isLoading = false; // Stop loading if there was a failure
       } else if (this.orderId) {
         this.getOrderDetails(this.orderId);
-        this.confirmPayment(this.orderId);
-        this.cartService.clearCart();
       }
+      this.cartService.clearCart();
     });
   }
 
@@ -41,12 +41,17 @@ export class OrderConfirmationComponent implements OnInit {
     this.wcService.getOrder(orderId).subscribe(
       (order: any) => {
         this.orderDetails = order;
-        this.loading = false; // Stop loading when order details are fetched
+        if(this.redirectStatus === 'success') {
+          this.confirmPayment(this.orderId);
+        } else {
+          this.confirmationMessage = 'Your payment is currently unconfirmed. As soon as we receive the payment confirmation, we will send you an email to confirm your order.!';
+          this.isLoading = false; // Stop loading if there was a failure
+        }
       },
       (error) => {
         console.error('Failed to fetch order details:', error);
         this.errorMessage = 'Failed to retrieve order details. Please try again later.';
-        this.loading = false; // Stop loading on error
+        this.isLoading = false; // Stop loading on error
       }
     );
   }
@@ -57,6 +62,7 @@ export class OrderConfirmationComponent implements OnInit {
         response => {
           // Handle success response
           this.confirmationMessage = 'Your payment has been confirmed!';
+          this.isLoading = false; // Stop loading if there was a failure
           console.log('Payment confirmed:', response);
         },
         error => {
