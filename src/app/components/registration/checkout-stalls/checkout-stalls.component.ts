@@ -56,7 +56,7 @@ export class CheckoutStallsComponent {
   menuItems: string = '';
 
   requiresElectricity: boolean = false;
-  electricityPoints: number = 1; // Default to 1 point
+  electricityPoints: number = 2; // Default to 1 point
   kvkRegistrationNumber: string = '';
   agreeToWasteManagement: boolean = false; // Agreement checkbox
   numberOfPersons: number | null = null; // Number of persons in the stall (1 or 2)
@@ -159,16 +159,19 @@ export class CheckoutStallsComponent {
         last_name: this.lastName,
         email: this.email,
         phone: this.phoneNumber,
-        business_address: this.businessAddress,
-        business_contact_name: this.businessName,
-        business_contact: this.businessContactNumber,
-        business_type: this.businessType,
-        business_electricity_requirement: this.requiresElectricity,
-        business_waste_management_agree: this.agreeToWasteManagement,
-        business_remarks: this.remarks ?? '',
-        business_type_cusine: this.menuType
         // Add fields for KVK number, number of electricity points and number of persons in stall (optional, if business type is non food)
       },
+      business_address: this.businessAddress,
+      business_contact_name: this.businessName,
+      business_contact: this.businessContactNumber,
+      business_type: this.businessType,
+      business_electricity_requirement: this.requiresElectricity,
+      business_waste_management_agree: this.agreeToWasteManagement,
+      business_remarks: this.remarks ?? '',
+      business_type_cusine: this.menuType,
+      business_type_cusine_menu_item: this.menuItems,
+      business_kvk_number: this.kvkRegistrationNumber,
+      business_add_people_attending: this.numberOfPersons,
       line_items: this.cartItems.map(item => ({
         product_id: item.product.id,
         quantity: item.quantity,
