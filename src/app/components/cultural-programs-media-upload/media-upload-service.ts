@@ -10,6 +10,7 @@ declare const google: any;
 export class MediaUploadService {
   private readonly CLIENT_ID = environment.googleClientId;
   private readonly SCOPES = 'https://www.googleapis.com/auth/drive.file';
+  private readonly MAX_TOTAL_SIZE = 100 * 1024 * 1024; // 100MB in bytes
   private accessTokenSubject = new BehaviorSubject<string | null>(null);
   private googleAuth: any;
 
@@ -88,48 +89,45 @@ export class MediaUploadService {
     }
   }
 
-  async uploadFile(file: File, registrationId: string): Promise<any> {
+  async uploadFiles(files: File[], registrationId: string): Promise<any> {
     const accessToken = this.accessTokenSubject.getValue();
     if (!accessToken) {
       throw new Error('Access token is missing. User must log in.');
     }
 
-    const fileName = `${registrationId}_${file.name}`;
-    
-    const metadata = {
-      name: fileName,
-      mimeType: file.type,
-      parents: ['root']
-    };
+    // Calculate total size
+    const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+    if (totalSize > this.MAX_TOTAL_SIZE) {
+      throw new Error(`Total files size (${(totalSize / 1024 / 1024).toFixed(2)}MB) exceeds 100MB limit`);
+    }
 
-    const formData = new FormData();
-    formData.append(
-      "metadata",
-      new Blob([JSON.stringify(metadata)], { type: "application/json" })
-    );
-    formData.append("file", file);
+    const uploadPromises = files.map(file => {
+      const fileName = `${registrationId}_${file.name}`;
+      const metadata = {
+        name: fileName,
+        mimeType: file.type,
+        parents: ['root']
+      };
 
-    try {
-      const response = await fetch(
+      const formData = new FormData();
+      formData.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
+      formData.append("file", file);
+
+      return fetch(
         "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
         {
           method: "POST",
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+          headers: { Authorization: `Bearer ${accessToken}` },
           body: formData,
         }
-      );
+      ).then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to upload ${file.name}`);
+        }
+        return response.json();
+      });
+    });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || 'Upload failed');
-      }
-
-      return await response.json();
-    } catch (error) {
-      console.error('Upload error:', error);
-      throw error;
-    }
+    return Promise.all(uploadPromises);
   }
 }

@@ -14,7 +14,8 @@ export class MediaUploadComponent implements OnInit {
   successMessage = '';
   registrationId = '';
   accessToken: string | null = null;
-  selectedFile: File | null = null;
+  selectedFiles: File[] = [];
+  totalSize = 0;
 
   constructor(
     private uploadService: MediaUploadService,
@@ -44,22 +45,21 @@ export class MediaUploadComponent implements OnInit {
     this.uploadService.signOut();
   }
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      // Check file size (100MB limit)
-      if (file.size > 100 * 1024 * 1024) {
-        this.errorMessage = 'File size exceeds 100MB limit';
-        this.selectedFile = null;
-        return;
-      }
-      this.selectedFile = file;
-      this.errorMessage = '';
-    }
-  }
-
   goBack() {
     this.location.back();
+  }
+
+  onFileSelected(event: any) {
+    this.selectedFiles = Array.from(event.target.files);
+    this.totalSize = this.selectedFiles.reduce((sum, file) => sum + file.size, 0);
+    
+    if (this.totalSize > 100 * 1024 * 1024) {
+      this.errorMessage = `Total size (${(this.totalSize / 1024 / 1024).toFixed(2)}MB) exceeds 100MB limit`;
+      this.selectedFiles = [];
+      this.totalSize = 0;
+    } else {
+      this.errorMessage = '';
+    }
   }
 
   async onSubmit(form: NgForm): Promise<void> {
@@ -71,18 +71,19 @@ export class MediaUploadComponent implements OnInit {
       return;
     }
 
-    if (!this.selectedFile) {
-      this.errorMessage = 'Please select a file to upload';
+    if (!this.selectedFiles.length) {
+      this.errorMessage = 'Please select at least one file';
       return;
     }
 
     this.isLoading = true;
 
     try {
-      await this.uploadService.uploadFile(this.selectedFile, this.registrationId);
-      this.successMessage = 'File uploaded successfully!';
+      const results = await this.uploadService.uploadFiles(this.selectedFiles, this.registrationId);
+      this.successMessage = `Successfully uploaded ${results.length} file(s)!`;
       form.resetForm();
-      this.selectedFile = null;
+      this.selectedFiles = [];
+      this.totalSize = 0;
     } catch (error: any) {
       console.error('Upload error:', error);
       this.errorMessage = error.message || 'Upload failed. Please try again.';
