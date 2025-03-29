@@ -1,0 +1,93 @@
+<app-loading-modal [isLoading]="isLoading"></app-loading-modal>
+
+<div class="container mt-2">
+    <button class="back-button" (click)="goBack()">Go Back</button>
+
+    <div class="row mt-2">
+        <!-- Right Column: Instructions -->
+        <div class="col-md-5 order-1 order-md-2 mb-4">
+            <h2 class="mb-4">Upload Instructions</h2>
+            <div class="card">
+                <div class="card-body" style="text-align: left;">
+                    <div class="instruction-line">- Maximum file size: 100MB</div>
+                    <div class="instruction-line">- Audio: MP3, WAV, AAC, FLAC, OGG, M4A, WMA</div>
+                    <div class="instruction-line">- Video: MP4, MOV, AVI, WMV, MKV, FLV, WEBM, MPEG</div>
+                    <div class="instruction-line">- Your registration ID will be prefixed to the filename</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Column: Upload Form -->
+        <div class="col-md-7 order-2 order-md-1 pb-4">
+            <h2 class="mb-4">File Upload</h2>
+            <div class="card" style="text-align: left;">
+                <div class="card-body">
+                    <div *ngIf="!accessToken" class="alert alert-info mb-3 text-center">
+                        <p>You need to sign in with Google to upload files</p>
+                        <button (click)="signIn()" class="btn btn-google">
+                            <i class="fab fa-google"></i> Sign in with Google
+                        </button>
+                    </div>
+                    
+                    <div *ngIf="accessToken" class="alert alert-success mb-3 text-center">
+                        <p>You are signed in</p>
+                        <button (click)="signOut()" class="btn btn-danger btn-sm">
+                            Sign out
+                        </button>
+                    </div>
+
+                    <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+                        <div class="row">
+                            <!-- Registration ID Field -->
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="registrationId">Registration ID</label>
+                                <input type="text" class="form-control form-control-sm" id="registrationId"
+                                    placeholder="Enter your registration ID" [(ngModel)]="registrationId" 
+                                    name="registrationId" required #registrationIdField="ngModel" />
+                                <div *ngIf="registrationIdField.invalid && registrationIdField.touched" class="text-danger">
+                                    Registration ID is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- File Upload Field -->
+                            <div class="form-group col-md-12 mb-4">
+                                <label for="fileUpload">Files</label>
+                                <input type="file" class="form-control" id="fileUpload" style="padding-top: 10px;"
+                                    (change)="onFileSelected($event)" 
+                                    accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp" 
+                                    [disabled]="!accessToken" required />
+                                <small class="form-text text-muted" *ngIf="selectedFile">
+                                    Selected: {{ selectedFile?.name }} ({{ (selectedFile.size / 1024 / 1024).toFixed(2) }} MB)
+                                </small>
+                                <div *ngIf="!selectedFile && uploadForm.submitted" class="text-danger">
+                                    Please select a file to upload.
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mt-4 mb-4" 
+                                [disabled]="isLoading || !accessToken || !selectedFile">
+                            <span *ngIf="isLoading">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Uploading...
+                            </span>
+                            <span *ngIf="!isLoading">Upload Document</span>
+                        </button>
+
+                        <div *ngIf="errorMessage" class="alert alert-danger">
+                            {{ errorMessage }}
+                        </div>
+                        <div *ngIf="successMessage" class="alert alert-success">
+                            {{ successMessage }}
+                        </div>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add this to your index.html head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
