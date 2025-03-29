@@ -75,6 +75,33 @@
                             <span *ngIf="!isLoading">Upload Files</span>
                         </button>
 
+                        <div *ngIf="isUploading" class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                            role="progressbar" 
+                            [style.width]="uploadProgress + '%'"
+                            [attr.aria-valuenow]="uploadProgress"
+                            aria-valuemin="0" 
+                            aria-valuemax="100">
+                            {{ uploadProgress }}%
+                        </div>
+                        </div>
+
+                        <div *ngIf="selectedFiles.length > 0" class="file-list mb-3">
+                        <h5>Selected Files:</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" 
+                                *ngFor="let file of selectedFiles">
+                            {{ file.name }}
+                            <span class="badge bg-primary rounded-pill text-white">
+                                {{ (file.size / 1024 / 1024).toFixed(2) }} MB
+                            </span>
+                            </li>
+                        </ul>
+                        <div class="mt-2 text-end">
+                            <strong>Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB</strong>
+                        </div>
+                        </div>
+
                         <div *ngIf="errorMessage" class="alert alert-danger">
                             {{ errorMessage }}
                         </div>

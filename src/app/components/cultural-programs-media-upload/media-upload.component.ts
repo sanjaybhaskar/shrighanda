@@ -16,6 +16,8 @@ export class MediaUploadComponent implements OnInit {
   accessToken: string | null = null;
   selectedFiles: File[] = [];
   totalSize = 0;
+  uploadProgress = 0;
+  isUploading = false;
 
   constructor(
     private uploadService: MediaUploadService,
@@ -65,30 +67,37 @@ export class MediaUploadComponent implements OnInit {
   async onSubmit(form: NgForm): Promise<void> {
     this.errorMessage = '';
     this.successMessage = '';
+    this.uploadProgress = 0;
+    this.isUploading = true;
 
     if (form.invalid) {
       this.errorMessage = 'Please fill all required fields';
+      this.isUploading = false;
       return;
     }
 
     if (!this.selectedFiles.length) {
       this.errorMessage = 'Please select at least one file';
+      this.isUploading = false;
       return;
     }
 
-    this.isLoading = true;
-
     try {
-      const results = await this.uploadService.uploadFiles(this.selectedFiles, this.registrationId);
+      const results = await this.uploadService.uploadFiles(
+        this.selectedFiles,
+        this.registrationId,
+        (progress) => this.uploadProgress = progress
+      );
+      
       this.successMessage = `Successfully uploaded ${results.length} file(s)!`;
       form.resetForm();
       this.selectedFiles = [];
       this.totalSize = 0;
     } catch (error: any) {
-      console.error('Upload error:', error);
       this.errorMessage = error.message || 'Upload failed. Please try again.';
     } finally {
-      this.isLoading = false;
+      this.isUploading = false;
+      this.uploadProgress = 0;
     }
   }
 }

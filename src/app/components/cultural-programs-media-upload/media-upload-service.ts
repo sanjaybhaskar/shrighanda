@@ -4,6 +4,10 @@ import { environment } from 'src/environments/environment';
 
 declare const google: any;
 
+interface ProgressTrackingXHR extends XMLHttpRequest {
+  _lastLoaded?: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -88,19 +92,18 @@ export class MediaUploadService {
       this.accessTokenSubject.next(null);
     }
   }
-
-  async uploadFiles(files: File[], registrationId: string): Promise<any> {
+  
+  async uploadFiles(files: File[], registrationId: string, 
+                   progressCallback: (progress: number) => void): Promise<any> {
     const accessToken = this.accessTokenSubject.getValue();
-    if (!accessToken) {
-      throw new Error('Access token is missing. User must log in.');
-    }
-
-    // Calculate total size
+    if (!accessToken) throw new Error('Access token missing. Please log in.');
+  
     const totalSize = files.reduce((sum, file) => sum + file.size, 0);
     if (totalSize > this.MAX_TOTAL_SIZE) {
-      throw new Error(`Total files size (${(totalSize / 1024 / 1024).toFixed(2)}MB) exceeds 100MB limit`);
+      throw new Error(`Total size (${(totalSize / 1024 / 1024).toFixed(2)}MB) exceeds limit`);
     }
-
+  
+    let uploadedSize = 0;
     const uploadPromises = files.map(file => {
       const fileName = `${registrationId}_${file.name}`;
       const metadata = {
@@ -108,26 +111,41 @@ export class MediaUploadService {
         mimeType: file.type,
         parents: ['root']
       };
-
+  
       const formData = new FormData();
       formData.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
       formData.append("file", file);
-
-      return fetch(
-        "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
-        {
-          method: "POST",
-          headers: { Authorization: `Bearer ${accessToken}` },
-          body: formData,
-        }
-      ).then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to upload ${file.name}`);
-        }
-        return response.json();
+  
+      return new Promise((resolve, reject) => {
+        const xhr: ProgressTrackingXHR = new XMLHttpRequest();
+        xhr.open('POST', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart');
+        xhr.setRequestHeader('Authorization', `Bearer ${accessToken}`);
+  
+        xhr.upload.onprogress = (event) => {
+          if (event.lengthComputable) {
+            // Track the delta since last progress event
+            const delta = event.loaded - (xhr._lastLoaded || 0);
+            uploadedSize += delta;
+            xhr._lastLoaded = event.loaded;
+            
+            const progress = Math.round((uploadedSize / totalSize) * 100);
+            progressCallback(progress);
+          }
+        };
+  
+        xhr.onload = () => {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(JSON.parse(xhr.responseText));
+          } else {
+            reject(new Error(`Failed to upload ${file.name}`));
+          }
+        };
+  
+        xhr.onerror = () => reject(new Error(`Error uploading ${file.name}`));
+        xhr.send(formData);
       });
     });
-
+  
     return Promise.all(uploadPromises);
   }
 }

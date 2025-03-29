@@ -66,6 +66,42 @@
     margin-right: 0.5rem;
   }
 
+  .progress {
+    height: 25px;
+    border-radius: 4px;
+  }
+  
+  .progress-bar {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  
+  .file-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .list-group-item {
+    padding: 8px 12px;
+  }
+
+  .upload-controls {
+    max-width: 500px;
+  }
+  
+  .progress {
+    height: 25px;
+  }
+  
+  .btn-danger {
+    margin-left: 10px;
+  }
+  
+  /* Visual feedback during cancellation */
+  .progress-bar.bg-warning {
+    transition: background-color 0.3s ease;
+  }
+
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .back-button {
