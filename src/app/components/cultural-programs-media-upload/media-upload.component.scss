@@ -1,0 +1,117 @@
+.back-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  body {
+    text-align: center;
+    
+  }
+  
+  .card {
+    margin: 0 auto;
+    text-align: center;
+      display: -webkit-flex;
+      display: flex;
+    border-radius: 10px;
+      -webkit-justify-content: center; 
+    justify-content: center;
+    -webkit-flex-wrap: wrap; 
+      flex-wrap: wrap;
+      margin-top: 15px;
+      padding: 1.5%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.16), 0 4px 10px rgba(0,0,0,0.23);
+  }
+
+  .instruction-line {
+    margin-bottom: 8px; /* Adjust spacing as needed */
+    padding-left: 0; /* Remove any default padding */
+  } 
+
+  .btn-google {
+    background-color: #4285F4;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn-google:hover {
+      background-color: #357ABD;
+      color: white;
+  }
+
+  .btn-google i {
+      margin-right: 8px;
+  }
+    
+  /* Loading spinner styles */
+  .spinner-border {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .progress {
+    height: 25px;
+    border-radius: 4px;
+  }
+  
+  .progress-bar {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  
+  .file-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .list-group-item {
+    padding: 8px 12px;
+  }
+
+  .upload-controls {
+    max-width: 500px;
+  }
+  
+  .progress {
+    height: 25px;
+  }
+  
+  .btn-danger {
+    margin-left: 10px;
+  }
+  
+  /* Visual feedback during cancellation */
+  .progress-bar.bg-warning {
+    transition: background-color 0.3s ease;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .back-button {
+      display: none;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .back-button {
+      display: none;
+    }
+  }

@@ -9,6 +9,7 @@ import { OrderConfirmationComponent } from './components/registration/order-conf
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CheckoutStallsComponent } from './components/registration/checkout-stalls/checkout-stalls.component';
+import { MediaUploadComponent } from './components/cultural-programs-media-upload/media-upload.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'order-confirmation', component: OrderConfirmationComponent },
   { path: 'contact-us', component: FeedbackFormComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'media-upload', component: MediaUploadComponent }
 
 ];
 

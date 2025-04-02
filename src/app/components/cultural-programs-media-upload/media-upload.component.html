@@ -1,0 +1,75 @@
+<app-loading-modal [isLoading]="isLoading"></app-loading-modal>
+
+<div class="container mt-2">
+    <!-- <button class="back-button" (click)="goBack()">Go Back</button> -->
+
+    <div class="row mt-2">
+        <!-- Right Column: Instructions -->
+        <div class="col-md-5 order-1 order-md-2 mb-4">
+            <h2 class="mb-4">Upload Instructions</h2>
+            <div class="card">
+                <div class="card-body" style="text-align: left;">
+                    <div class="instruction-line">- Maximum size of all files: 100MB</div>
+                    <div class="instruction-line">- Allowed audio file formats: MP3, WAV, AAC, FLAC, OGG, M4A, WMA</div>
+                    <div class="instruction-line">- Allowed video file formats: MP4, MOV, AVI, WMV, MKV, FLV, WEBM, MPEG</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Column: Upload Form -->
+        <div class="col-md-7 order-2 order-md-1 pb-4">
+            <h2 class="mb-4">File Upload</h2>
+            <div class="card" style="text-align: left;">
+                <div class="card-body">
+                    <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+                        <div class="form-group mb-4">
+                            <label for="registrationId">Registration ID</label>
+                            <input type="text" class="form-control" id="registrationId" placeholder="Enter Registration ID" 
+                                   [(ngModel)]="registrationId" name="registrationId" required #registrationIdField="ngModel" />
+                            <div *ngIf="registrationIdField.invalid && registrationIdField.touched" class="text-danger">
+                                Registration ID is required.
+                            </div>
+                        </div>
+                    
+                        <div class="form-group mb-4">
+                            <label for="fileUpload">Select Files</label>
+                            <input type="file" class="form-control" id="fileUpload" (change)="onFileSelected($event)" 
+                                   accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp"
+                                   multiple required />
+                            <small *ngIf="selectedFiles.length > 0" class="text-muted">
+                                {{ selectedFiles.length }} file(s) selected (Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB)
+                            </small>
+                            <div *ngIf="selectedFiles.length === 0 && uploadForm.submitted" class="text-danger">
+                                Please select at least one file.
+                            </div>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary mt-4" [disabled]="isLoading || selectedFiles.length === 0">
+                            <span *ngIf="isLoading">
+                                <span class="spinner-border spinner-border-sm"></span> Uploading...
+                            </span>
+                            <span *ngIf="!isLoading">Upload Files</span>
+                        </button>
+                    
+                        <div *ngIf="isLoading" class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                 role="progressbar" 
+                                 [style.width]="uploadProgress + '%'">
+                                {{ uploadProgress }}%
+                            </div>
+                        </div>
+                        
+                    
+                        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+                        <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+                    </form>
+                    
+                    
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add this to your index.html head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

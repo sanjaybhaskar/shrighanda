@@ -21,6 +21,7 @@ import { CheckoutStallsComponent } from './components/registration/checkout-stal
 import { OrderConfirmationComponent } from './components/registration/order-confirmation/order-confirmation.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { LoadingModalComponent } from './shared/loading-modal/loading-modal.component';
+import { MediaUploadComponent } from './components/cultural-programs-media-upload/media-upload.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoadingModalComponent } from './shared/loading-modal/loading-modal.comp
     CheckoutStallsComponent,
     OrderConfirmationComponent,
     FeedbackFormComponent,
-    LoadingModalComponent
+    LoadingModalComponent,
+    MediaUploadComponent
   ],
   imports: [
     BrowserModule,
