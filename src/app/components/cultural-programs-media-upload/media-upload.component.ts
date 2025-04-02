@@ -1,103 +1,72 @@
 import { Component, OnInit } from '@angular/core';
-import { MediaUploadService } from './media-upload-service';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-media-upload',
   templateUrl: './media-upload.component.html',
   styleUrls: ['./media-upload.component.scss']
 })
-export class MediaUploadComponent implements OnInit {
-  isLoading = false;
-  errorMessage = '';
-  successMessage = '';
-  registrationId = '';
-  accessToken: string | null = null;
+export class MediaUploadComponent {
+  registrationId: string = '';
   selectedFiles: File[] = [];
-  totalSize = 0;
+  totalSize: number = 0;
+  isLoading = false;
+  errorMessage: string | null = null;
+  successMessage: string | null = null;
   uploadProgress = 0;
-  isUploading = false;
 
-  constructor(
-    private uploadService: MediaUploadService,
-    private location: Location
-  ) {}
-
-  ngOnInit() {
-    this.uploadService.accessToken$.subscribe({
-      next: (token) => {
-        this.accessToken = token;
-        if (token) {
-          this.errorMessage = '';
-        }
-      },
-      error: (err) => {
-        console.error('Token error:', err);
-        this.errorMessage = 'Authentication error. Please try again.';
-      }
-    });
-  }
-
-  signIn() {
-    this.uploadService.signIn();
-  }
-
-  signOut() {
-    this.uploadService.signOut();
-  }
-
-  goBack() {
-    this.location.back();
-  }
+  constructor(private http: HttpClient) {}
 
   onFileSelected(event: any) {
     this.selectedFiles = Array.from(event.target.files);
     this.totalSize = this.selectedFiles.reduce((sum, file) => sum + file.size, 0);
-    
-    if (this.totalSize > 100 * 1024 * 1024) {
-      this.errorMessage = `Total size (${(this.totalSize / 1024 / 1024).toFixed(2)}MB) exceeds 100MB limit`;
-      this.selectedFiles = [];
-      this.totalSize = 0;
-    } else {
-      this.errorMessage = '';
-    }
   }
 
-  async onSubmit(form: NgForm): Promise<void> {
-    this.errorMessage = '';
-    this.successMessage = '';
+  onSubmit(form: any) {
+    if (!this.registrationId || this.selectedFiles.length === 0) {
+      this.errorMessage = 'Please provide a Registration ID and select files.';
+      return;
+    }
+
+    const formData = new FormData();
+    this.selectedFiles.forEach((file, index) => {
+      const renamedFile = new File([file], `${this.registrationId}_${index + 1}.${file.name.split('.').pop()}`, {
+        type: file.type
+      });
+      formData.append('files[]', renamedFile);
+    });
+
+    formData.append('registrationId', this.registrationId);
+
+    this.isLoading = true;
+    this.errorMessage = null;
+    this.successMessage = null;
     this.uploadProgress = 0;
-    this.isUploading = true;
 
-    if (form.invalid) {
-      this.errorMessage = 'Please fill all required fields';
-      this.isUploading = false;
-      return;
-    }
-
-    if (!this.selectedFiles.length) {
-      this.errorMessage = 'Please select at least one file';
-      this.isUploading = false;
-      return;
-    }
-
-    try {
-      const results = await this.uploadService.uploadFiles(
-        this.selectedFiles,
-        this.registrationId,
-        (progress) => this.uploadProgress = progress
-      );
-      
-      this.successMessage = `Successfully uploaded ${results.length} file(s)!`;
-      form.resetForm();
-      this.selectedFiles = [];
-      this.totalSize = 0;
-    } catch (error: any) {
-      this.errorMessage = error.message || 'Upload failed. Please try again.';
-    } finally {
-      this.isUploading = false;
-      this.uploadProgress = 0;
-    }
+    this.http.post('https://shrigandha.nl/wp-json/wc/v2/upload', formData, {
+      reportProgress: true,
+      observe: 'events'
+    }).subscribe({
+      next: (event: any) => {
+        if (event.type === 1 && event.total) {
+          this.uploadProgress = Math.round((event.loaded / event.total) * 100);
+        } else if (event.body) {
+          this.successMessage = 'Files uploaded successfully!';
+          this.selectedFiles = [];
+          this.totalSize = 0;
+          form.resetForm();
+        }
+      },
+      error: () => {
+        this.errorMessage = 'File upload failed!';
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
+      }
+    });
   }
+
 }

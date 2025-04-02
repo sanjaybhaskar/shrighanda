@@ -1,7 +1,7 @@
 <app-loading-modal [isLoading]="isLoading"></app-loading-modal>
 
 <div class="container mt-2">
-    <button class="back-button" (click)="goBack()">Go Back</button>
+    <!-- <button class="back-button" (click)="goBack()">Go Back</button> -->
 
     <div class="row mt-2">
         <!-- Right Column: Instructions -->
@@ -21,94 +21,50 @@
             <h2 class="mb-4">File Upload</h2>
             <div class="card" style="text-align: left;">
                 <div class="card-body">
-                    <div *ngIf="!accessToken" class="alert alert-info mb-3 text-center">
-                        <p>You need to sign in with Google to upload files</p>
-                        <button (click)="signIn()" class="btn btn-google">
-                            <i class="fab fa-google"></i> Sign in with Google
-                        </button>
-                    </div>
-                    
-                    <div *ngIf="accessToken" class="alert alert-success mb-3 text-center">
-                        <p>You are signed in</p>
-                        <button (click)="signOut()" class="btn btn-danger btn-sm">
-                            Sign out
-                        </button>
-                    </div>
-
                     <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
-                        <div class="row">
-                            <!-- Registration ID Field -->
-                            <div class="form-group col-md-12 mb-4">
-                                <label for="registrationId">Registration ID</label>
-                                <input type="text" class="form-control form-control-sm" id="registrationId"
-                                    placeholder="Enter your registration ID" [(ngModel)]="registrationId" 
-                                    name="registrationId" required #registrationIdField="ngModel" />
-                                <div *ngIf="registrationIdField.invalid && registrationIdField.touched" class="text-danger">
-                                    Registration ID is required.
-                                </div>
+                        <div class="form-group mb-4">
+                            <label for="registrationId">Registration ID</label>
+                            <input type="text" class="form-control" id="registrationId" placeholder="Enter Registration ID" 
+                                   [(ngModel)]="registrationId" name="registrationId" required #registrationIdField="ngModel" />
+                            <div *ngIf="registrationIdField.invalid && registrationIdField.touched" class="text-danger">
+                                Registration ID is required.
                             </div>
                         </div>
-
-                        <div class="row">
-                            <!-- File Upload Field -->
-                            <div class="form-group col-md-12 mb-4">
-                              <label for="fileUpload">Files (Multiple Selection Allowed)</label>
-                              <input type="file" class="form-control" id="fileUpload" style="padding-top: 10px;"
-                                     (change)="onFileSelected($event)" 
-                                     accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp" 
-                                     [disabled]="!accessToken" multiple required />
-                              <small class="form-text text-muted" *ngIf="selectedFiles.length > 0">
-                                Selected: {{ selectedFiles.length }} file(s) (Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB)
-                              </small>
-                              <div *ngIf="selectedFiles.length === 0 && uploadForm.submitted" class="text-danger">
+                    
+                        <div class="form-group mb-4">
+                            <label for="fileUpload">Select Files</label>
+                            <input type="file" class="form-control" id="fileUpload" (change)="onFileSelected($event)" 
+                                   accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp"
+                                   multiple required />
+                            <small *ngIf="selectedFiles.length > 0" class="text-muted">
+                                {{ selectedFiles.length }} file(s) selected (Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB)
+                            </small>
+                            <div *ngIf="selectedFiles.length === 0 && uploadForm.submitted" class="text-danger">
                                 Please select at least one file.
-                              </div>
                             </div>
-                          </div>
-
-                        <button type="submit" class="btn btn-primary btn-block mt-4 mb-4" 
-                                [disabled]="isLoading || !accessToken || selectedFiles.length === 0">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary mt-4" [disabled]="isLoading || selectedFiles.length === 0">
                             <span *ngIf="isLoading">
-                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                Uploading...
+                                <span class="spinner-border spinner-border-sm"></span> Uploading...
                             </span>
                             <span *ngIf="!isLoading">Upload Files</span>
                         </button>
-
-                        <div *ngIf="isUploading" class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
-                            role="progressbar" 
-                            [style.width]="uploadProgress + '%'"
-                            [attr.aria-valuenow]="uploadProgress"
-                            aria-valuemin="0" 
-                            aria-valuemax="100">
-                            {{ uploadProgress }}%
+                    
+                        <div *ngIf="isLoading" class="progress mt-3">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                 role="progressbar" 
+                                 [style.width]="uploadProgress + '%'">
+                                {{ uploadProgress }}%
+                            </div>
                         </div>
-                        </div>
-
-                        <div *ngIf="selectedFiles.length > 0" class="file-list mb-3">
-                        <h5>Selected Files:</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center" 
-                                *ngFor="let file of selectedFiles">
-                            {{ file.name }}
-                            <span class="badge bg-primary rounded-pill text-white">
-                                {{ (file.size / 1024 / 1024).toFixed(2) }} MB
-                            </span>
-                            </li>
-                        </ul>
-                        <div class="mt-2 text-end">
-                            <strong>Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB</strong>
-                        </div>
-                        </div>
-
-                        <div *ngIf="errorMessage" class="alert alert-danger">
-                            {{ errorMessage }}
-                        </div>
-                        <div *ngIf="successMessage" class="alert alert-success">
-                            {{ successMessage }}
-                        </div>
+                        
+                    
+                        <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+                        <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
                     </form>
+                    
+                    
                 </div>  
             </div>
         </div>
