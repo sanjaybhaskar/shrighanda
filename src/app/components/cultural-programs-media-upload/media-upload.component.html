@@ -33,10 +33,12 @@
                     
                         <div class="form-group mb-4">
                             <label for="fileUpload">Select Files</label>
-                            <input type="file" class="form-control" id="fileUpload" (change)="onFileSelected($event)" 
-                                   accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp"
-                                   multiple required />
-                            <small *ngIf="selectedFiles.length > 0" class="text-muted">
+                            <input type="file" id="fileUpload" (change)="onFileSelected($event)"
+                            accept=".mp3,.wav,.aac,.flac,.ogg,.m4a,.wma,.mp4,.mov,.avi,.wmv,.mkv,.flv,.webm,.mpeg,.mpg,.3gp"
+                            multiple required hidden />
+                     <button type="button" class="btn btn-primary" (click)="triggerFileInput()">Choose Files</button>
+                 
+                                             <small *ngIf="selectedFiles.length > 0" class="text-muted">
                                 {{ selectedFiles.length }} file(s) selected (Total: {{ (totalSize / 1024 / 1024).toFixed(2) }} MB)
                             </small>
                             <div *ngIf="selectedFiles.length === 0 && uploadForm.submitted" class="text-danger">

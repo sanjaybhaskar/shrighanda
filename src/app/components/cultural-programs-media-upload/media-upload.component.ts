@@ -24,6 +24,10 @@ export class MediaUploadComponent {
     this.totalSize = this.selectedFiles.reduce((sum, file) => sum + file.size, 0);
   }
 
+  triggerFileInput() {
+    document.getElementById('fileUpload')?.click();
+  }
+
   onSubmit(form: any) {
     if (!this.registrationId || this.selectedFiles.length === 0) {
       this.errorMessage = 'Please provide a Registration ID and select files.';
