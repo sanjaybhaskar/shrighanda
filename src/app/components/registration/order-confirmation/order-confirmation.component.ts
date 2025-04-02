@@ -41,7 +41,7 @@ export class OrderConfirmationComponent implements OnInit {
     this.wcService.getOrder(orderId).subscribe(
       (order: any) => {
         this.orderDetails = order;
-        if(this.redirectStatus === 'success') {
+        if(this.redirectStatus === 'succeeded') {
           this.confirmPayment(this.orderId);
         } else {
           this.confirmationMessage = 'Your payment is currently unconfirmed. As soon as we receive the payment confirmation, we will send you an email to confirm your order.!';

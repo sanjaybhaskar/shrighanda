@@ -91,9 +91,6 @@ export class RegistrationComponent {
 
   // Add product to cart
   addToCart(product: any) {
-    if(product.quantity > 1) {
-      product.quantity = 1; // Limit to one product
-    }
     this.cartService.addToCart(Object.assign({}, product));
     this.cart = this.cartService.getCart();  // Update cart after adding product
     product.quantity = 0;

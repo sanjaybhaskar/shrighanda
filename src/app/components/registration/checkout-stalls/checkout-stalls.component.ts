@@ -186,7 +186,7 @@ export class CheckoutStallsComponent {
         async (order: any) => {
           this.orderId = order.id;
           if (totalAmount === 0) {
-            window.location.href = `https://shrigandha.nl/order-confirmation?orderId=${order.id}&redirect_status=success`;
+            window.location.href = `https://shrigandha.nl/order-confirmation?orderId=${order.id}&redirect_status=succeeded`;
           }
           else {
             this.handleStripePayment(order);
