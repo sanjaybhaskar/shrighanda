@@ -115,3 +115,9 @@
       display: none;
     }
   }
+
+  .custom-btn {
+    display: block;
+    width: -webkit-fill-available;
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
