@@ -101,12 +101,6 @@ export class CheckoutStallsComponent {
 
   public calculateCartTotal(): number {
     let total = this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0);
-  
-    // Add food price for non-food vendors
-    if (this.businessType && this.businessType !== 'Food Vendor' && this.numberOfPersons) {
-      total += 15 * this.numberOfPersons;
-    }
-  
     return total;
   }
 

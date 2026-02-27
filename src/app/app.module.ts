@@ -22,6 +22,7 @@ import { OrderConfirmationComponent } from './components/registration/order-conf
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { LoadingModalComponent } from './shared/loading-modal/loading-modal.component';
 import { MediaUploadComponent } from './components/cultural-programs-media-upload/media-upload.component';
+import { LogoScrollComponent } from './components/logo-scroll/logo-scroll.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MediaUploadComponent } from './components/cultural-programs-media-uploa
     OrderConfirmationComponent,
     FeedbackFormComponent,
     LoadingModalComponent,
-    MediaUploadComponent
+    MediaUploadComponent,
+    LogoScrollComponent
   ],
   imports: [
     BrowserModule,

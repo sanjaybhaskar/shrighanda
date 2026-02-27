@@ -1,0 +1,18 @@
+<section class="sponsor-section">
+    <h2 class="sponsor-title">Our Sponsors</h2>
+  
+    <div class="logo-slider" [class.static-display]="logos.length <= 3">
+      <!-- Scrolling version for > 3 logos -->
+      <div class="logo-track" *ngIf="logos.length > 3; else staticDisplay">
+        <img *ngFor="let logo of duplicatedLogos" [src]="logo" alt="Sponsor Logo" />
+      </div>
+  
+      <!-- Static version for ≤ 3 logos -->
+      <ng-template #staticDisplay>
+        <div class="logo-static">
+          <img *ngFor="let logo of logos" [src]="logo" alt="Sponsor Logo" />
+        </div>
+      </ng-template>
+    </div>
+  </section>
+  

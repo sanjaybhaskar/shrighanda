@@ -14,7 +14,7 @@
         <!-- Title Card -->
         <div class="card mb-4" style="background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);">
             <div class="card-header text-center">
-                <h2 class="mb-0" style="color: white;">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2025</h2>
+                <h2 class="mb-0" style="color: white;">ಶ್ರೀಗಂಧ ಯುಗಾದಿ - 2026</h2>
                 <div class="card-title" style="color: white; font-size: medium; padding-top: 5px;">Book your tickets
                     below</div>
             </div>
@@ -24,12 +24,12 @@
         <div class="event-container">
             <!-- Left column for the image -->
             <div class="event-image">
-                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2025/rajyotsava/cultural.png" alt="Event Image">
+                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2026/ugadi/cultural.png" alt="Event Image">
             </div>
 
             <!-- Right column for the Google Maps iframe -->
             <div class="event-image">
-                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2025/rajyotsava/poster.png" alt="Event Image">
+                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2026/ugadi/poster.png" alt="Event Image">
 
             </div>
         </div>
@@ -145,7 +145,7 @@
             <div>
                 <h4 class="text-primary font-weight-bold mb-3 text-center">Total: &euro;{{ calculateCartTotal() }}</h4>
                 <button class="btn btn-success cart-total-button" (click)="proceedToCheckout()"
-                    [disabled]="cart.length == 0">
+                    [disabled]="getCartCount() == 0">
                     <i class="fas fa-shopping-cart"></i> Proceed to Checkout
                 </button>
             </div>

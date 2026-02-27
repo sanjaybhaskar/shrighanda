@@ -9,11 +9,11 @@
             <h2 class="mb-4">Stall Information</h2>
             <div class="card" style="text-align: left;">
                 <div class="card-body">
-                        <h5>Expected Audience size is ~500 people, catered overall by around 6 varied food stalls* </h5>
+                        <h5>Expected Audience size is ~450 people, catered overall by around varies food stalls* </h5>
                         <ul>
                             <li><h6>Two tables and one chair will be provided per stall.</h6></li>
                             <li><h6>Final Menu and stall placement in the hall is finalized by the organization.</h6></li>
-                            <li><h6>Stalls can be set up from 12.00hr onwards and must wrap up by 20.00hr. <em>*to be confirmed</em></h6>
+                            <li><h6>Stalls can be set up from 11.00hr onwards and must wrap up by 19.00hr. <em>*to be confirmed</em></h6>
                             </li>
                         </ul>
                 </div>
@@ -203,29 +203,6 @@
                                   </div>
                                 </div>
                               </div>                 
-                        </div>
-
-                        <!-- Non-Food Vendor Details -->
-                        <div *ngIf="businessType && businessType !== 'Food Vendor'">
-                            <h3 class="mt-4 mb-3">Non-Food Vendor Details</h3>
-                            <div class="row">
-                                <div class="form-group col-md-12 mb-4">
-                                    <p>
-                                        Non-food vendors are expected to pay <strong>€15 per person</strong> (discounted rate) for food.
-                                    </p>
-                                </div>
-                                <div class="form-group col-md-6 mb-4">
-                                    <label for="numberOfPersons">Number of Persons in Stall</label>
-                                    <select class="form-control form-control-sm" id="numberOfPersons"
-                                        [(ngModel)]="numberOfPersons" (ngModelChange)="onNumberOfPersonsChange()" name="numberOfPersons" required #numberOfPersonsField="ngModel">
-                                        <option value="" disabled>Select Number of Persons</option>
-                                        <option *ngFor="let person of [1, 2]" [value]="person">{{ person }}</option>
-                                    </select>
-                                    <div *ngIf="numberOfPersonsField.invalid && numberOfPersonsField.touched" class="text-danger">
-                                        Please select the number of persons.
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- Electricity Requirements -->

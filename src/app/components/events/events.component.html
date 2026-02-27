@@ -1,129 +1,95 @@
 <section class="bg-smoke space-top space-extra-bottom" id="event">
     <div class="vs-container style2">
-        <div class="title-area text-center">
-            <span class="sub-title">#Discover the Fun!</span>
-            <h2 class="sec-title">Upcoming Events</h2>
-            <span class="shape-title"></span>
+      <div class="title-area text-center">
+        <span class="sub-title">#Discover the Fun!</span>
+        <h2 class="sec-title">Upcoming Events</h2>
+        <span class="shape-title"></span>
+      </div>
+  
+      <div class="card mb-4" style="background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);">
+        <div class="card-header text-center">
+          <h2 class="mb-0" style="color: white;">ಶ್ರೀಗಂಧ ಯುಗಾದಿ - 2026</h2>
+          <div class="card-title" style="color: white; font-size: medium; padding-top: 5px;">
+            Book your tickets below
+          </div>
         </div>
-        <div class="card mb-4" style="background: linear-gradient(180deg, #f7420d 0%, #ffcc00 50%, #f98110 100%);">
-            <div class="card-header text-center">
-                <h2 class="mb-0" style="color: white;">ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ - 2025</h2>
-                <div class="card-title" style="color: white; font-size: medium; padding-top: 5px;">Book your tickets
-                    below</div>
-            </div>
+      </div>
+  
+      <div class="event-container">
+        <!-- Event images -->
+        <div class="event-image">
+          <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2026/ugadi/cultural.png" alt="Event Image 1">
         </div>
-
-        <div class="event-container">
-            <!-- Left column for the image -->
-
-            <div class="event-image">
-                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2025/rajyotsava/cultural.png" alt="Event Image">
-            </div>
-            <!-- Right column for the Google Maps iframe -->
-            <div class="event-image">
-                <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2025/rajyotsava/poster.png" alt="Event Image">
-            </div>
+        <div class="event-image">
+          <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2026/ugadi/poster.png" alt="Event Image 2">
         </div>
-
-        <!-- Register Now Button -->
-        <div class="register-button-container">
-            <a href="/events" class="register-button">Register Now</a>
+        <div class="event-image">
+          <img src="https://usercontent.one/wp/shrigandha.nl/wp-content/themes/shrighanda_new/angular-app/assets/events/2026/ugadi/cultural1.png" alt="Event Image 3">
         </div>
+      </div>
+  
+      
     </div>
-</section>
-
-<!-- CSS for styling -->
-<style>
+  </section>
+  
+  <style>
     /* Event container layout */
     .event-container {
-        display: flex;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        flex-wrap: wrap;
-        margin-bottom: 20px; /* Add space below the event container */
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding: 10px;
     }
-
-    /* Styling for the event image */
+  
+    /* Event images */
     .event-image {
-        flex: 1;
-        overflow: hidden;
-        min-width: 200px; /* Ensures the image section doesn't shrink too much */
+      flex: 1 1 30%;
+      overflow: hidden;
+      min-width: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
+  
     .event-image img {
-        width: 100%;
-        height: auto; /* Ensure the height adjusts based on the width */
-        object-fit: contain; /* Keep aspect ratio while covering */
+      width: 100%;
+      height: auto;
+      max-height: 400px; /* Controls the max visible height */
+      object-fit: contain;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
     }
-
-    /* Styling for the Google Maps iframe */
-    .event-location {
-        flex: 1;
-        padding: 0; /* Remove padding to ensure full height */
-        min-width: 300px; /* Ensures the map section doesn't shrink too much */
-        display: flex; /* Allows the iframe to fill the height */
+  
+    .event-image img:hover {
+      transform: scale(1.03);
     }
-
-    .event-location iframe {
-        width: 100%;
-        height: 100%; /* Set iframe height to 100% of its parent */
-        border: 0;
+  
+  
+    /* Tablet screens */
+    @media (max-width: 992px) {
+      .event-image {
+        flex: 1 1 45%;
+      }
     }
-
-    /* Register Now Button Styles */
-    .register-button-container {
-        text-align: center; /* Center the button */
-        margin-top: 15px; /* Space above the button */
+  
+    /* Mobile screens */
+    @media (max-width: 600px) {
+      .event-image {
+        flex: 1 1 100%;
+      }
+      .event-image img {
+        max-height: 300px;
+      }
     }
-
-    .register-button {
-        display: inline-block;
-        padding: 12px 25px;
-        font-size: 16px;
-        color: #fff;
-        background-color: #007BFF; /* Button color */
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .register-button:hover {
-        background-color: #0056b3; /* Darker shade on hover */
-        transform: translateY(-2px); /* Slight lift effect */
-    }
-
-    /* Media query for tablets and small screens */
-    @media (max-width: 768px) {
-        .event-container {
-            flex-direction: column;
-        }
-
-        .event-location {
-            padding: 10px;
-            height: 200px; /* Set a specific height for smaller screens */
-        }
-    }
-
-    /* Media query for mobile phones */
-    @media (max-width: 480px) {
-        .event-image img {
-            height: auto; /* Ensure the height adjusts based on the width */
-            object-fit: contain; /* Keep aspect ratio while covering */
-        }
-
-        .event-location {
-            height: 200px; /* Adjust height for map on small screens */
-        }
-
-        .event-location iframe {
-            height: 100%; /* Full height of the parent */
-        }
-    }
-
-    /* Global styles to reduce section height */
+  
     section {
-        padding: 20px 0; /* Adjust top and bottom padding as needed */
+      padding: 20px 0;
     }
-</style>
+  </style>
+  

@@ -1,9 +1,16 @@
 <app-loading-modal [isLoading]="isLoading"></app-loading-modal>
 
 <div class="container mt-2">
-    <button class="back-button" onclick="window.history.back();">Go Back</button>
-
-    <div class="row mt-2">
+    <button class="back-button" *ngIf="cartItems.length > 0" onclick="window.history.back();">Go Back</button>
+    <ng-template #emptyCart>
+        <div class="text-center mt-5">
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added anything to your cart yet.</p>
+            <a class="btn btn-primary" routerLink="/events">Buy Tickets</a>
+        </div>
+    </ng-template>
+    <div class="row mt-2" *ngIf="cartItems.length > 0; else emptyCart">
+        
         <!-- Right Column: Cart Summary -->
         <div class="col-md-5 order-1 order-md-2 mb-4">
             <h2 class="mb-4">Order Summary</h2>

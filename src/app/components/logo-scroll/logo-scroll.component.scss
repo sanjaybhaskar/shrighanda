@@ -1,0 +1,82 @@
+.sponsor-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #fafafa;
+  }
+  
+  .sponsor-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* The slider container */
+  .logo-slider {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding: 10px 0;
+  }
+  
+  /* Scrolling section */
+  .logo-track {
+    display: flex;
+    animation: scroll-right var(--scroll-speed, 30s) linear infinite;
+  }
+  
+  .logo-track img,
+  .logo-static img {
+    height: auto;
+    max-height: 160px; /* smaller & proportional */
+    width: auto;
+    max-width: 220px; /* caps overly wide logos */
+    margin: 0 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-track img:hover,
+  .logo-static img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Static layout for 1–3 logos */
+  .logo-static {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Animation for scrolling */
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive tuning */
+  @media (max-width: 768px) {
+    .sponsor-title {
+      font-size: 1.5rem;
+    }
+  
+    .logo-track img,
+    .logo-static img {
+      max-height: 90px;
+      max-width: 180px;
+      margin: 0 10px;
+    }
+  }
+  
